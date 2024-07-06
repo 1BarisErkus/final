@@ -1,20 +1,22 @@
 import Image from "next/image";
-import Link from "next/link";
-import { StyledCard } from "./styles";
+import { StyledCard, StyledLink } from "./styles";
 
-const DressCard = ({ col, title }) => {
+const DressCard = ({ col, title, src }) => {
   return (
-    <Link href="#" className={`col-${col} text-decoration-none text-black`}>
+    <StyledLink
+      href="#"
+      className={`col-${col} text-decoration-none text-black`}
+    >
       <StyledCard className="bg-white position-relative rounded-4 mb-3">
         <h3 className="z-2 position-relative pt-4 ps-4 fw-bold">{title}</h3>
         <Image
-          src={`/images/dress/${title}.png`}
+          src={src}
           alt={title}
           fill
           className="object-fit-cover rounded-4"
         />
       </StyledCard>
-    </Link>
+    </StyledLink>
   );
 };
 
