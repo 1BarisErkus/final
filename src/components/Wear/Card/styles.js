@@ -6,6 +6,10 @@ export const Card = styled.div`
   width: 295px;
   border: none;
   cursor: pointer;
+
+  /* @media (max-width: 768px) {
+    width: 198px;
+  } */
 `;
 
 export const StyledImage = styled(Image)`

@@ -11,4 +11,8 @@ export const Row = styled.div`
 
 export const H2 = styled.h2`
   font-size: 48px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;

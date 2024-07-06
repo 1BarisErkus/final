@@ -1,5 +1,5 @@
 import Image from "next/image";
-import versace from "@/assets/images/brands/versace.png";
+import versace from "@//assets/images/brands/versace.png";
 import zara from "@/assets/images/brands/zara.png";
 import gucci from "@/assets/images/brands/gucci.png";
 import prada from "@/assets/images/brands/prada.png";

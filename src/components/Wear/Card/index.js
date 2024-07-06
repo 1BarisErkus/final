@@ -13,7 +13,7 @@ const WearCard = ({ src, title, price, discount = null }) => {
 
   return (
     <Card className="card">
-      <StyledImage src={src} className="card-img-top" alt="Wear" />
+      <StyledImage src={src} className="" alt="Wear" />
       <div className="card-body px-0">
         <CardTitle className="card-title p-0">{title}</CardTitle>
         <StarRating className="my-2" />
