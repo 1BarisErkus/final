@@ -4,28 +4,31 @@ import { IoMdSearch } from "react-icons/io";
 import { FiShoppingCart } from "react-icons/fi";
 import { VscAccount } from "react-icons/vsc";
 import { FaChevronDown } from "react-icons/fa";
+import { IconsWrapper } from "./styles";
 
 const Navbar = () => {
   return (
     <>
       <Header />
       <nav className="navbar navbar-expand-lg">
-        <div className="container gap-3">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNav"
-            aria-controls="mainNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <Link className="navbar-brand" href="#">
-            <h1 className="fs-2">SHOP.CO</h1>
-          </Link>
-          <div className="collapse navbar-collapse" id="mainNav">
+        <div className="container-lg gap-3 my-2">
+          <div className="d-flex gap-3 flex-wrap">
+            <button
+              className="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mainNav"
+              aria-controls="mainNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <Link className="navbar-brand" href="#">
+              <h1 className="fs-2">SHOP.CO</h1>
+            </Link>
+          </div>
+          <div className="collapse navbar-collapse gap-3" id="mainNav">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
                 <Link
@@ -56,7 +59,7 @@ const Navbar = () => {
               </li>
             </ul>
             <form
-              className="d-flex position-relative flex-grow-1 mx-5"
+              className="d-flex position-relative flex-grow-1"
               role="search"
             >
               <span className="position-absolute top-50 start-0 translate-middle-y ms-3">
@@ -69,15 +72,18 @@ const Navbar = () => {
                 aria-label="Search"
               />
             </form>
-            <div className="d-flex align-items-center">
-              <Link href="#" className="me-3">
-                <FiShoppingCart size={24} />
-              </Link>
-              <Link href="#">
-                <VscAccount size={24} />
-              </Link>
-            </div>
           </div>
+          <IconsWrapper className="d-flex align-items-center">
+            <Link href="#" className="me-3">
+              <IoMdSearch size={24} />
+            </Link>
+            <Link href="#" className="me-3">
+              <FiShoppingCart size={24} />
+            </Link>
+            <Link href="#">
+              <VscAccount size={24} />
+            </Link>
+          </IconsWrapper>
         </div>
       </nav>
     </>

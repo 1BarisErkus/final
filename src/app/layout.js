@@ -10,7 +10,7 @@ import Navbar from "@/components/Navbar";
 const integralFc = localFont({
   src: [
     {
-      path: "../../public/fonts/Fontspring-DEMO-integralcf-bold.otf",
+      path: "../assets/fonts/Fontspring-DEMO-integralcf-bold.otf",
       weight: "700",
       style: "normal",
     },
@@ -21,17 +21,17 @@ const integralFc = localFont({
 const satoshi = localFont({
   src: [
     {
-      path: "../../public/fonts/Satoshi-Regular.woff2",
+      path: "../assets/fonts/Satoshi-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Satoshi-Medium.woff2",
+      path: "../assets/fonts/Satoshi-Medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Satoshi-Bold.woff2",
+      path: "../assets/fonts/Satoshi-Bold.woff2",
       weight: "700",
       style: "normal",
     },
@@ -55,6 +55,12 @@ export default function RootLayout({ children }) {
             {children}
           </StyledComponentsRegistry>
         </ReduxProvider>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossOrigin="anonymous"
+          async
+        ></script>
       </body>
     </html>
   );

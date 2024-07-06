@@ -8,4 +8,10 @@ export const StyledLink = styled(Link)`
 
 export const IconWrapper = styled.div`
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    :first-child {
+      display: none;
+    }
+  }
 `;
