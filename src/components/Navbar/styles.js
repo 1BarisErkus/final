@@ -1,14 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import styled from "styled-components";
 
-export const IconsWrapper = styled.div`
-  > *:first-child {
-    display: none;
-  }
-  @media (max-width: 991px) {
-    > *:first-child {
-      display: block;
-    }
-  }
+export const StyledLink = styled(Link)`
+  color: black;
 `;

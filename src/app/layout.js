@@ -6,6 +6,7 @@ import ReduxProvider from "@/common/ReduxProvider";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Navbar from "@/components/Navbar";
+import Header from "@/components/Header";
 
 const integralFc = localFont({
   src: [
@@ -51,6 +52,7 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <StyledComponentsRegistry>
             <GlobalStyles />
+            <Header />
             <Navbar />
             {children}
           </StyledComponentsRegistry>
