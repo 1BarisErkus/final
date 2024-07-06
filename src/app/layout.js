@@ -1,12 +1,12 @@
 import localFont from "next/font/local";
-
-import StyledComponentsRegistry from "@/lib/registry";
-import GlobalStyles from "@/common/GlobalStyles";
-import ReduxProvider from "@/common/ReduxProvider";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Navbar from "@/components/Navbar";
-import Header from "@/components/Header";
+import StyledComponentsRegistry from "@/lib/styledregistry";
+import GlobalStyles from "@/common/GlobalStyles";
+import ReduxProvider from "@/common/ReduxProvider";
+
+import Discount from "@/components/Header/Discount";
+import Navbar from "@/components/Header/Navbar";
 
 const integralFc = localFont({
   src: [
@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <StyledComponentsRegistry>
             <GlobalStyles />
-            <Header />
+            <Discount />
             <Navbar />
             {children}
           </StyledComponentsRegistry>

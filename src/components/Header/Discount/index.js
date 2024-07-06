@@ -12,7 +12,7 @@ import { IoMdClose } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { hideHeader } from "@/redux/slices/globalSlice";
 
-const Header = () => {
+const Discount = () => {
   const dispatch = useDispatch();
 
   const handleHideHeader = () => {
@@ -38,4 +38,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Discount;

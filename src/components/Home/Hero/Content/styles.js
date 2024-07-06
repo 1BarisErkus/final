@@ -1,10 +1,5 @@
 "use client";
-
 import styled from "styled-components";
-
-export const Container = styled.div`
-  padding: 100px 0;
-`;
 
 export const H1 = styled.h1`
   font-size: 64px;
@@ -20,14 +15,6 @@ export const Paragraph = styled.p`
 
   @media (max-width: 768px) {
     font-size: 14px;
-  }
-`;
-
-export const Button = styled.button`
-  margin-top: 32px;
-  margin-bottom: 48px;
-  @media (max-width: 768px) {
-    width: 100%;
   }
 `;
 
