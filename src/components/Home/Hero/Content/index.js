@@ -19,7 +19,7 @@ const Content = () => {
         style.
       </Paragraph>
       <Button theme="dark">Shop Now</Button>
-      <StatsWrapper className="d-flex flex-wrap">
+      <StatsWrapper className="d-flex flex-wrap gap-4">
         <StatsItem>
           <StatsNum>200+</StatsNum>
           <StatsParagraph>International Brands</StatsParagraph>

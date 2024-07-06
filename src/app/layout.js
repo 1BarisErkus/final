@@ -7,6 +7,7 @@ import ReduxProvider from "@/common/ReduxProvider";
 
 import Discount from "@/components/Header/Discount";
 import Navbar from "@/components/Header/Navbar";
+import Footer from "@/components/Footer";
 
 const integralFc = localFont({
   src: [
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
             <Discount />
             <Navbar />
             {children}
+            <Footer />
           </StyledComponentsRegistry>
         </ReduxProvider>
         <script

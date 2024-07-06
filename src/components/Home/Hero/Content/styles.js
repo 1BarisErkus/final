@@ -28,7 +28,7 @@ export const StatsWrapper = styled.div`
 
 export const StatsItem = styled.div`
   border-right: 1px solid #0000001a;
-  padding: 0 25px;
+  padding: 0 25px 0 0;
   @media (max-width: 768px) {
     border: none;
     padding: 0;
