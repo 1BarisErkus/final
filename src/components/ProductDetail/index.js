@@ -1,50 +1,35 @@
+import { getComments, getMightLike, getProduct } from "@/lib/server";
 import ShowCase from "../ShowCase";
 import Content from "./Content";
 import Details from "./Details";
 import ImagesContainer from "./ImagesContainer";
 
-import wear1 from "@/assets/images/wears/wear-1.png";
-import wear2 from "@/assets/images/wears/wear-2.png";
-import wear3 from "@/assets/images/wears/wear-3.png";
-import wear4 from "@/assets/images/wears/wear-4.png";
+const ProductDetail = async ({ slug }) => {
+  const data = await getMightLike();
+  const product = await getProduct(slug);
+  const comments = product.comments;
 
-const cards = [
-  {
-    src: wear1,
-    title: "T-shirt with Tape Details",
-    price: 120,
-  },
-  {
-    src: wear2,
-    title: "Skinny Fit Jeans",
-    price: 240,
-    discount: 20,
-  },
-  {
-    src: wear3,
-    title: "Checkered Shirt",
-    price: 180,
-  },
-  {
-    src: wear4,
-    title: "Sleeve Striped T-Shirt",
-    price: 130,
-    discount: 30,
-  },
-];
-
-const ProductDetail = () => {
   return (
     <div className="container">
       <div className="row">
         <div className="col-6">
-          <ImagesContainer />
+          <ImagesContainer productImage={product.image} />
         </div>
         <div className="col-6">
-          <Content />
+          <Content
+            title={product.title}
+            price={product.price}
+            discount={product.discount}
+            description={product.description}
+            stock={product.stock}
+            sizes={product.sizes}
+            color={product.color}
+            comments={product.comments}
+            rating={product.rating}
+          />
         </div>
-        <Details />
-        <ShowCase title="YOU MIGHT ALSO LIKE" cards={cards} />
+        <Details comments={comments} />
+        <ShowCase title="YOU MIGHT ALSO LIKE" cards={data} />
       </div>
     </div>
   );

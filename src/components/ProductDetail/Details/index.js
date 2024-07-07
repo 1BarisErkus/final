@@ -3,52 +3,7 @@ import { BiChevronDown } from "react-icons/bi";
 import Button from "@/components/Button";
 import CommentCard from "@/components/CommentCard";
 
-const data = [
-  {
-    rating: 5,
-    name: "John Doe",
-    testimonial:
-      "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt.",
-    id: 1,
-  },
-  {
-    rating: 3,
-    name: "John Doe",
-    testimonial:
-      "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt.",
-    id: 1,
-  },
-  {
-    rating: 4.5,
-    name: "John Doe",
-    testimonial:
-      "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt.",
-    id: 1,
-  },
-  {
-    rating: 1.5,
-    name: "John Doe",
-    testimonial:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-    id: 1,
-  },
-  {
-    rating: 5,
-    name: "John Doe",
-    testimonial:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-    id: 1,
-  },
-  {
-    rating: 5,
-    name: "John Doe",
-    testimonial:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-    id: 1,
-  },
-];
-
-const Details = () => {
+const Details = ({ comments }) => {
   return (
     <div className="container mt-5">
       <div className="row mt-5">
@@ -82,13 +37,24 @@ const Details = () => {
             </div>
           </div>
 
-          <div className="mt-4 d-flex flex-column align-items-center justify-content-center">
+          <div className="mt-4">
             <div className="row flex-wrap align-items-center justify-content-around">
-              {data.map((customer) => (
-                <CommentCard key={customer.id} customer={customer} postedDate />
-              ))}
+              {comments && comments.length > 0 ? (
+                comments.map((comment) => (
+                  <CommentCard
+                    key={comment.id}
+                    userId={comment.user_id}
+                    rating={comment.rating}
+                    content={comment.content}
+                    created_at={comment.created_at}
+                    postedDate
+                  />
+                ))
+              ) : (
+                <div className="fs-5 text-secondary">No reviews yet</div>
+              )}
             </div>
-            <Button>Load More Reviews</Button>
+            <Button className="d-flex mx-auto">Load More Reviews</Button>
           </div>
         </div>
       </div>

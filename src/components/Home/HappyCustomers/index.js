@@ -8,7 +8,7 @@ const HappyCustomers = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [customers, setCustomers] = useState([]);
 
-  const fetchCustomers = async () => {
+  const fetchCustomers = () => {
     const data = [
       {
         rating: 5,
@@ -22,35 +22,35 @@ const HappyCustomers = () => {
         name: "John Doe",
         testimonial:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 1,
+        id: 2,
       },
       {
         rating: 4.5,
         name: "John Doe",
         testimonial:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 1,
+        id: 3,
       },
       {
         rating: 1.5,
         name: "John Doe",
         testimonial:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 1,
+        id: 4,
       },
       {
         rating: 5,
         name: "John Doe",
         testimonial:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 1,
+        id: 5,
       },
       {
         rating: 5,
         name: "John Doe",
         testimonial:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 1,
+        id: 6,
       },
     ];
     setCustomers(data);

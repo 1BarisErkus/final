@@ -19,12 +19,14 @@ const FilterComponent = () => {
       </SectionTitle>
 
       <ul className="list-unstyled d-flex flex-column gap-3 pb-3 mb-3 border-bottom">
-        {["T-shirts", "Shorts", "Shirts", "Hoodie", "Jeans"].map((category) => (
-          <li key={category} className="d-flex justify-content-between">
-            <span>{category}</span>
-            <BiChevronRight size={24} />
-          </li>
-        ))}
+        {["T-shirts", "Shorts", "Shirts", "Hoodie", "Jeans"].map(
+          (category, i) => (
+            <li key={i} className="d-flex justify-content-between">
+              <span>{category}</span>
+              <BiChevronRight size={24} />
+            </li>
+          )
+        )}
       </ul>
 
       <SectionTitle>
@@ -53,9 +55,9 @@ const FilterComponent = () => {
           "#F506A4",
           "#FFFFFF",
           "#000000",
-        ].map((color) => (
+        ].map((color, i) => (
           <ColorOption
-            key={color}
+            key={i}
             color={color}
             selected={selectedColor === color}
             onClick={() => setSelectedColor(color)}
@@ -78,9 +80,9 @@ const FilterComponent = () => {
           "XX-Large",
           "3X-Large",
           "4X-Large",
-        ].map((size) => (
+        ].map((size, i) => (
           <SizeButton
-            key={size}
+            key={i}
             selected={selectedSize === size}
             onClick={() => setSelectedSize(size)}
           >
@@ -94,9 +96,9 @@ const FilterComponent = () => {
         <BiChevronUp size={24} />
       </SectionTitle>
       <ul className="list-unstyled d-flex flex-column gap-3 mb-3">
-        {["Casual", "Formal", "Party", "Gym"].map((category) => (
-          <li key={category} className="d-flex justify-content-between">
-            <span>{category}</span>
+        {["Casual", "Formal", "Party", "Gym"].map((dressStyle, i) => (
+          <li key={i} className="d-flex justify-content-between">
+            <span>{dressStyle}</span>
             <BiChevronRight size={24} />
           </li>
         ))}

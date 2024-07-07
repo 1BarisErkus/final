@@ -9,27 +9,41 @@ import {
 } from "@/components/Wear/Card/styles";
 import { Rating } from "@smastrom/react-rating";
 
-const Content = () => {
+const Content = ({
+  title,
+  price,
+  discount,
+  description,
+  stock,
+  sizes,
+  color,
+  rating,
+}) => {
   return (
     <div className="container">
       <div className="row">
         <div className="col">
-          <h1 className="fs-1 d-none d-lg-block">ONE LIFE GRAPHIC T-SHIRT</h1>
-          <h1 className="fs-3 d-block d-lg-none">ONE LIFE GRAPHIC T-SHIRT</h1>
+          <h1 className="fs-1 d-none d-lg-block">{title}</h1>
+          <h1 className="fs-3 d-block d-lg-none">{title}</h1>
           <Rating
-            value={4.5}
+            value={rating}
             style={{ maxWidth: 150 }}
             className="my-2 fs-1"
             readOnly
           />
           <div className="d-flex align-items-center gap-2">
-            <Price className="fs-2">$250</Price>
-            <DiscountlessPrice className="fs-2">$270</DiscountlessPrice>
-            <DiscountPercent className="fs-6">20%</DiscountPercent>
+            <Price className="fs-2">${price}</Price>
+            {discount !== 0 && (
+              <>
+                <DiscountlessPrice className="fs-2">
+                  ${price / (1 - discount / 100)}
+                </DiscountlessPrice>
+                <DiscountPercent className="fs-6">{discount}%</DiscountPercent>
+              </>
+            )}
           </div>
           <p className="mt-2 pb-4 border-bottom text-secondary">
-            This graphic t-shirt which is perfect for any occasion. Crafted from
-            a soft and breathable fabric, it offers superior comfort and style.
+            {description}
           </p>
           <div className="mt-2 pb-4 border-bottom">
             <h5 className="fs-6 text-secondary">Select Colors</h5>
@@ -41,16 +55,23 @@ const Content = () => {
           </div>
           <div className="mt-4 pb-4 border-bottom">
             <h5 className="fs-6 text-secondary">Choose Size</h5>
-            <div className="d-flex mt-3">
-              <SizeButton>Small</SizeButton>
-              <SizeButton>Medium</SizeButton>
-              <SizeButton>Large</SizeButton>
-              <SizeButton>X-Large</SizeButton>
+            <div className="d-flex flex-wrap mt-3">
+              {sizes?.XS && sizes?.XXS > 0 && (
+                <SizeButton>XX - Small</SizeButton>
+              )}
+              {sizes?.XS && sizes?.XS > 0 && <SizeButton>X - Small</SizeButton>}
+              {sizes?.S && sizes?.S > 0 && <SizeButton>Small</SizeButton>}
+              {sizes?.M && sizes?.M > 0 && <SizeButton>Medium</SizeButton>}
+              {sizes?.L && sizes?.L > 0 && <SizeButton>Large</SizeButton>}
+              {sizes?.XL && sizes?.XL > 0 && <SizeButton>X - Large</SizeButton>}
+              {sizes?.XXL && sizes?.XXL > 0 && (
+                <SizeButton>XX - Large</SizeButton>
+              )}
             </div>
           </div>
           <div className="mt-4">
             <div className="d-flex align-items-center justify-content-between">
-              <ProductCountButton>1</ProductCountButton>
+              <ProductCountButton />
               <Button theme="dark" className="m-0">
                 Add to Cart
               </Button>

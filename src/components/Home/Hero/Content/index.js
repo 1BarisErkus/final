@@ -8,6 +8,7 @@ import {
   StatsWrapper,
 } from "./styles";
 import Button from "@/components/Button";
+import Link from "next/link";
 
 const Content = () => {
   return (
@@ -18,7 +19,9 @@ const Content = () => {
         designed to bring out your individuality and cater to your sense of
         style.
       </Paragraph>
-      <Button theme="dark">Shop Now</Button>
+      <Link href="/category">
+        <Button theme="dark">Shop Now</Button>
+      </Link>
       <StatsWrapper className="d-flex flex-wrap gap-4">
         <StatsItem>
           <StatsNum>200+</StatsNum>

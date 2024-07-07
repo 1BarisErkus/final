@@ -1,14 +1,14 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import ProductDetail from "@/components/ProductDetail";
 
-const ProductDetailPage = () => {
+const ProductDetailPage = ({ params }) => {
   return (
     <main>
       <div className="container">
         <div className="row">
           <div className="col">
             <Breadcrumb />
-            <ProductDetail />
+            <ProductDetail slug={params.id} />
           </div>
         </div>
       </div>

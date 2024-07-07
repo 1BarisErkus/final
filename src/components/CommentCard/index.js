@@ -4,22 +4,25 @@ import { StyledIcon } from "../Home/HappyCustomers/styles";
 
 import tick from "@/assets/tick.png";
 
-const CommentCard = ({ customer, postedDate }) => {
+const CommentCard = ({ rating, content, username, postedDate }) => {
+  username = "John Doe";
   return (
     <div
-      className={`rounded-4 border mb-4 ${postedDate ? "col-5" : "col-4"} p-4`}
+      className={`rounded-4 border mb-4 mx-2 ${
+        postedDate ? "col-lg-5" : "col-lg-4"
+      } col-12 p-4`}
     >
       <div className="d-flex justify-content-between">
         <Rating
           style={{ maxWidth: 100 }}
-          value={customer.rating}
+          value={rating}
           className="py-1"
           readOnly
         />
         {postedDate && <div>...</div>}
       </div>
       <h5 className="fw-bold my-2 d-flex gap-2">
-        {customer.name}
+        {username}
         <StyledIcon>
           <Image
             src={tick}
@@ -29,7 +32,7 @@ const CommentCard = ({ customer, postedDate }) => {
           />
         </StyledIcon>
       </h5>
-      <p className=" mt-2  opacity-50 fw-lighter">{customer.testimonial}</p>
+      <p className=" mt-2  opacity-50 fw-lighter">{content}</p>
       {postedDate && (
         <div>
           <span className="fs-6 text-secondary fw-bold">

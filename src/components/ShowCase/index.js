@@ -2,6 +2,7 @@ import { Container, H2, Row } from "./styles";
 import WearCard from "@/components/Wear/Card";
 import WearCardList from "@/components/Wear/CardList";
 import Button from "@/components/Button";
+import Link from "next/link";
 
 const ShowCase = ({ title, button, cards }) => {
   return (
@@ -11,19 +12,28 @@ const ShowCase = ({ title, button, cards }) => {
           <div className="col-12 d-flex flex-column align-items-center justify-content-center">
             <H2 className=" text-center">{title}</H2>
             <WearCardList>
-              {cards.map((card, index) => {
-                return (
-                  <WearCard
-                    key={index}
-                    src={card.src}
-                    title={card.title}
-                    price={card.price}
-                    discount={card.discount}
-                  />
-                );
-              })}
+              {cards && cards.length > 0 ? (
+                cards.map((card) => {
+                  return (
+                    <Link key={card.id} href={`/product/${card.id}`}>
+                      <WearCard
+                        src={card.image}
+                        title={card.title}
+                        price={card.price}
+                        discount={card.discount}
+                      />
+                    </Link>
+                  );
+                })
+              ) : (
+                <div>Products are not found.</div>
+              )}
             </WearCardList>
-            {button && <Button>View All</Button>}
+            {button && (
+              <Link href="/category">
+                <Button>View All</Button>
+              </Link>
+            )}
           </div>
         </Row>
       </Container>

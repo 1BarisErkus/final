@@ -27,7 +27,7 @@ const Discount = () => {
         <Container className="container">
           <TextWrapper className="container-md">
             Sign up and get 20% off all your orders.{" "}
-            <StyledLink href="signup">Sign Up Now</StyledLink>
+            <StyledLink href="/signup">Sign Up Now</StyledLink>
           </TextWrapper>
           <IconWrapper>
             <IoMdClose size={20} onClick={handleHideHeader} />
