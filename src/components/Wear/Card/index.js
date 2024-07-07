@@ -1,4 +1,4 @@
-import StarRating from "../../StarRating";
+import { Rating } from "@smastrom/react-rating";
 import {
   Card,
   CardTitle,
@@ -16,7 +16,7 @@ const WearCard = ({ src, title, price, discount = null }) => {
       <StyledImage src={src} className="" alt="Wear" />
       <div className="card-body px-0">
         <CardTitle className="card-title p-0">{title}</CardTitle>
-        <StarRating className="my-2" />
+        <Rating style={{ maxWidth: 100 }} value={0} className="my-2" readOnly />
         <div className="d-flex align-items-center">
           <Price>${price}</Price>
           {discount && (

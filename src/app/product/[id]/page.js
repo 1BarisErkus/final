@@ -1,4 +1,6 @@
 import ShowCase from "@/components/ShowCase";
+import Breadcrumb from "@/components/Breadcrumb";
+import ProductDetail from "@/components/ProductDetail";
 
 import wear1 from "@/assets/images/wears/wear-1.png";
 import wear2 from "@/assets/images/wears/wear-2.png";
@@ -30,12 +32,14 @@ const cards = [
   },
 ];
 
-const ProductDetail = () => {
+const ProductDetailPage = () => {
   return (
     <main>
       <div className="container">
         <div className="row">
           <div className="col">
+            <Breadcrumb />
+            <ProductDetail />
             <ShowCase title="YOU MIGHT ALSO LIKE" cards={cards} />
           </div>
         </div>
@@ -44,4 +48,4 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+export default ProductDetailPage;

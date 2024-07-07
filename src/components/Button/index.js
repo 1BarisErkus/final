@@ -1,9 +1,9 @@
 import { StyledButton } from "./styles";
 
-const Button = ({ children, theme }) => {
+const Button = ({ children, theme, className }) => {
   return (
     <StyledButton
-      className={`btn ${
+      className={`btn ${className} ${
         theme === "dark"
           ? "btn-dark"
           : "btn-ligth border border-gray border-1 text-black"

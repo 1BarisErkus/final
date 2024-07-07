@@ -6,7 +6,7 @@ import SearchInput from "./SearchInput";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav className="navbar navbar-expand-lg border-bottom">
       <div className="container-lg gap-3 my-2">
         <div className="d-flex gap-3 flex-wrap">
           <button
