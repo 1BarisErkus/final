@@ -30,12 +30,18 @@ const cards = [
   },
 ];
 
-const NewArrivals = () => {
+const ProductDetail = () => {
   return (
-    <div className="border-bottom">
-      <ShowCase title="New Arrivals" button cards={cards} />
-    </div>
+    <main>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <ShowCase title="YOU MIGHT ALSO LIKE" cards={cards} />
+          </div>
+        </div>
+      </div>
+    </main>
   );
 };
 
-export default NewArrivals;
+export default ProductDetail;

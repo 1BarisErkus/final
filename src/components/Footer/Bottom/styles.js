@@ -21,7 +21,7 @@ export const Paragraph = styled.p`
 
 export const PaymentIconsContainer = styled.div`
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 12px;
   @media (min-width: 576px) {
     margin-top: 0;

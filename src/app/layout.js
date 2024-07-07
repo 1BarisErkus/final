@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@smastrom/react-rating/style.css";
 
 import StyledComponentsRegistry from "@/lib/styledregistry";
 import GlobalStyles from "@/common/GlobalStyles";

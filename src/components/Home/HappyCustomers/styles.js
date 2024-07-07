@@ -13,6 +13,8 @@ export const H2 = styled.h2`
   }
 `;
 
-export const CommentRow = styled.div`
-  margin-top: 40px;
+export const StyledIcon = styled.div`
+  position: relative;
+  width: 24px;
+  height: 24px;
 `;
