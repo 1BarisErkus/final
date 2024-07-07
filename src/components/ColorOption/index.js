@@ -1,13 +1,19 @@
-const ColorOption = ({ color }) => {
-  const style = {
-    backgroundColor: color,
-    width: 37,
-    height: 37,
-    borderRadius: "50%",
-    border: "none",
-  };
+"use client";
+import styled from "styled-components";
 
-  return <div style={style}></div>;
+const Option = styled.div`
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-color: ${(props) => props.color};
+  margin: 5px;
+  border: 1px solid gray;
+  cursor: pointer;
+`;
+
+const ColorOption = ({ color }) => {
+  return <Option color={color} />;
 };
 
 export default ColorOption;

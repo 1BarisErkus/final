@@ -33,7 +33,7 @@ const Content = () => {
           </p>
           <div className="mt-2 pb-4 border-bottom">
             <h5 className="fs-6 text-secondary">Select Colors</h5>
-            <div className="d-flex gap-2 mt-3">
+            <div className="d-flex mt-3">
               <ColorOption color="#4F4631" />
               <ColorOption color="#314F4A" />
               <ColorOption color="#31344F" />
@@ -41,7 +41,7 @@ const Content = () => {
           </div>
           <div className="mt-4 pb-4 border-bottom">
             <h5 className="fs-6 text-secondary">Choose Size</h5>
-            <div className="d-flex gap-2 mt-3">
+            <div className="d-flex mt-3">
               <SizeButton>Small</SizeButton>
               <SizeButton>Medium</SizeButton>
               <SizeButton>Large</SizeButton>

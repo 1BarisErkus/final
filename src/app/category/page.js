@@ -1,14 +1,14 @@
 import Breadcrumb from "@/components/Breadcrumb";
-import ProductDetail from "@/components/ProductDetail";
+import Category from "@/components/Category";
 
-const ProductDetailPage = () => {
+const CategoryPage = () => {
   return (
     <main>
       <div className="container">
         <div className="row">
           <div className="col">
             <Breadcrumb />
-            <ProductDetail />
+            <Category />
           </div>
         </div>
       </div>
@@ -16,4 +16,4 @@ const ProductDetailPage = () => {
   );
 };
 
-export default ProductDetailPage;
+export default CategoryPage;
