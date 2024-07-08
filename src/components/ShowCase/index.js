@@ -4,6 +4,7 @@ import WearCardList from "@/components/Wear/CardList";
 import Button from "@/components/Button";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
+import { calculateRating } from "@/lib/helpers";
 
 const ShowCase = ({ title, button, cards }) => {
   const t = useTranslations("ShowCase");
@@ -16,6 +17,7 @@ const ShowCase = ({ title, button, cards }) => {
             <WearCardList>
               {cards && cards.length > 0 ? (
                 cards.map((card) => {
+                  const rating = calculateRating(card.comments);
                   return (
                     <Link key={card.id} href={`/product/${card.id}`}>
                       <WearCard
@@ -23,6 +25,7 @@ const ShowCase = ({ title, button, cards }) => {
                         title={card.title}
                         price={card.price}
                         discount={card.discount}
+                        rating={rating}
                       />
                     </Link>
                   );

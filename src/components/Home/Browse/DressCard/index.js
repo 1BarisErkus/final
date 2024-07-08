@@ -14,6 +14,7 @@ const DressCard = ({ col, title, src }) => {
           alt={title}
           fill
           className="object-fit-cover rounded-4"
+          sizes="300px"
         />
       </StyledCard>
     </StyledLink>

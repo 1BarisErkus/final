@@ -59,15 +59,21 @@ const HappyCustomers = () => {
             transition: "transform 0.5s",
           }}
         >
-          {comments.map((comment) => (
-            <CommentCard
-              key={comment.id}
-              userId={comment.user_id}
-              rating={comment.rating}
-              content={comment.content}
-              created_at={comment.created_at}
-            />
-          ))}
+          {comments?.length > 0 ? (
+            comments.map((comment) => (
+              <CommentCard
+                key={comment.id}
+                userId={comment.user_id}
+                rating={comment.rating}
+                content={comment.content}
+                created_at={comment.created_at}
+              />
+            ))
+          ) : (
+            <div className="d-flex align-items-center justify-content-center w-100">
+              {t("commentsNotFound")}
+            </div>
+          )}
         </div>
       </div>
     </Section>

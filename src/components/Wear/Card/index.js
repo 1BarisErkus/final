@@ -8,7 +8,7 @@ import {
   StyledImage,
 } from "./styles";
 
-const WearCard = ({ src, title, price, discount = 0 }) => {
+const WearCard = ({ src, title, price, discount = 0, rating }) => {
   const discountlessPrice = discount !== 0 ? price / (1 - discount / 100) : 0;
 
   return (
@@ -23,7 +23,12 @@ const WearCard = ({ src, title, price, discount = 0 }) => {
       />
       <div className="card-body px-0">
         <CardTitle className="card-title p-0">{title}</CardTitle>
-        <Rating style={{ maxWidth: 100 }} value={0} className="my-2" readOnly />
+        <Rating
+          style={{ maxWidth: 100 }}
+          value={rating}
+          className="my-2"
+          readOnly
+        />
         <div className="d-flex align-items-center">
           <Price>${price}</Price>
           {discount !== 0 && (

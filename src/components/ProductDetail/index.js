@@ -4,6 +4,7 @@ import Content from "./Content";
 import Details from "./Details";
 import ImagesContainer from "./ImagesContainer";
 import { getTranslations } from "next-intl/server";
+import { calculateRating } from "@/lib/helpers";
 
 const ProductDetail = async ({ slug }) => {
   const data = await getMightLike();
@@ -11,13 +12,15 @@ const ProductDetail = async ({ slug }) => {
   const comments = product.comments;
   const t = await getTranslations("ProductDetail");
 
+  const rating = calculateRating(comments);
+
   return (
     <div className="container">
       <div className="row">
-        <div className="col-6">
+        <div className="col-xl-6 col-12">
           <ImagesContainer productImage={product.image} />
         </div>
-        <div className="col-6">
+        <div className="col-xl-6 col-12">
           <Content
             title={product.title}
             price={product.price}
@@ -27,7 +30,7 @@ const ProductDetail = async ({ slug }) => {
             sizes={product.sizes}
             color={product.color}
             comments={product.comments}
-            rating={product.rating}
+            rating={rating}
           />
         </div>
         <Details comments={comments} />

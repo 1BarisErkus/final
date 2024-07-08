@@ -58,21 +58,17 @@ const Content = ({
           <div className="mt-4 pb-4 border-bottom">
             <h5 className="fs-6 text-secondary">{t("chooseSize")}</h5>
             <div className="d-flex flex-wrap mt-3">
-              {sizes?.XS && sizes?.XXS > 0 && (
-                <SizeButton>{t("xxs")}</SizeButton>
-              )}
-              {sizes?.XS && sizes?.XS > 0 && <SizeButton>{t("xs")}</SizeButton>}
-              {sizes?.S && sizes?.S > 0 && <SizeButton>{t("s")}</SizeButton>}
-              {sizes?.M && sizes?.M > 0 && <SizeButton>{t("m")}</SizeButton>}
-              {sizes?.L && sizes?.L > 0 && <SizeButton>{t("l")}</SizeButton>}
-              {sizes?.XL && sizes?.XL > 0 && <SizeButton>{t("xl")}</SizeButton>}
-              {sizes?.XXL && sizes?.XXL > 0 && (
-                <SizeButton>{t("xxl")}</SizeButton>
-              )}
+              {sizes?.XXS > 0 ? <SizeButton>{t("xxs")}</SizeButton> : null}
+              {sizes?.XS > 0 ? <SizeButton>{t("xs")}</SizeButton> : null}
+              {sizes?.S > 0 ? <SizeButton>{t("s")}</SizeButton> : null}
+              {sizes?.M > 0 ? <SizeButton>{t("m")}</SizeButton> : null}
+              {sizes?.L > 0 ? <SizeButton>{t("l")}</SizeButton> : null}
+              {sizes?.XL > 0 ? <SizeButton>{t("xl")}</SizeButton> : null}
+              {sizes?.XXL > 0 ? <SizeButton>{t("xxl")}</SizeButton> : null}
             </div>
           </div>
           <div className="mt-4">
-            <div className="d-flex align-items-center justify-content-between">
+            <div className="d-flex flex-wrap gap-4 align-items-center justify-content-between">
               <ProductCountButton />
               <Button theme="dark" className="m-0">
                 {t("addToCart")}

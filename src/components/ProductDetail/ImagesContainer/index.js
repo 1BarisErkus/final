@@ -1,4 +1,11 @@
 import Image from "next/image";
+import {
+  BigImage,
+  BigImageContainer,
+  LitteImages,
+  LittleImageContainer,
+  Row,
+} from "./styles";
 
 const images = [
   {
@@ -18,29 +25,30 @@ const images = [
 const ImagesContainer = ({ productImage }) => {
   return (
     <div className="container ps-0">
-      <div className="row">
-        <div className="col-4 d-flex flex-column gap-3 px-0">
+      <Row className="row">
+        <LitteImages className="col-lg-4 col-12 gap-3 px-0">
           {images.map((image) => (
-            <Image
-              key={image.id}
-              src={image.src}
-              alt="product"
-              className="img-fluid"
-              width={150}
-              height={150}
-            />
+            <LittleImageContainer key={image.id} className="position-relative">
+              <Image
+                src={image.src}
+                alt="product"
+                className="obejct-fit-cover rounded-4"
+                fill
+              />
+            </LittleImageContainer>
           ))}
-        </div>
-        <div className="col-8 position-relative">
-          <Image
-            src={`/images/wears/${productImage}.png`}
-            alt="product"
-            className="obejct-fit-cover img-fluid"
-            fill
-            priority
-          />
-        </div>
-      </div>
+        </LitteImages>
+        <BigImage className="col-lg-8 col-12">
+          <BigImageContainer>
+            <Image
+              src={`/images/wears/${productImage}.png`}
+              alt="product"
+              className="obejct-fit-cover rounded-4"
+              fill
+            />
+          </BigImageContainer>
+        </BigImage>
+      </Row>
     </div>
   );
 };

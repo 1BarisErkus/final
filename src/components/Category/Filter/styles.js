@@ -22,3 +22,7 @@ export const PriceRange = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
+export const ClearButtonWrapper = styled.div`
+  cursor: pointer;
+`;

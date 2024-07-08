@@ -10,10 +10,26 @@ const Option = styled.div`
   margin: 5px;
   border: 1px solid gray;
   cursor: pointer;
+  position: relative;
 `;
 
-const ColorOption = ({ color }) => {
-  return <Option color={color} />;
+const Tick = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: ${({ color }) => (color === "#FFFFFF" ? "black" : "white")};
+`;
+
+const ColorOption = ({ color, selected, ...props }) => {
+  return (
+    <Option color={color} {...props}>
+      {selected && <Tick color={color}>&#10004;</Tick>}
+    </Option>
+  );
 };
 
 export default ColorOption;

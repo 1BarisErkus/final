@@ -11,8 +11,8 @@ export const SizeOption = styled.button`
   cursor: pointer;
 `;
 
-const SizeButton = ({ children }) => {
-  return <SizeOption>{children}</SizeOption>;
+const SizeButton = ({ children, ...props }) => {
+  return <SizeOption {...props}>{children}</SizeOption>;
 };
 
 export default SizeButton;

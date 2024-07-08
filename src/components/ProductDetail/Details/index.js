@@ -9,7 +9,7 @@ const Details = ({ comments }) => {
   return (
     <div className="container mt-5">
       <div className="row mt-5">
-        <div className="col">
+        <div className="col-12">
           <div className="d-flex align-items-center justify-content-around pb-3 border-bottom">
             <div>
               <h5 className="fs-6 text-secondary">{t("productDetails")}</h5>
@@ -22,11 +22,11 @@ const Details = ({ comments }) => {
             </div>
           </div>
 
-          <div className="mt-4 d-flex">
+          <div className="mt-4 d-flex flex-wrap">
             <div>
               <span className="fs-4 fw-bold">{t("allReviews")}</span> (451)
             </div>
-            <div className="ms-auto d-flex gap-3">
+            <div className="ms-auto d-flex flex-wrap gap-3">
               <button className="btn btn-light px-3 py-1 fs-4 d-flex align-items-center justify-content-center rounded-pill">
                 <RiIndentIncrease />
               </button>
@@ -48,7 +48,7 @@ const Details = ({ comments }) => {
                     userId={comment.user_id}
                     rating={comment.rating}
                     content={comment.content}
-                    created_at={comment.created_at}
+                    createdAt={comment.created_at}
                     postedDate
                   />
                 ))
@@ -56,7 +56,9 @@ const Details = ({ comments }) => {
                 <div className="fs-5 text-secondary">{t("noReviews")}</div>
               )}
             </div>
-            <Button className="d-flex mx-auto">{t("loadMore")}</Button>
+            <Button className="d-flex mx-auto align-items-center justify-content-center">
+              {t("loadMore")}
+            </Button>
           </div>
         </div>
       </div>

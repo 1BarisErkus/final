@@ -13,7 +13,8 @@
     "highQualityProducts": "High Quality Products",
     "happyCustomers": "Happy Customers",
     "newArrivals": "New Arrivals",
-    "topSellers": "Top Sellers"
+    "topSellers": "Top Sellers",
+    "commentsNotFound": "No comments yet."
   },
   "Breadcrumb": {
     "home": "Home",
