@@ -109,7 +109,11 @@
     "writeReview": "Write a Review",
     "noReviews": "No reviews yet.",
     "loadMore": "Load More Reviews",
-    "youMightAlsoLike": "You Might Also Like"
+    "youMightAlsoLike": "You Might Also Like",
+    "modalTitle": "Write your review",
+    "modalClose": "Close",
+    "modalSubmit": "Submit",
+    "modalSubtitle": "Rate and write your comment"
   },
   "ShowCase": {
     "productsAreNotFound": "Products are not found.",

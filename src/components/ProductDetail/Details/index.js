@@ -3,6 +3,7 @@ import { BiChevronDown } from "react-icons/bi";
 import Button from "@/components/Button";
 import CommentCard from "@/components/CommentCard";
 import { useTranslations } from "next-intl";
+import Modal from "./Modal";
 
 const Details = ({ comments }) => {
   const t = useTranslations("ProductDetail");
@@ -33,11 +34,18 @@ const Details = ({ comments }) => {
               <button className="btn btn-light px-3 py-1 fs-6 d-flex align-items-center justify-content-center rounded-pill">
                 {t("latest")} <BiChevronDown />
               </button>
-              <Button theme="dark" className="m-0">
+              <Button
+                theme="dark"
+                className="m-0"
+                data-bs-toggle="modal"
+                data-bs-target="#addCommentModal"
+              >
                 {t("writeReview")}
               </Button>
             </div>
           </div>
+
+          <Modal />
 
           <div className="mt-4">
             <div className="row flex-wrap align-items-center justify-content-around">

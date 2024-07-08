@@ -61,3 +61,27 @@ export const getMightLike = async () => {
 
   return mightLike;
 };
+
+export const addComment = async (productId, values) => {
+  const product = await getProduct(productId);
+
+  const newComment = {
+    id: String(new Date().getTime()),
+    user_id: "123",
+    content: values.comment,
+    rating: values.rating,
+    created_at: new Date().toISOString(),
+  };
+
+  const updatedComments = [...product.comments, newComment];
+
+  const res = await fetch(`${BASE_URL}/products/${productId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ...product, comments: updatedComments }),
+  });
+
+  return res;
+};

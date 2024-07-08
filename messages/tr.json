@@ -109,7 +109,11 @@
     "writeReview": "Yorum Yazin",
     "noReviews": "Henuz yorum yok.",
     "loadMore": "Daha Fazla Yorum Yukle",
-    "youMightAlsoLike": "Bunlari da Begenebilirsiniz"
+    "youMightAlsoLike": "Bunlari da Begenebilirsiniz",
+    "modalTitle": "Yorumunuzu yazin",
+    "modalClose": "Kapat",
+    "modalSubmit": "Gonder",
+    "modalSubtitle": "Puanlayın ve yorumunuzu yazın"
   },
   "ShowCase": {
     "productsAreNotFound": "Urunler bulunamadi.",
