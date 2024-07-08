@@ -26,6 +26,8 @@ const ImagesContainer = ({ productImage }) => {
               src={image.src}
               alt="product"
               className="img-fluid"
+              width={150}
+              height={150}
             />
           ))}
         </div>

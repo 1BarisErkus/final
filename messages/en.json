@@ -111,6 +111,7 @@
     "youMightAlsoLike": "You Might Also Like"
   },
   "ShowCase": {
-    "productsAreNotFound": "Products are not found."
+    "productsAreNotFound": "Products are not found.",
+    "viewAll": "View All"
   }
 }

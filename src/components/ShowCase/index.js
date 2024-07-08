@@ -33,7 +33,7 @@ const ShowCase = ({ title, button, cards }) => {
             </WearCardList>
             {button && (
               <Link href="/category">
-                <Button>View All</Button>
+                <Button>{t("viewAll")}</Button>
               </Link>
             )}
           </div>

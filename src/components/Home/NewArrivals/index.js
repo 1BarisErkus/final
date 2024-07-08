@@ -7,7 +7,7 @@ const NewArrivals = async () => {
   const t = await getTranslations("Home");
 
   return (
-    <div className="border-bottom">
+    <div className="border-bottom" id="newArrivals">
       <ShowCase title={t("newArrivals")} button cards={data} />
     </div>
   );

@@ -19,6 +19,7 @@ const WearCard = ({ src, title, price, discount = 0 }) => {
         alt="Wear"
         width={300}
         height={300}
+        priority
       />
       <div className="card-body px-0">
         <CardTitle className="card-title p-0">{title}</CardTitle>

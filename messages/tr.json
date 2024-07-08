@@ -111,6 +111,7 @@
     "youMightAlsoLike": "Bunları da Beğenebilirsiniz"
   },
   "ShowCase": {
-    "productsAreNotFound": "Ürünler bulunamadı."
+    "productsAreNotFound": "Ürünler bulunamadı.",
+    "viewAll": "Hepsini Gör"
   }
 }

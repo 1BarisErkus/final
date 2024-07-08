@@ -46,7 +46,7 @@ const Navbar = () => {
               </StyledLink>
             </li>
             <li className="nav-item">
-              <StyledLink className="nav-link" href="#">
+              <StyledLink className="nav-link" href="#newArrivals">
                 {t("newArrivals")}
               </StyledLink>
             </li>

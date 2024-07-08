@@ -1,12 +1,14 @@
 import { BiChevronDown } from "react-icons/bi";
 import WearCard from "../Wear/Card";
 import FilterComponent from "./Filter";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { getProducts } from "@/lib/server";
+import { Link } from "@/navigation";
+import WearCardList from "../Wear/CardList";
 
-const cards = [];
-
-const Category = () => {
-  const t = useTranslations("Category");
+const Category = async () => {
+  const data = await getProducts();
+  const t = await getTranslations("Category");
   return (
     <div className="container">
       <div className="row">
@@ -28,37 +30,46 @@ const Category = () => {
           </div>
           <div className="mt-4">
             <div className="row align-items-center gap-4">
-              {cards.map((card, index) => (
-                <WearCard key={index} {...card} />
-              ))}
+              <WearCardList className="justify-content-start">
+                {data.map((card) => (
+                  <Link key={card.id} href={`/product/${card.id}`}>
+                    <WearCard
+                      src={card.image}
+                      title={card.title}
+                      price={card.price}
+                      discount={card.discount}
+                    />
+                  </Link>
+                ))}
+              </WearCardList>
             </div>
             <nav
               aria-label="Page navigation example"
               className="d-flex justify-content-center"
             >
-              <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="#">
+              <ul className="pagination mt-5">
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     {t("previous")}
                   </a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     1
                   </a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     2
                   </a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     3
                   </a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     {t("next")}
                   </a>
                 </li>
