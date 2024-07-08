@@ -20,7 +20,6 @@ import Button from "@/components/Button";
 import FilterButton from "./Button";
 import { FiFilter } from "react-icons/fi";
 import { BiChevronRight, BiChevronUp } from "react-icons/bi";
-import { FaWindowClose } from "react-icons/fa";
 
 const FilterComponent = ({ modal }) => {
   const t = useTranslations("Category");
@@ -93,7 +92,7 @@ const FilterComponent = ({ modal }) => {
   const applyAllFilters = () => {};
 
   return (
-    <FilterContainer classname={{ modal }}>
+    <FilterContainer>
       <SectionTitle className="pb-3 border-bottom">
         <span>{t("filters")}</span>
         {modal ? (

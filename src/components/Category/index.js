@@ -45,7 +45,7 @@ const Category = async () => {
                 aria-hidden="true"
               >
                 <div className="modal-dialog">
-                  <div className="modal-content rounded-4">
+                  <div className="modal-content rounded-4 justify-content-center align-items-center">
                     <div className="modal-body p-0 m-0">
                       <FilterComponent modal={true} />
                     </div>
@@ -54,7 +54,7 @@ const Category = async () => {
               </div>
             </div>
           </div>
-          <WearCardList className="justify-content-start mt-4">
+          <WearCardList className="align-items-center justify-content-center justify-content-start mt-4">
             {data.map((card) => {
               const rating = calculateRating(card.comments);
               return (

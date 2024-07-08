@@ -118,5 +118,8 @@
   "ShowCase": {
     "productsAreNotFound": "Urunler bulunamadi.",
     "viewAll": "Hepsini Gor"
+  },
+  "Cart": {
+    "yourCart": "Sepetiniz"
   }
 }

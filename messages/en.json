@@ -118,5 +118,8 @@
   "ShowCase": {
     "productsAreNotFound": "Products are not found.",
     "viewAll": "View All"
+  },
+  "Cart": {
+    "yourCart": "Your Cart"
   }
 }
