@@ -6,31 +6,54 @@ import { BiChevronRight, BiChevronUp } from "react-icons/bi";
 import ColorOption from "@/components/ColorOption";
 import SizeButton from "@/components/SizeButton";
 import Button from "@/components/Button";
+import { useTranslations } from "next-intl";
 
 const FilterComponent = () => {
+  const t = useTranslations("Category");
+
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
+
+  const filterCategories = [
+    t("tshirts"),
+    t("shorts"),
+    t("shirts"),
+    t("hoodie"),
+    t("jeans"),
+  ];
+
+  const sizes = [
+    t("xxs"),
+    t("xs"),
+    t("s"),
+    t("m"),
+    t("l"),
+    t("xl"),
+    t("xxl"),
+    t("3xl"),
+    t("4xl"),
+  ];
+
+  const dressStyles = [t("casual"), t("formal"), t("party"), t("gym")];
 
   return (
     <FilterContainer>
       <SectionTitle className="pb-3 border-bottom">
-        <span>Filters</span>
+        <span>{t("filters")}</span>
         <FiFilter />
       </SectionTitle>
 
       <ul className="list-unstyled d-flex flex-column gap-3 pb-3 mb-3 border-bottom">
-        {["T-shirts", "Shorts", "Shirts", "Hoodie", "Jeans"].map(
-          (category, i) => (
-            <li key={i} className="d-flex justify-content-between">
-              <span>{category}</span>
-              <BiChevronRight size={24} />
-            </li>
-          )
-        )}
+        {filterCategories.map((category, i) => (
+          <li key={i} className="d-flex justify-content-between">
+            <span>{category}</span>
+            <BiChevronRight size={24} />
+          </li>
+        ))}
       </ul>
 
       <SectionTitle>
-        <span>Price</span>
+        <span>{t("price")}</span>
         <BiChevronUp size={24} />
       </SectionTitle>
       <PriceRange className="pb-4 border-bottom mb-4">
@@ -40,7 +63,7 @@ const FilterComponent = () => {
       </PriceRange>
 
       <SectionTitle>
-        <span>Colors</span>
+        <span>{t("colors")}</span>
         <BiChevronUp size={24} />
       </SectionTitle>
       <div className="pb-3 border-bottom mb-3">
@@ -66,21 +89,11 @@ const FilterComponent = () => {
       </div>
 
       <SectionTitle>
-        <span>Size</span>
+        <span>{t("size")}</span>
         <BiChevronUp size={24} />
       </SectionTitle>
       <div className="pb-3 border-bottom mb-3">
-        {[
-          "XX-Small",
-          "X-Small",
-          "Small",
-          "Medium",
-          "Large",
-          "X-Large",
-          "XX-Large",
-          "3X-Large",
-          "4X-Large",
-        ].map((size, i) => (
+        {sizes.map((size, i) => (
           <SizeButton
             key={i}
             selected={selectedSize === size}
@@ -92,11 +105,11 @@ const FilterComponent = () => {
       </div>
 
       <SectionTitle>
-        <span>Dress Style</span>
+        <span>{t("dressStyle")}</span>
         <BiChevronUp size={24} />
       </SectionTitle>
       <ul className="list-unstyled d-flex flex-column gap-3 mb-3">
-        {["Casual", "Formal", "Party", "Gym"].map((dressStyle, i) => (
+        {dressStyles.map((dressStyle, i) => (
           <li key={i} className="d-flex justify-content-between">
             <span>{dressStyle}</span>
             <BiChevronRight size={24} />
@@ -104,7 +117,7 @@ const FilterComponent = () => {
         ))}
       </ul>
       <Button theme="dark" className="w-100 my-2">
-        Apply Filter
+        {t("applyFilter")}
       </Button>
     </FilterContainer>
   );

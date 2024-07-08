@@ -7,14 +7,14 @@ import {
 import { RiVisaLine } from "react-icons/ri";
 import { BiLogoMastercard } from "react-icons/bi";
 import { FaAmazonPay, FaApplePay, FaGooglePay } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const FooterBottom = () => {
+  const t = useTranslations("Footer");
   return (
     <div className="container mt-5">
       <Bottom>
-        <Paragraph className="text-muted">
-          Shop.co © 2000-2023, All Rights Reserved
-        </Paragraph>
+        <Paragraph className="text-muted">{t("shopco")}</Paragraph>
         <PaymentIconsContainer>
           <PaymentIcon href="#">
             <RiVisaLine />

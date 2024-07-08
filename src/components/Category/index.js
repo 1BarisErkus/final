@@ -1,71 +1,12 @@
 import { BiChevronDown } from "react-icons/bi";
 import WearCard from "../Wear/Card";
-
-import wear1 from "@/assets/images/wears/wear-1.png";
-import wear2 from "@/assets/images/wears/wear-2.png";
-import wear3 from "@/assets/images/wears/wear-3.png";
-import wear4 from "@/assets/images/wears/wear-4.png";
 import FilterComponent from "./Filter";
+import { useTranslations } from "next-intl";
 
-const cards = [
-  {
-    src: wear1,
-    title: "T-shirt with Tape Details",
-    price: 120,
-  },
-  {
-    src: wear2,
-    title: "Skinny Fit Jeans",
-    price: 240,
-    discount: 20,
-  },
-  {
-    src: wear3,
-    title: "Checkered Shirt",
-    price: 180,
-  },
-  {
-    src: wear4,
-    title: "Sleeve Striped T-Shirt",
-    price: 130,
-    discount: 30,
-  },
-  {
-    src: wear1,
-    title: "T-shirt with Tape Details",
-    price: 120,
-  },
-  {
-    src: wear2,
-    title: "Skinny Fit Jeans",
-    price: 240,
-    discount: 20,
-  },
-  {
-    src: wear3,
-    title: "Checkered Shirt",
-    price: 180,
-  },
-  {
-    src: wear4,
-    title: "Sleeve Striped T-Shirt",
-    price: 130,
-    discount: 30,
-  },
-  {
-    src: wear1,
-    title: "T-shirt with Tape Details",
-    price: 120,
-  },
-  {
-    src: wear2,
-    title: "Skinny Fit Jeans",
-    price: 240,
-    discount: 20,
-  },
-];
+const cards = [];
 
 const Category = () => {
+  const t = useTranslations("Category");
   return (
     <div className="container">
       <div className="row">
@@ -74,13 +15,13 @@ const Category = () => {
         </div>
         <div className="col-9">
           <div className="d-flex">
-            <span className="fs-4 fw-bold">Casual</span>
+            <span className="fs-4 fw-bold">{t("casual")}</span>
             <div className="ms-auto mt-auto d-flex gap-3">
-              <span className="opacity-50">Showing 1-10 of 100 Products</span>
+              <span className="opacity-50">{t("showing")}</span>
               <div>
-                <span className="opacity-50"></span> Sort by:{" "}
+                <span className="opacity-50"></span> {t("sortby")}:{" "}
                 <span className="opacity-100 fw-bold">
-                  Most Popular <BiChevronDown />
+                  {t("mostPopular")} <BiChevronDown />
                 </span>
               </div>
             </div>
@@ -98,7 +39,7 @@ const Category = () => {
               <ul class="pagination">
                 <li class="page-item">
                   <a class="page-link" href="#">
-                    Previous
+                    {t("previous")}
                   </a>
                 </li>
                 <li class="page-item">
@@ -118,7 +59,7 @@ const Category = () => {
                 </li>
                 <li class="page-item">
                   <a class="page-link" href="#">
-                    Next
+                    {t("next")}
                   </a>
                 </li>
               </ul>

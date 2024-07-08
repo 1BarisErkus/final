@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/navigation";
 import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoMdSearch } from "react-icons/io";

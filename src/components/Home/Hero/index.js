@@ -1,13 +1,12 @@
 import Image from "next/image";
 import { Container } from "./styles";
 import Content from "./Content";
-import homebanner from "@/assets/images/homebanner/home-banner.png";
 
 const HomeBanner = () => {
   return (
     <section className="position-relative py-5">
       <Image
-        src={homebanner}
+        src="/images/homebanner/home-banner.png"
         alt="Home Banner"
         fill
         quality={100}

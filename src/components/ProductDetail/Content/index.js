@@ -8,6 +8,7 @@ import {
   Price,
 } from "@/components/Wear/Card/styles";
 import { Rating } from "@smastrom/react-rating";
+import { useTranslations } from "next-intl";
 
 const Content = ({
   title,
@@ -19,6 +20,7 @@ const Content = ({
   color,
   rating,
 }) => {
+  const t = useTranslations("ProductDetail");
   return (
     <div className="container">
       <div className="row">
@@ -46,7 +48,7 @@ const Content = ({
             {description}
           </p>
           <div className="mt-2 pb-4 border-bottom">
-            <h5 className="fs-6 text-secondary">Select Colors</h5>
+            <h5 className="fs-6 text-secondary">{t("selectColors")}</h5>
             <div className="d-flex mt-3">
               <ColorOption color="#4F4631" />
               <ColorOption color="#314F4A" />
@@ -54,18 +56,18 @@ const Content = ({
             </div>
           </div>
           <div className="mt-4 pb-4 border-bottom">
-            <h5 className="fs-6 text-secondary">Choose Size</h5>
+            <h5 className="fs-6 text-secondary">{t("chooseSize")}</h5>
             <div className="d-flex flex-wrap mt-3">
               {sizes?.XS && sizes?.XXS > 0 && (
-                <SizeButton>XX - Small</SizeButton>
+                <SizeButton>{t("xxs")}</SizeButton>
               )}
-              {sizes?.XS && sizes?.XS > 0 && <SizeButton>X - Small</SizeButton>}
-              {sizes?.S && sizes?.S > 0 && <SizeButton>Small</SizeButton>}
-              {sizes?.M && sizes?.M > 0 && <SizeButton>Medium</SizeButton>}
-              {sizes?.L && sizes?.L > 0 && <SizeButton>Large</SizeButton>}
-              {sizes?.XL && sizes?.XL > 0 && <SizeButton>X - Large</SizeButton>}
+              {sizes?.XS && sizes?.XS > 0 && <SizeButton>{t("xs")}</SizeButton>}
+              {sizes?.S && sizes?.S > 0 && <SizeButton>{t("s")}</SizeButton>}
+              {sizes?.M && sizes?.M > 0 && <SizeButton>{t("m")}</SizeButton>}
+              {sizes?.L && sizes?.L > 0 && <SizeButton>{t("l")}</SizeButton>}
+              {sizes?.XL && sizes?.XL > 0 && <SizeButton>{t("xl")}</SizeButton>}
               {sizes?.XXL && sizes?.XXL > 0 && (
-                <SizeButton>XX - Large</SizeButton>
+                <SizeButton>{t("xxl")}</SizeButton>
               )}
             </div>
           </div>
@@ -73,7 +75,7 @@ const Content = ({
             <div className="d-flex align-items-center justify-content-between">
               <ProductCountButton />
               <Button theme="dark" className="m-0">
-                Add to Cart
+                {t("addToCart")}
               </Button>
             </div>
           </div>

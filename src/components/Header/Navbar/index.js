@@ -1,10 +1,12 @@
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { FaChevronDown } from "react-icons/fa";
 import { StyledLink } from "./styles";
 import Icons from "./Icons";
 import SearchInput from "./SearchInput";
+import { useTranslations } from "next-intl";
 
 const Navbar = () => {
+  const t = useTranslations("Header");
   return (
     <nav className="navbar navbar-expand-lg border-bottom">
       <div className="container-lg gap-3 my-2">
@@ -32,7 +34,7 @@ const Navbar = () => {
                 aria-current="page"
                 href="#"
               >
-                Shop
+                {t("shop")}
                 <span>
                   <FaChevronDown size={14} />
                 </span>
@@ -40,17 +42,17 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <StyledLink className="nav-link" href="#">
-                On Sale
+                {t("onSale")}
               </StyledLink>
             </li>
             <li className="nav-item">
               <StyledLink className="nav-link" href="#">
-                New Arrivals
+                {t("newArrivals")}
               </StyledLink>
             </li>
             <li className="nav-item">
               <StyledLink className="nav-link" href="#">
-                Brands
+                {t("brands")}
               </StyledLink>
             </li>
           </ul>

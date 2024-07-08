@@ -16,6 +16,24 @@ export const getProduct = async (slug) => {
   return data[0];
 };
 
+export const getHappyComments = async () => {
+  const res = await fetch(`${BASE_URL}/products`, { cache: "no-store" });
+  const data = await res.json();
+  const happyComments = [];
+
+  data.forEach((product) => {
+    if (product.comments && product.comments.length > 0) {
+      product.comments.forEach((comment) => {
+        if (comment.rating === 5) {
+          happyComments.push(comment);
+        }
+      });
+    }
+  });
+
+  return happyComments;
+};
+
 export const getNewArrivals = async () => {
   const res = await fetch(`${BASE_URL}/products`, { cache: "no-store" });
   const data = await res.json();

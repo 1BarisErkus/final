@@ -7,8 +7,10 @@ import {
   InputIcon,
   SubscribeButton,
 } from "./styles";
+import { useTranslations } from "next-intl";
 
 const Form = () => {
+  const t = useTranslations("Footer");
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -24,13 +26,13 @@ const Form = () => {
         <Input
           type="email"
           name="email"
-          placeholder="Enter your email address"
+          placeholder={t("inputPlaceholder")}
           value={formik.values.email}
           onChange={formik.handleChange}
         />
         <InputIcon />
       </InputContainer>
-      <SubscribeButton type="submit">Subscribe to Newsletter</SubscribeButton>
+      <SubscribeButton type="submit">{t("subscribe")}</SubscribeButton>
     </FormContainer>
   );
 };

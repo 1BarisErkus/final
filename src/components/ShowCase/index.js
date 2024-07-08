@@ -2,9 +2,11 @@ import { Container, H2, Row } from "./styles";
 import WearCard from "@/components/Wear/Card";
 import WearCardList from "@/components/Wear/CardList";
 import Button from "@/components/Button";
-import Link from "next/link";
+import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 const ShowCase = ({ title, button, cards }) => {
+  const t = useTranslations("ShowCase");
   return (
     <section>
       <Container className="container">
@@ -26,7 +28,7 @@ const ShowCase = ({ title, button, cards }) => {
                   );
                 })
               ) : (
-                <div>Products are not found.</div>
+                <div>{t("productsAreNotFound")}</div>
               )}
             </WearCardList>
             {button && (

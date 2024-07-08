@@ -1,14 +1,13 @@
+import { useTranslations } from "next-intl";
 import { Description, Logo, SocialIcon, SocialIconsContainer } from "./styles";
 import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const CompanyInfos = () => {
+  const t = useTranslations("Footer");
   return (
     <>
       <Logo>SHOP.CO</Logo>
-      <Description>
-        We have clothes that suits your style and which you&apos;re proud to
-        wear. From women to men.
-      </Description>
+      <Description>{t("desc")}</Description>
       <SocialIconsContainer>
         <SocialIcon href="#">
           <FaTwitter />

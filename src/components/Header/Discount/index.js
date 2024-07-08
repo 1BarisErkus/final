@@ -8,11 +8,12 @@ import {
   TextWrapper,
 } from "./styles";
 import { IoMdClose } from "react-icons/io";
-
 import { useDispatch, useSelector } from "react-redux";
 import { hideHeader } from "@/redux/slices/globalSlice";
+import { useTranslations } from "next-intl";
 
 const Discount = () => {
+  const t = useTranslations("Header");
   const dispatch = useDispatch();
 
   const handleHideHeader = () => {
@@ -26,8 +27,7 @@ const Discount = () => {
       <HeaderWrapper>
         <Container className="container">
           <TextWrapper className="container-md">
-            Sign up and get 20% off all your orders.{" "}
-            <StyledLink href="/signup">Sign Up Now</StyledLink>
+            {t("content")} <StyledLink href="/signup">{t("signup")}</StyledLink>
           </TextWrapper>
           <IconWrapper>
             <IoMdClose size={20} onClick={handleHideHeader} />

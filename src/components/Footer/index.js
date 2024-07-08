@@ -3,8 +3,31 @@ import CompanyInfos from "./CompanyInfos";
 import Infos from "./Infos";
 import FooterBottom from "./Bottom";
 import { FooterContainer } from "./styles";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
+  const t = useTranslations("Footer");
+
+  const companyList = [t("about"), t("features"), t("works"), t("career")];
+  const helpList = [
+    t("customerSupport"),
+    t("deliveryDetails"),
+    t("terms"),
+    t("privacy"),
+  ];
+  const faqList = [
+    t("account"),
+    t("manageDeliveries"),
+    t("orders"),
+    t("payments"),
+  ];
+  const resourcesList = [
+    t("freeEbooks"),
+    t("developmentTutorial"),
+    t("howToBlog"),
+    t("youtubePlaylist"),
+  ];
+
   return (
     <FooterContainer>
       <Newsletter />
@@ -13,32 +36,10 @@ const Footer = () => {
           <div className="col-lg-2 mb-4 mb-lg-0 text-center">
             <CompanyInfos />
           </div>
-          <Infos
-            title="COMPANY"
-            list={["About", "Features", "Works", "Career"]}
-          />
-          <Infos
-            title="HELP"
-            list={[
-              "Customer Support",
-              "Delivery Details",
-              "Terms & Conditions",
-              "Privacy Policy",
-            ]}
-          />
-          <Infos
-            title="FAQ"
-            list={["Account", "Manage Deliveries", "Orders", "Payments"]}
-          />
-          <Infos
-            title="RESOURCES"
-            list={[
-              "Free eBooks",
-              "Development Tutorial",
-              "How to - Blog",
-              "Youtube Playlist",
-            ]}
-          />
+          <Infos title={t("company")} list={companyList} />
+          <Infos title={t("help")} list={helpList} />
+          <Infos title={t("faq")} list={faqList} />
+          <Infos title={t("resources")} list={resourcesList} />
         </div>
       </div>
       <FooterBottom />

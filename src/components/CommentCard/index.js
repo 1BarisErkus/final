@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { Rating } from "@smastrom/react-rating";
 import { StyledIcon } from "../Home/HappyCustomers/styles";
-
-import tick from "@/assets/tick.png";
+import tick from "../../../public/images/tick.png";
+import { useTranslations } from "next-intl";
 
 const CommentCard = ({ rating, content, username, postedDate }) => {
+  const t = useTranslations("CommentCard");
+
   username = "John Doe";
   return (
     <div
@@ -35,9 +37,7 @@ const CommentCard = ({ rating, content, username, postedDate }) => {
       <p className=" mt-2  opacity-50 fw-lighter">{content}</p>
       {postedDate && (
         <div>
-          <span className="fs-6 text-secondary fw-bold">
-            Posted on August 14, 2023
-          </span>
+          <span className="fs-6 text-secondary fw-bold">{t("posted")}</span>
         </div>
       )}
     </div>

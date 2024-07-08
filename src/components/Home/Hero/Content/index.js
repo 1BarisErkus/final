@@ -8,32 +8,30 @@ import {
   StatsWrapper,
 } from "./styles";
 import Button from "@/components/Button";
-import Link from "next/link";
+import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 const Content = () => {
+  const t = useTranslations("Home");
   return (
     <>
-      <H1>FIND CLOTHES THAT MATCHES YOUR STYLE</H1>
-      <Paragraph className="text-gray">
-        Browse through our diverse range of meticulously crafted garments,
-        designed to bring out your individuality and cater to your sense of
-        style.
-      </Paragraph>
+      <H1>{t("findClothes")}</H1>
+      <Paragraph className="text-gray">{t("contentDesc")}</Paragraph>
       <Link href="/category">
-        <Button theme="dark">Shop Now</Button>
+        <Button theme="dark">{t("shopNow")}</Button>
       </Link>
       <StatsWrapper className="d-flex flex-wrap gap-4">
         <StatsItem>
           <StatsNum>200+</StatsNum>
-          <StatsParagraph>International Brands</StatsParagraph>
+          <StatsParagraph>{t("internationalBrands")}</StatsParagraph>
         </StatsItem>
         <StatsItem>
           <StatsNum>2,000+</StatsNum>
-          <StatsParagraph>High-Quality Products</StatsParagraph>
+          <StatsParagraph>{t("highQualityProducts")}</StatsParagraph>
         </StatsItem>
         <StatsItem>
           <StatsNum>30,000+</StatsNum>
-          <StatsParagraph>Happy Customers</StatsParagraph>
+          <StatsParagraph>{t("happyCustomers")}</StatsParagraph>
         </StatsItem>
       </StatsWrapper>
     </>

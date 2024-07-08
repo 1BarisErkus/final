@@ -1,34 +1,29 @@
 import Image from "next/image";
-import versace from "@//assets/images/brands/versace.png";
-import zara from "@/assets/images/brands/zara.png";
-import gucci from "@/assets/images/brands/gucci.png";
-import prada from "@/assets/images/brands/prada.png";
-import calvinklein from "@/assets/images/brands/calvin-klein.png";
 
 const brands = [
   {
     id: 1,
-    src: versace,
+    src: "/images/brands/versace.png",
     alt: "Versace",
   },
   {
     id: 2,
-    src: zara,
+    src: "/images/brands/zara.png",
     alt: "Zara",
   },
   {
     id: 3,
-    src: gucci,
+    src: "/images/brands/gucci.png",
     alt: "Gucci",
   },
   {
     id: 4,
-    src: prada,
+    src: "/images/brands/prada.png",
     alt: "Prada",
   },
   {
     id: 5,
-    src: calvinklein,
+    src: "/images/brands/calvin-klein.png",
     alt: "Calvin Klein",
   },
 ];
@@ -44,7 +39,12 @@ const Brands = () => {
                 key={brand.id}
                 className="col-md-4 col-lg-2 d-flex justify-content-center"
               >
-                <Image src={brand.src} alt={brand.alt} />
+                <Image
+                  src={brand.src}
+                  alt={brand.alt}
+                  width={170}
+                  height={40}
+                />
               </li>
             ))}
           </ul>

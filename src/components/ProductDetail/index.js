@@ -1,13 +1,15 @@
-import { getComments, getMightLike, getProduct } from "@/lib/server";
+import { getMightLike, getProduct } from "@/lib/server";
 import ShowCase from "../ShowCase";
 import Content from "./Content";
 import Details from "./Details";
 import ImagesContainer from "./ImagesContainer";
+import { getTranslations } from "next-intl/server";
 
 const ProductDetail = async ({ slug }) => {
   const data = await getMightLike();
   const product = await getProduct(slug);
   const comments = product.comments;
+  const t = await getTranslations("ProductDetail");
 
   return (
     <div className="container">
@@ -29,7 +31,7 @@ const ProductDetail = async ({ slug }) => {
           />
         </div>
         <Details comments={comments} />
-        <ShowCase title="YOU MIGHT ALSO LIKE" cards={data} />
+        <ShowCase title={t("youMightAlsoLike")} cards={data} />
       </div>
     </div>
   );

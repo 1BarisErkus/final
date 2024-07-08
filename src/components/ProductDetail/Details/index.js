@@ -2,37 +2,39 @@ import { RiIndentIncrease } from "react-icons/ri";
 import { BiChevronDown } from "react-icons/bi";
 import Button from "@/components/Button";
 import CommentCard from "@/components/CommentCard";
+import { useTranslations } from "next-intl";
 
 const Details = ({ comments }) => {
+  const t = useTranslations("ProductDetail");
   return (
     <div className="container mt-5">
       <div className="row mt-5">
         <div className="col">
           <div className="d-flex align-items-center justify-content-around pb-3 border-bottom">
             <div>
-              <h5 className="fs-6 text-secondary">Product Details</h5>
+              <h5 className="fs-6 text-secondary">{t("productDetails")}</h5>
             </div>
             <div>
-              <h5 className="fs-6 text-secondary">Rating & Reviews</h5>
+              <h5 className="fs-6 text-secondary">{t("ratingReviews")}</h5>
             </div>
             <div>
-              <h5 className="fs-6 text-secondary">FAQs</h5>
+              <h5 className="fs-6 text-secondary">{t("faqs")}</h5>
             </div>
           </div>
 
           <div className="mt-4 d-flex">
             <div>
-              <span className="fs-4 fw-bold">All Reviews</span> (451)
+              <span className="fs-4 fw-bold">{t("allReviews")}</span> (451)
             </div>
             <div className="ms-auto d-flex gap-3">
               <button className="btn btn-light px-3 py-1 fs-4 d-flex align-items-center justify-content-center rounded-pill">
                 <RiIndentIncrease />
               </button>
               <button className="btn btn-light px-3 py-1 fs-6 d-flex align-items-center justify-content-center rounded-pill">
-                Latest <BiChevronDown />
+                {t("latest")} <BiChevronDown />
               </button>
               <Button theme="dark" className="m-0">
-                Write a Review
+                {t("writeReview")}
               </Button>
             </div>
           </div>
@@ -51,10 +53,10 @@ const Details = ({ comments }) => {
                   />
                 ))
               ) : (
-                <div className="fs-5 text-secondary">No reviews yet</div>
+                <div className="fs-5 text-secondary">{t("noReviews")}</div>
               )}
             </div>
-            <Button className="d-flex mx-auto">Load More Reviews</Button>
+            <Button className="d-flex mx-auto">{t("loadMore")}</Button>
           </div>
         </div>
       </div>

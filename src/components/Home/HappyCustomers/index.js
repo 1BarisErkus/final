@@ -3,79 +3,39 @@ import { H2, Section, StyledIcon } from "./styles";
 import CommentCard from "../../CommentCard";
 import { useEffect, useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { getHappyComments } from "@/lib/server";
+import { useTranslations } from "next-intl";
 
 const HappyCustomers = () => {
+  const t = useTranslations("Home");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [customers, setCustomers] = useState([]);
+  const [comments, setComments] = useState([]);
 
-  const fetchCustomers = () => {
-    const data = [
-      {
-        rating: 5,
-        name: "John Doe",
-        testimonial:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 1,
-      },
-      {
-        rating: 3,
-        name: "John Doe",
-        testimonial:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 2,
-      },
-      {
-        rating: 4.5,
-        name: "John Doe",
-        testimonial:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 3,
-      },
-      {
-        rating: 1.5,
-        name: "John Doe",
-        testimonial:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 4,
-      },
-      {
-        rating: 5,
-        name: "John Doe",
-        testimonial:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 5,
-      },
-      {
-        rating: 5,
-        name: "John Doe",
-        testimonial:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae libero.",
-        id: 6,
-      },
-    ];
-    setCustomers(data);
+  const fetchComments = async () => {
+    const data = await getHappyComments();
+    setComments(data);
   };
 
   useEffect(() => {
-    fetchCustomers();
+    fetchComments();
   }, []);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? customers.length - 1 : prevIndex - 1
+      prevIndex === 0 ? comments.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === customers.length - 1 ? 0 : prevIndex + 1
+      prevIndex === comments.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   return (
     <Section className="container pt-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <H2 className="fw-bold integralFont">Our Happy Customers</H2>
+        <H2 className="fw-bold integralFont">{t("ourHappyCustomers")}</H2>
         <div className="d-flex gap-3">
           <button className="border-0 bg-white" onClick={handlePrev}>
             <StyledIcon>
@@ -94,13 +54,19 @@ const HappyCustomers = () => {
           className="d-flex transition-transform gap-3"
           style={{
             transform: `translateX(-${
-              (currentIndex * 100) / (customers.length - 2)
+              (currentIndex * 100) / (comments.length - 2)
             }%)`,
             transition: "transform 0.5s",
           }}
         >
-          {customers.map((customer) => (
-            <CommentCard key={customer.id} customer={customer} />
+          {comments.map((comment) => (
+            <CommentCard
+              key={comment.id}
+              userId={comment.user_id}
+              rating={comment.rating}
+              content={comment.content}
+              created_at={comment.created_at}
+            />
           ))}
         </div>
       </div>
