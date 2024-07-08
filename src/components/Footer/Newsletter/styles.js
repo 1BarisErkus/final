@@ -28,6 +28,9 @@ export const H2 = styled.h2`
   @media (min-width: 992px) {
     font-size: 32px;
   }
+  @media (max-width: 576px) {
+    font-size: 24px;
+  }
 `;
 
 export const Section = styled.div`

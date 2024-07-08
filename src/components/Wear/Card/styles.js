@@ -36,3 +36,11 @@ export const DiscountPercent = styled.span`
   color: #ff3333;
   border-radius: 62px;
 `;
+
+export const ImageContainer = styled.div`
+  border-radius: 20px;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  position: relative;
+`;

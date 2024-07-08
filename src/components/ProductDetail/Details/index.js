@@ -5,7 +5,7 @@ import CommentCard from "@/components/CommentCard";
 import { useTranslations } from "next-intl";
 import Modal from "./Modal";
 
-const Details = ({ comments }) => {
+const Details = ({ comments, productId }) => {
   const t = useTranslations("ProductDetail");
   return (
     <div className="container mt-5">
@@ -45,7 +45,7 @@ const Details = ({ comments }) => {
             </div>
           </div>
 
-          <Modal />
+          <Modal productId={productId} />
 
           <div className="mt-4">
             <div className="row flex-wrap align-items-center justify-content-around">

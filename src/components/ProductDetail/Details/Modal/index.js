@@ -4,7 +4,7 @@ import { Rating } from "@smastrom/react-rating";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-const Modal = () => {
+const Modal = ({ productId }) => {
   const t = useTranslations("ProductDetail");
 
   const [rating, setRating] = useState(0);
@@ -12,10 +12,15 @@ const Modal = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await addComment(1, { rating, content: comment });
-
-    res.status === 200 && alert("Comment added successfully");
-    closeModal();
+    try {
+      const res = await addComment(productId, { rating, content: comment });
+      console.log("res", res);
+      if (res.status === 200) {
+        alert("Comment added successfully");
+      }
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (

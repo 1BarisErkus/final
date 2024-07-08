@@ -4,6 +4,7 @@ import {
   CardTitle,
   DiscountlessPrice,
   DiscountPercent,
+  ImageContainer,
   Price,
   StyledImage,
 } from "./styles";
@@ -13,14 +14,15 @@ const WearCard = ({ src, title, price, discount = 0, rating }) => {
 
   return (
     <Card className="card">
-      <StyledImage
-        src={`/images/wears/${src}.png`}
-        className="object-fit-cover"
-        alt="Wear"
-        width={300}
-        height={300}
-        priority
-      />
+      <ImageContainer>
+        <StyledImage
+          src={`/images/wears/${src}.png`}
+          className="object-fit-cover"
+          alt="Wear"
+          fill
+          priority
+        />
+      </ImageContainer>
       <div className="card-body px-0">
         <CardTitle className="card-title p-0">{title}</CardTitle>
         <Rating

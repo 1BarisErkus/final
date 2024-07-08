@@ -1,3 +1,7 @@
+"use server";
+
+import { revalidatePath } from "next/cache";
+
 const BASE_URL = "http://localhost:3001";
 
 export const getProducts = async () => {
@@ -65,10 +69,14 @@ export const getMightLike = async () => {
 export const addComment = async (productId, values) => {
   const product = await getProduct(productId);
 
+  if (!product) {
+    throw new Error("Product not found");
+  }
+
   const newComment = {
     id: String(new Date().getTime()),
     user_id: "123",
-    content: values.comment,
+    content: values.content,
     rating: values.rating,
     created_at: new Date().toISOString(),
   };
@@ -82,6 +90,8 @@ export const addComment = async (productId, values) => {
     },
     body: JSON.stringify({ ...product, comments: updatedComments }),
   });
+
+  revalidatePath("/product/[id]", "page");
 
   return res;
 };

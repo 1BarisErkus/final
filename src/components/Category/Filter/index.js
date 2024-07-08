@@ -20,9 +20,9 @@ import Button from "@/components/Button";
 import FilterButton from "./Button";
 import { FiFilter } from "react-icons/fi";
 import { BiChevronRight, BiChevronUp } from "react-icons/bi";
-import { getProducts } from "@/lib/server";
+import { FaWindowClose } from "react-icons/fa";
 
-const FilterComponent = () => {
+const FilterComponent = ({ modal }) => {
   const t = useTranslations("Category");
 
   const router = useRouter();
@@ -93,12 +93,20 @@ const FilterComponent = () => {
   const applyAllFilters = () => {};
 
   return (
-    <FilterContainer>
+    <FilterContainer classname={{ modal }}>
       <SectionTitle className="pb-3 border-bottom">
         <span>{t("filters")}</span>
-        <ClearButtonWrapper onClick={clearFilters}>
-          <FiFilter />
-        </ClearButtonWrapper>
+        {modal ? (
+          <ClearButtonWrapper
+            className="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></ClearButtonWrapper>
+        ) : (
+          <ClearButtonWrapper onClick={clearFilters}>
+            <FiFilter size={24} />
+          </ClearButtonWrapper>
+        )}
       </SectionTitle>
 
       <ul className="list-unstyled d-flex flex-column pb-3 mb-3 border-bottom gap-1">

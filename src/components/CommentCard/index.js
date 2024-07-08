@@ -27,8 +27,6 @@ const CommentCard = ({ rating, content, userId, createdAt, postedDate }) => {
     return `Posted on ${monthName} ${d.getDate()}, ${d.getFullYear()}`;
   };
 
-  console.log(formatDate(createdAt));
-
   return (
     <div
       className={`rounded-4 border mb-4 mx-2 ${

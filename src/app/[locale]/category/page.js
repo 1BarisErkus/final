@@ -5,8 +5,8 @@ const CategoryPage = () => {
   return (
     <main>
       <div className="container">
-        <div className="row">
-          <div className="col">
+        <div className="row m-0 p-0">
+          <div className="col m-0 p-0">
             <Breadcrumb />
             <Category />
           </div>
