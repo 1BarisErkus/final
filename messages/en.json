@@ -120,6 +120,14 @@
     "viewAll": "View All"
   },
   "Cart": {
-    "yourCart": "Your Cart"
+    "yourCart": "Your Cart",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "deliveryFree": "Delivery Free",
+    "total": "Total",
+    "apply": "Apply",
+    "gotoCheckout": "Go to Checkout",
+    "couponCode": "Add promo code"
   }
 }

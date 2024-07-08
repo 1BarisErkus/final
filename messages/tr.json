@@ -120,6 +120,14 @@
     "viewAll": "Hepsini Gor"
   },
   "Cart": {
-    "yourCart": "Sepetiniz"
+    "yourCart": "Sepetiniz",
+    "total": "Toplam",
+    "orderSummary": "Siparis Ozeti",
+    "subtotal": "Ara Toplam",
+    "discount": "Indirim",
+    "deliveryFree": "Ucretsiz Teslimat",
+    "apply": "Uygula",
+    "gotoCheckout": "Odeme Yapin",
+    "couponCode": "Kupon Kodu Ekle"
   }
 }
