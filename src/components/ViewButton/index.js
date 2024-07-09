@@ -4,35 +4,46 @@ import { useTranslations } from "next-intl";
 import { calculateRating } from "@/lib/helpers";
 import WearCard from "@/components/Wear/Card";
 import StyledButton from "@/components/Button";
+import CommentCard from "../CommentCard";
 
-const ViewButton = ({ data }) => {
+const ViewButton = ({ data, type }) => {
   const [click, setClick] = useState(false);
   const t = useTranslations("ShowCase");
 
-  console.log(click);
-  console.log(data);
-
   return (
     <>
-      {click
-        ? data.slice(4).map((product) => {
-            const rating = calculateRating(product.comments);
+      {click && type === "wear"
+        ? data.slice(4).map((item) => {
+            const rating = calculateRating(item.comments);
             return (
               <WearCard
-                key={product.id}
-                src={product.image}
-                title={product.title}
+                key={item.id}
+                src={item.image}
+                title={item.title}
                 rating={rating}
-                price={product.price}
-                discount={product.discount}
+                price={item.price}
+                discount={item.discount}
               />
             );
           })
-        : ""}
+        : click &&
+          type === "comment" &&
+          data
+            .slice(6)
+            .map((comment) => (
+              <CommentCard
+                key={comment.id}
+                userId={comment.user_id}
+                rating={comment.rating}
+                content={comment.content}
+                createdAt={comment.created_at}
+                postedDate
+              />
+            ))}
       <div className="col-12 d-flex justify-content-center">
         {click ? (
           <StyledButton
-            className="mt-5"
+            className="mt-0"
             onClick={() => {
               setClick(false);
             }}
@@ -41,7 +52,7 @@ const ViewButton = ({ data }) => {
           </StyledButton>
         ) : (
           <StyledButton
-            className="mt-5"
+            className="mt-0"
             onClick={() => {
               setClick(true);
             }}

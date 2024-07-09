@@ -148,6 +148,13 @@
     "passwordPlaceholder": "Enter your password",
     "passwordConfirm": "Password Again",
     "passwordConfirmPlaceholder": "Enter your password again",
-    "login": "Login"
+    "login": "Login",
+    "success": "Logged in successfully.",
+    "error": "Email or password is incorrect. Please try again.",
+    "logout": "Logout",
+    "logoutSuccess": "Logged out successfully.",
+    "signupSuccess": "Signed up successfully. Your promotion code is: ATMOSWARE20",
+    "signupError": "Sign up failed. Please check your information.",
+    "emailInUse": "Email is already in use. Please try another one."
   }
 }

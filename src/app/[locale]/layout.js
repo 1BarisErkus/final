@@ -57,7 +57,7 @@ export default async function RootLayout({ children, params: { locale } }) {
   const messages = await getMessages({ locale });
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${integralFc.variable} ${satoshi.variable}`}>
         <ReduxProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>

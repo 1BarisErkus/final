@@ -4,7 +4,7 @@ import { StyledCard, StyledLink } from "./styles";
 const DressCard = ({ col, title, src }) => {
   return (
     <StyledLink
-      href="#"
+      href={`/category?dressStyle_like=${title.toLowerCase()}`}
       className={`col-${col} text-decoration-none text-black`}
     >
       <StyledCard className="bg-white position-relative rounded-4 mb-3">

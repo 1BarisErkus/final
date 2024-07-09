@@ -1,8 +1,6 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
-
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = process.env.BASE_URL;
 
 export const getProducts = async (query) => {
   const res = await fetch(`${BASE_URL}/products?${query}`, {
@@ -41,6 +39,7 @@ export const getHappyComments = async () => {
 
 export const getNewArrivals = async () => {
   const res = await fetch(`${BASE_URL}/products`, { cache: "no-store" });
+  console.log(res);
   const data = await res.json();
   const newArrivals = data.filter((product) => product.new_arrival === true);
 
@@ -61,28 +60,4 @@ export const getMightLike = async () => {
   const mightLike = data.slice(0, 4);
 
   return mightLike;
-};
-
-export const addComment = async (productId, newComment) => {
-  const product = await getProduct(productId);
-
-  if (!product) {
-    throw new Error("Product not found");
-  }
-
-  const updatedComments = [...product.comments, newComment];
-
-  const newProduct = { ...product, comments: updatedComments };
-
-  const res = await fetch(`${BASE_URL}/products/${productId}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newProduct),
-  });
-
-  revalidatePath("/product/[id]", "page");
-
-  return res.json();
 };

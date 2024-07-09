@@ -1,7 +1,9 @@
 "use client";
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  border-bottom: 1px solid var(--tertiary);
+`;
 
 export const Row = styled.div`
   margin-top: 72px;

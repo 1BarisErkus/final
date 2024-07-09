@@ -1,5 +1,5 @@
 "use client";
-import { addComment } from "@/lib/server";
+import { addComment } from "@/lib/server/comment";
 import { Rating } from "@smastrom/react-rating";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -22,7 +22,7 @@ const Modal = ({ productId }) => {
     };
 
     try {
-      const res = await addComment("1", newComment);
+      const res = await addComment(productId, newComment);
       if (res.status === 200) {
         alert("Comment added successfully");
       }

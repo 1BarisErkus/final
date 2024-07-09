@@ -58,13 +58,27 @@ const Content = ({
           <div className="mt-4 pb-4 border-bottom">
             <h5 className="fs-6 text-secondary">{t("chooseSize")}</h5>
             <div className="d-flex flex-wrap mt-3">
-              {sizes?.XXS > 0 ? <SizeButton>{t("xxs")}</SizeButton> : null}
-              {sizes?.XS > 0 ? <SizeButton>{t("xs")}</SizeButton> : null}
-              {sizes?.S > 0 ? <SizeButton>{t("s")}</SizeButton> : null}
-              {sizes?.M > 0 ? <SizeButton>{t("m")}</SizeButton> : null}
-              {sizes?.L > 0 ? <SizeButton>{t("l")}</SizeButton> : null}
-              {sizes?.XL > 0 ? <SizeButton>{t("xl")}</SizeButton> : null}
-              {sizes?.XXL > 0 ? <SizeButton>{t("xxl")}</SizeButton> : null}
+              {sizes.includes("xxsmall") > 0 ? (
+                <SizeButton>{t("xxs")}</SizeButton>
+              ) : null}
+              {sizes.includes("xsmall") > 0 ? (
+                <SizeButton>{t("xs")}</SizeButton>
+              ) : null}
+              {sizes?.includes("small") > 0 ? (
+                <SizeButton>{t("s")}</SizeButton>
+              ) : null}
+              {sizes?.includes("medium") > 0 ? (
+                <SizeButton>{t("m")}</SizeButton>
+              ) : null}
+              {sizes?.includes("large") > 0 ? (
+                <SizeButton>{t("l")}</SizeButton>
+              ) : null}
+              {sizes?.includes("xlarge") > 0 ? (
+                <SizeButton>{t("xl")}</SizeButton>
+              ) : null}
+              {sizes?.includes("xxllarge") > 0 ? (
+                <SizeButton>{t("xxl")}</SizeButton>
+              ) : null}
             </div>
           </div>
           <div className="mt-4">

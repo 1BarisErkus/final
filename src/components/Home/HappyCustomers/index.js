@@ -1,10 +1,10 @@
 "use client";
-import { H2, Section, StyledIcon } from "./styles";
-import CommentCard from "../../CommentCard";
 import { useEffect, useState } from "react";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import { getHappyComments } from "@/lib/server";
 import { useTranslations } from "next-intl";
+import { getHappyComments } from "@/lib/server/product";
+import CommentCard from "../../CommentCard";
+import { H2, Section, StyledButton } from "./styles";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const HappyCustomers = () => {
   const t = useTranslations("Home");
@@ -37,16 +37,12 @@ const HappyCustomers = () => {
       <div className="d-flex justify-content-between align-items-center mb-4">
         <H2 className="fw-bold integralFont">{t("ourHappyCustomers")}</H2>
         <div className="d-flex gap-3">
-          <button className="border-0 bg-white" onClick={handlePrev}>
-            <StyledIcon>
-              <FiArrowLeft size={24} />
-            </StyledIcon>
-          </button>
-          <button className="border-0 bg-white" onClick={handleNext}>
-            <StyledIcon>
-              <FiArrowRight size={24} />
-            </StyledIcon>
-          </button>
+          <StyledButton onClick={handlePrev}>
+            <FiArrowLeft size={24} />
+          </StyledButton>
+          <StyledButton onClick={handleNext}>
+            <FiArrowRight size={24} />
+          </StyledButton>
         </div>
       </div>
       <div className="position-relative overflow-hidden">

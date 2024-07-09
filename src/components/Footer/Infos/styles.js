@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import styled from "styled-components";
 
 export const H5 = styled.h5`

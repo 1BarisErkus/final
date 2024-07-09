@@ -4,8 +4,10 @@ import { useTranslations } from "next-intl";
 import styled from "styled-components";
 import { useFormik } from "formik";
 import { object, string, ref } from "yup";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from "@/navigation";
+import { notify } from "@/common/notify";
 
 const StyledFormContainer = styled.div`
   max-width: 400px;
@@ -17,8 +19,8 @@ const StyledFormContainer = styled.div`
 `;
 
 const SignupForm = () => {
-  const [createUserWithEmailAndPassword] =
-    useCreateUserWithEmailAndPassword(auth);
+  const t = useTranslations("Auth");
+  const router = useRouter();
 
   const initialValues = {
     email: "",
@@ -28,25 +30,11 @@ const SignupForm = () => {
 
   const validationSchema = object({
     email: string().email("Invalid email address").required("Required"),
-    password: string().required("Required"),
+    password: string().min(6, "Password is too short").required("Required"),
     passwordConfirm: string()
       .oneOf([ref("password"), null], "Passwords must match")
       .required("Required"),
   });
-
-  const signup = async (values) => {
-    try {
-      const res = await createUserWithEmailAndPassword(
-        values.email,
-        values.password
-      );
-      values.email = "";
-      values.password = "";
-      values.passwordConfirm = "";
-    } catch {
-      console.error("Failed to create an account");
-    }
-  };
 
   const {
     values,
@@ -62,7 +50,21 @@ const SignupForm = () => {
     onSubmit: (values) => signup(values),
   });
 
-  const t = useTranslations("Auth");
+  const signup = async (values) => {
+    createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then(() => {
+        notify(t("signupSuccess"), "success");
+        router.push("/signin");
+      })
+      .catch((error) => {
+        if (error.code === "auth/email-already-in-use") {
+          notify(t("emailInUse"), "error");
+        } else {
+          notify(t("signupError"), "error");
+        }
+      });
+  };
+
   return (
     <StyledFormContainer>
       <h2 className="text-center">{t("signup")}</h2>

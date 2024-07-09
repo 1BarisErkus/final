@@ -20,9 +20,11 @@ const Discount = () => {
   };
 
   const { isHeaderVisible } = useSelector((state) => state.global);
+  const { user } = useSelector((state) => state.user);
 
   return (
-    isHeaderVisible && (
+    isHeaderVisible &&
+    !user && (
       <HeaderWrapper>
         <Container className="container">
           <TextWrapper className="container-md">

@@ -4,7 +4,7 @@ import WearCardList from "@/components/Wear/CardList";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { calculateRating } from "@/lib/helpers";
-import ViewButton from "../Home/ViewButton";
+import ViewButton from "../ViewButton";
 
 const ShowCase = ({ title, button, cards }) => {
   const t = useTranslations("ShowCase");
@@ -33,7 +33,7 @@ const ShowCase = ({ title, button, cards }) => {
               ) : (
                 <div>{t("productsAreNotFound")}</div>
               )}
-              {button && <ViewButton data={cards} />}
+              {button && <ViewButton data={cards} type="wear" />}
             </WearCardList>
           </div>
         </Row>

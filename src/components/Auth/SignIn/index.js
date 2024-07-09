@@ -4,14 +4,12 @@ import { useTranslations } from "next-intl";
 import styled from "styled-components";
 import { useFormik } from "formik";
 import { object, string } from "yup";
-import {
-  useSignInWithEmailAndPassword,
-  useAuthState,
-} from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
-import { signOut } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useRouter } from "@/navigation";
-import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { removeUser, setUser } from "@/redux/slices/userSlice";
+import { notify } from "@/common/notify";
 
 const StyledFormContainer = styled.div`
   max-width: 400px;
@@ -24,12 +22,10 @@ const StyledFormContainer = styled.div`
 
 const LoginForm = () => {
   const t = useTranslations("Auth");
-  const [user] = useAuthState(auth);
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
   const router = useRouter();
-  console.log("user", user);
-
-  const notify = (message, type) => toast(message, { type: type });
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.user);
+  console.log(user);
 
   const initialValues = {
     email: "",
@@ -56,29 +52,25 @@ const LoginForm = () => {
   });
 
   const login = async (values) => {
-    try {
-      const res = await signInWithEmailAndPassword(
-        values.email,
-        values.password
-      );
-      console.log(res);
-      if (res) {
+    signInWithEmailAndPassword(auth, values.email, values.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        dispatch(setUser(user));
+        notify(t("success"), "success");
         router.push("/");
-        notify("adsadsa", "error");
-      }
-    } catch {
-      notify();
-      console.error("Failed to log in");
-    }
+      })
+      .catch((error) => {
+        notify(t("error"), "error");
+      });
   };
 
   const logout = async () => {
     try {
       await signOut(auth);
+      dispatch(removeUser());
+      notify(t("logoutSuccess"), "success");
       router.push("/signin");
-    } catch {
-      console.error("Failed to log out");
-    }
+    } catch {}
   };
 
   if (user) {

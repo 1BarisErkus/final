@@ -13,9 +13,10 @@ export const H2 = styled.h2`
   }
 `;
 
-export const StyledIcon = styled.div`
+export const StyledButton = styled.button`
   position: relative;
   width: 24px;
   height: 24px;
   background-color: transparent;
+  border: none;
 `;

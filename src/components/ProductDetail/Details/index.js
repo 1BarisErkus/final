@@ -1,9 +1,9 @@
 import { RiIndentIncrease } from "react-icons/ri";
 import { BiChevronDown } from "react-icons/bi";
 import Button from "@/components/Button";
-import CommentCard from "@/components/CommentCard";
 import { useTranslations } from "next-intl";
 import Modal from "./Modal";
+import Comments from "./Comments";
 
 const Details = ({ comments, productId }) => {
   const t = useTranslations("ProductDetail");
@@ -47,27 +47,7 @@ const Details = ({ comments, productId }) => {
 
           <Modal productId={productId} />
 
-          <div className="mt-4">
-            <div className="row flex-wrap align-items-center justify-content-around">
-              {comments && comments.length > 0 ? (
-                comments.map((comment) => (
-                  <CommentCard
-                    key={comment.id}
-                    userId={comment.user_id}
-                    rating={comment.rating}
-                    content={comment.content}
-                    createdAt={comment.created_at}
-                    postedDate
-                  />
-                ))
-              ) : (
-                <div className="fs-5 text-secondary">{t("noReviews")}</div>
-              )}
-            </div>
-            <Button className="d-flex mx-auto align-items-center justify-content-center">
-              {t("loadMore")}
-            </Button>
-          </div>
+          <Comments comments={comments} />
         </div>
       </div>
     </div>

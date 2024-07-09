@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Rating } from "@smastrom/react-rating";
-import { StyledIcon } from "../Home/HappyCustomers/styles";
 import tick from "../../../public/images/tick.png";
+import { IconWrapper } from "./styles";
 
 const CommentCard = ({ rating, content, userId, createdAt, postedDate }) => {
   const monthNames = [
@@ -44,7 +44,7 @@ const CommentCard = ({ rating, content, userId, createdAt, postedDate }) => {
       </div>
       <h5 className="fw-bold my-2 d-flex gap-2">
         {userId}
-        <StyledIcon>
+        <IconWrapper>
           <Image
             src={tick}
             alt="verified"
@@ -52,7 +52,7 @@ const CommentCard = ({ rating, content, userId, createdAt, postedDate }) => {
             fill
             sizes="24px"
           />
-        </StyledIcon>
+        </IconWrapper>
       </h5>
       <p className=" mt-2  opacity-50 fw-lighter">{content}</p>
       {postedDate && (
