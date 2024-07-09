@@ -57,18 +57,6 @@ const FilterComponent = ({ modal, className }) => {
     });
   };
 
-  const updateURLParams = (params) => {
-    const searchParams = new URLSearchParams(window.location.search);
-    for (const key in params) {
-      if (params[key].length) {
-        searchParams.set(key, params[key].join(","));
-      } else {
-        searchParams.delete(key);
-      }
-    }
-    router.replace(`?${searchParams.toString()}`, { scroll: false });
-  };
-
   const filterCategories = [
     t("tshirts"),
     t("shorts"),

@@ -1,4 +1,3 @@
-import { BiChevronDown } from "react-icons/bi";
 import { GiSettingsKnobs } from "react-icons/gi";
 import FilterComponent from "../Filter";
 import { useTranslations } from "next-intl";
@@ -8,12 +7,6 @@ const MobileModal = () => {
   const t = useTranslations("Category");
   return (
     <>
-      <div className="d-md-block d-none">
-        <span className="opacity-50"></span> {t("sortby")}:{" "}
-        <span className="opacity-100 fw-bold">
-          {t("mostPopular")} <BiChevronDown />
-        </span>
-      </div>
       <FilterButtonWrapper
         className="d-lg-none"
         data-bs-toggle="modal"

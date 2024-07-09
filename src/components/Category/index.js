@@ -1,16 +1,20 @@
 import { Link } from "@/navigation";
-import { getTranslations } from "next-intl/server";
 import { getProducts } from "@/lib/server/product";
 import { calculateRating } from "@/lib/helpers";
 import WearCardList from "../Wear/CardList";
 import WearCard from "../Wear/Card";
 import FilterComponent from "./Filter";
 import Header from "./Header";
+import Pagination from "./Pagination";
 
 const Category = async ({ searchParams }) => {
   const query = new URLSearchParams(searchParams).toString();
-  const data = await getProducts(query);
-  const t = await getTranslations("Category");
+  const page = searchParams["_page"] ?? "1";
+  const limit = searchParams["_limit"] ?? "9";
+  console.log(page, limit);
+  // const data = await getProducts(query);
+  const data = await getProducts(`${query}&_page=${page}&_limit=${limit}`);
+  console.log(data);
 
   return (
     <div className="container ps-0">
@@ -36,38 +40,10 @@ const Category = async ({ searchParams }) => {
               );
             })}
           </WearCardList>
-          <nav
-            aria-label="Page navigation example"
-            className="d-flex justify-content-center"
-          >
-            <ul className="pagination mt-5">
-              <li className="page-item">
-                <a className="page-link" href="#">
-                  {t("previous")}
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">
-                  1
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">
-                  2
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">
-                  3
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link" href="#">
-                  {t("next")}
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <Pagination
+            hasNextPage={page * limit <= data.length}
+            hasPrevPage={page > 1}
+          />
         </div>
       </div>
     </div>
