@@ -21,7 +21,7 @@ import FilterButton from "./Button";
 import { FiFilter } from "react-icons/fi";
 import { BiChevronRight, BiChevronUp } from "react-icons/bi";
 
-const FilterComponent = ({ modal }) => {
+const FilterComponent = ({ modal, className }) => {
   const t = useTranslations("Category");
 
   const router = useRouter();
@@ -92,7 +92,7 @@ const FilterComponent = ({ modal }) => {
   const applyAllFilters = () => {};
 
   return (
-    <FilterContainer>
+    <FilterContainer className={className}>
       <SectionTitle className="pb-3 border-bottom">
         <span>{t("filters")}</span>
         {modal ? (

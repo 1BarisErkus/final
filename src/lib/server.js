@@ -16,7 +16,6 @@ export const getProduct = async (slug) => {
     cache: "no-store",
   });
   const data = await res.json();
-
   return data[0];
 };
 
@@ -66,32 +65,26 @@ export const getMightLike = async () => {
   return mightLike;
 };
 
-export const addComment = async (productId, values) => {
+export const addComment = async (productId, newComment) => {
   const product = await getProduct(productId);
 
   if (!product) {
     throw new Error("Product not found");
   }
 
-  const newComment = {
-    id: String(new Date().getTime()),
-    user_id: "123",
-    content: values.content,
-    rating: values.rating,
-    created_at: new Date().toISOString(),
-  };
-
   const updatedComments = [...product.comments, newComment];
+
+  const newProduct = { ...product, comments: updatedComments };
 
   const res = await fetch(`${BASE_URL}/products/${productId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ ...product, comments: updatedComments }),
+    body: JSON.stringify(newProduct),
   });
 
   revalidatePath("/product/[id]", "page");
 
-  return res;
+  return res.json();
 };

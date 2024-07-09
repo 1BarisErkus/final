@@ -10,7 +10,11 @@ const ThemeChanger = () => {
     setTheme(nextTheme);
   };
 
-  return <ThemeChangerWrapper onClick={changeTheme} theme={theme} />;
+  return (
+    <ThemeChangerWrapper onClick={changeTheme} theme={theme}>
+      Change Theme
+    </ThemeChangerWrapper>
+  );
 };
 
 export default ThemeChanger;

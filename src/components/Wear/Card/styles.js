@@ -6,6 +6,8 @@ export const Card = styled.div`
   width: 295px;
   border: none;
   cursor: pointer;
+  background: transparent;
+  color: var(--secondary);
 `;
 
 export const StyledImage = styled(Image)`
@@ -23,7 +25,7 @@ export const Price = styled.span`
 `;
 
 export const DiscountlessPrice = styled(Price)`
-  color: #00000066;
+  opacity: 0.5;
   text-decoration: line-through;
   margin: 0 10px;
 `;

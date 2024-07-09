@@ -47,7 +47,7 @@ const Category = async () => {
                 <div className="modal-dialog">
                   <div className="modal-content rounded-4 justify-content-center align-items-center">
                     <div className="modal-body p-0 m-0">
-                      <FilterComponent modal={true} />
+                      <FilterComponent modal={true} className="w-100" />
                     </div>
                   </div>
                 </div>

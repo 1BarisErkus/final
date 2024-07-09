@@ -6,12 +6,16 @@ const GlobalStyles = createGlobalStyle`
         --primary: #fff;
         --secondary: #000;
         --tertiary: #f2f0f1;
+        --quaternary: #f8f9fa;
+        --filter-background: #e0e0e0;
     }
 
     [data-theme="dark"] {
         --primary: #000;
         --secondary: white;
         --tertiary: #1a1a1a;
+        --quaternary: #171717;
+        --filter-background: #171717;
     }
     * {
         box-sizing: border-box;
@@ -20,6 +24,8 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         font-family: var(--font-satoshi), sans-serif;
+        background-color: var(--primary);
+        color: var(--secondary);
     }
     a {
         text-decoration: none;

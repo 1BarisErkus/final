@@ -18,7 +18,9 @@ const Content = () => {
       <H1>{t("findClothes")}</H1>
       <Paragraph className="text-gray">{t("contentDesc")}</Paragraph>
       <Link href="/category">
-        <Button theme="dark">{t("shopNow")}</Button>
+        <Button theme="dark" className="bg-black text-white">
+          {t("shopNow")}
+        </Button>
       </Link>
       <StatsWrapper className="d-flex flex-wrap gap-4">
         <StatsItem>

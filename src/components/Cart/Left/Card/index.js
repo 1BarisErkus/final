@@ -1,12 +1,12 @@
 import React from "react";
-import { ImageWrapper, P } from "./styles";
+import { CardContainer, ImageWrapper, P } from "./styles";
 import Image from "next/image";
 import { RiDeleteBin3Fill } from "react-icons/ri";
 import ProductCountButton from "@/components/ProductCountButton";
 
 const Card = () => {
   return (
-    <div
+    <CardContainer
       className="card mb-3 border-0 border-bottom"
       style={{ maxWidth: "700px" }}
     >
@@ -44,7 +44,7 @@ const Card = () => {
           </div>
         </div>
       </div>
-    </div>
+    </CardContainer>
   );
 };
 

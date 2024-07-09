@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { BiPlus, BiMinus } from "react-icons/bi";
 
 const Container = styled.div`
-  background-color: #f0f0f0;
+  background-color: var(--tertiary);
   border: none;
   border-radius: 62px;
   font-size: 20px;

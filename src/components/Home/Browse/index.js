@@ -1,5 +1,6 @@
 import DressCard from "./DressCard";
 import { useTranslations } from "next-intl";
+import { Main } from "./styles";
 
 const casual = "/images/dress/casual.png";
 const formal = "/images/dress/formal.png";
@@ -9,7 +10,7 @@ const gym = "/images/dress/gym.png";
 const Browse = () => {
   const t = useTranslations("Home");
   return (
-    <main className="container-xl bg-body-secondary py-5 rounded-5 px-5">
+    <Main className="container-xl py-5 rounded-5 px-5">
       <h2 className="text-center">{t("browse")}</h2>
       <div className="row mt-5">
         <DressCard col={4} title={t("casual")} src={casual} />
@@ -17,7 +18,7 @@ const Browse = () => {
         <DressCard col={8} title={t("party")} src={party} />
         <DressCard col={4} title={t("gym")} src={gym} />
       </div>
-    </main>
+    </Main>
   );
 };
 

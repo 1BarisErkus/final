@@ -2,6 +2,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
-  background-color: #f8f9fa;
+  color: var(--secondary);
+  background-color: var(--quaternary);
   margin-top: 200px;
 `;

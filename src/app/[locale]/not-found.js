@@ -1,7 +1,8 @@
-import React from "react";
+"use client";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const NotFound = () => {
-  return <div>NotFound</div>;
+  return <DotLottieReact src="/animations/error.json" loop autoplay />;
 };
 
 export default NotFound;

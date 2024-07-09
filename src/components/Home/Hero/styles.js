@@ -6,6 +6,7 @@ export const Section = styled.section`
   position: relative;
   padding: 80px 0;
   background-color: #f2f0f1;
+  color: #000;
   @media (max-width: 768px) {
     padding-bottom: 0;
   }

@@ -5,7 +5,7 @@ import { IoMdSearch } from "react-icons/io";
 import { VscAccount } from "react-icons/vsc";
 import { IconsWrapper } from "./styles";
 import Language from "./Language";
-import ThemeChanger from "@/components/ThemeChanger";
+import ThemeChanger from "@/components/Header/Navbar/Icons/ThemeChanger";
 
 const Icons = () => {
   return (

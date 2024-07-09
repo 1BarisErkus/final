@@ -12,8 +12,17 @@ const Modal = ({ productId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newComment = {
+      id: String(new Date().getTime()),
+      user_id: "123",
+      content: comment,
+      rating: rating,
+      created_at: new Date().toISOString(),
+    };
+
     try {
-      const res = await addComment(productId, { rating, content: comment });
+      const res = await addComment("1", newComment);
       if (res.status === 200) {
         alert("Comment added successfully");
       }

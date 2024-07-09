@@ -14,7 +14,7 @@ const FooterBottom = () => {
   return (
     <div className="container mt-5">
       <Bottom>
-        <Paragraph className="text-muted">{t("shopco")}</Paragraph>
+        <Paragraph>{t("shopco")}</Paragraph>
         <PaymentIconsContainer>
           <PaymentIcon href="#">
             <RiVisaLine />

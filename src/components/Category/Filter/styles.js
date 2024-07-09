@@ -7,6 +7,7 @@ export const FilterContainer = styled.div`
   background-color: white;
   border-radius: 20px;
   border: 1px solid #e0e0e0;
+  background-color: var(--filter-background);
 `;
 
 export const SectionTitle = styled.h5`
