@@ -152,9 +152,11 @@
     "success": "Logged in successfully.",
     "error": "Email or password is incorrect. Please try again.",
     "logout": "Logout",
-    "logoutSuccess": "Logged out successfully.",
-    "signupSuccess": "Signed up successfully. Your promotion code is: ATMOSWARE20",
+    "logoutSuccess": "Logged out successfully. See you soon!",
+    "signupSuccess": "Signed up successfully. Your promotion code is: ATMOSWARE20 Welcome Again:",
     "signupError": "Sign up failed. Please check your information.",
-    "emailInUse": "Email is already in use. Please try another one."
+    "emailInUse": "Email is already in use. Please try another one.",
+    "name": "Name Surname",
+    "namePlaceholder": "Enter your name and surname"
   }
 }

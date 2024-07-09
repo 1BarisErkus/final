@@ -39,7 +39,6 @@ export const getHappyComments = async () => {
 
 export const getNewArrivals = async () => {
   const res = await fetch(`${BASE_URL}/products`, { cache: "no-store" });
-  console.log(res);
   const data = await res.json();
   const newArrivals = data.filter((product) => product.new_arrival === true);
 

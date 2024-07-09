@@ -59,7 +59,6 @@ const HappyCustomers = () => {
             comments.map((comment) => (
               <CommentCard
                 key={comment.id}
-                userId={comment.user_id}
                 rating={comment.rating}
                 content={comment.content}
                 created_at={comment.created_at}

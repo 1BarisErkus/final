@@ -20,12 +20,14 @@ import Button from "@/components/Button";
 import FilterButton from "./Button";
 import { FiFilter } from "react-icons/fi";
 import { BiChevronRight, BiChevronUp } from "react-icons/bi";
+import RangeSlider from "react-range-slider-input";
 
 const FilterComponent = ({ modal, className }) => {
   const t = useTranslations("Category");
   const router = useRouter();
   const searchParams = useSearchParams();
   const [selectedFilterQueries, setSelectedFilterQueries] = useState({});
+  const [priceRange, setPriceRange] = useState([0, 1000]);
 
   useEffect(() => {
     const paramsObj = convertStringToQueriesObject(searchParams);
@@ -55,6 +57,18 @@ const FilterComponent = ({ modal, className }) => {
     });
   };
 
+  const updateURLParams = (params) => {
+    const searchParams = new URLSearchParams(window.location.search);
+    for (const key in params) {
+      if (params[key].length) {
+        searchParams.set(key, params[key].join(","));
+      } else {
+        searchParams.delete(key);
+      }
+    }
+    router.replace(`?${searchParams.toString()}`, { scroll: false });
+  };
+
   const filterCategories = [
     t("tshirts"),
     t("shorts"),
@@ -77,6 +91,7 @@ const FilterComponent = ({ modal, className }) => {
 
   const setCategory = (category) =>
     handleSelectFilterOptions("category_like", category.toLowerCase());
+  const setPrice = (price) => setPriceRange(price);
   const setColor = (colorName) =>
     handleSelectFilterOptions("color_like", colorName.toLowerCase());
   const setSize = (size) =>
@@ -84,11 +99,17 @@ const FilterComponent = ({ modal, className }) => {
   const setDressStyle = (dressStyle) =>
     handleSelectFilterOptions("dressStyle_like", dressStyle.toLowerCase());
   const clearFilters = () => {
-    router.push("category", { scroll: false });
     setSelectedFilterQueries({});
+    setPriceRange([0, 1000]);
+    router.push("category", { scroll: false });
   };
 
-  const applyAllFilters = () => {};
+  const applyAllFilters = () => {
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("price_gte", priceRange[0]);
+    searchParams.set("price_lte", priceRange[1]);
+    router.replace(`?${searchParams.toString()}`, { scroll: false });
+  };
 
   return (
     <FilterContainer className={className}>
@@ -127,12 +148,17 @@ const FilterComponent = ({ modal, className }) => {
         <span>{t("price")}</span>
         <BiChevronUp size={24} />
       </SectionTitle>
-      <PriceRange className="pb-4 border-bottom mb-4">
-        <span>$50</span>
-        <input type="range" min="50" max="200" />
-        <span>$200</span>
-      </PriceRange>
-
+      <RangeSlider
+        min={0}
+        max={1000}
+        value={priceRange}
+        onInput={setPrice}
+        className="mb-3"
+      />
+      <div className="mb-4 d-flex justify-content-between">
+        <span>${priceRange[0]}</span>
+        <span>${priceRange[1]}</span>
+      </div>
       <SectionTitle>
         <span>{t("colors")}</span>
         <BiChevronUp size={24} />

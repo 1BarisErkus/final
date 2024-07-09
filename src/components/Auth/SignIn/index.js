@@ -25,7 +25,6 @@ const LoginForm = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
-  console.log(user);
 
   const initialValues = {
     email: "",

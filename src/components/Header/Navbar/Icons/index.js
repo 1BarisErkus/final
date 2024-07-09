@@ -1,5 +1,4 @@
 import { Link } from "@/navigation";
-import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoMdSearch } from "react-icons/io";
 import { VscAccount } from "react-icons/vsc";

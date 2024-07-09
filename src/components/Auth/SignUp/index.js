@@ -8,6 +8,7 @@ import { auth } from "@/lib/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "@/navigation";
 import { notify } from "@/common/notify";
+import { addUser } from "@/lib/server/user";
 
 const StyledFormContainer = styled.div`
   max-width: 400px;
@@ -23,12 +24,14 @@ const SignupForm = () => {
   const router = useRouter();
 
   const initialValues = {
+    name: "",
     email: "",
     password: "",
     passwordConfirm: "",
   };
 
   const validationSchema = object({
+    name: string().required("Required"),
     email: string().email("Invalid email address").required("Required"),
     password: string().min(6, "Password is too short").required("Required"),
     passwordConfirm: string()
@@ -52,9 +55,17 @@ const SignupForm = () => {
 
   const signup = async (values) => {
     createUserWithEmailAndPassword(auth, values.email, values.password)
-      .then(() => {
-        notify(t("signupSuccess"), "success");
-        router.push("/signin");
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        const userForDbJson = {
+          id: user.uid,
+          name: values.name,
+          email: values.email,
+        };
+        addUser(userForDbJson).then(() => {
+          notify(`${t("signupSuccess")} ${values.name}`, "success");
+          router.push("/signin");
+        });
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {
@@ -69,6 +80,24 @@ const SignupForm = () => {
     <StyledFormContainer>
       <h2 className="text-center">{t("signup")}</h2>
       <form onSubmit={handleSubmit}>
+        <div className="my-3">
+          <label htmlFor="name" className="form-label">
+            {t("name")}
+          </label>
+          <input
+            type="name"
+            className="form-control"
+            id="name"
+            placeholder={t("namePlaceholder")}
+            value={values.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.name && touched.name && (
+            <p className="text-danger text-end">{errors.name}</p>
+          )}
+        </div>
+
         <div className="my-3">
           <label htmlFor="email" className="form-label">
             {t("email")}

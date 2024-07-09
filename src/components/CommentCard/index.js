@@ -2,31 +2,9 @@ import Image from "next/image";
 import { Rating } from "@smastrom/react-rating";
 import tick from "../../../public/images/tick.png";
 import { IconWrapper } from "./styles";
+import { formatDate } from "@/lib/helpers";
 
-const CommentCard = ({ rating, content, userId, createdAt, postedDate }) => {
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const formatDate = (date) => {
-    if (!date) return "";
-    const d = new Date(date);
-    const monthName = monthNames[d.getMonth()];
-
-    return `Posted on ${monthName} ${d.getDate()}, ${d.getFullYear()}`;
-  };
-
+const CommentCard = ({ rating, content, createdAt, postedDate }) => {
   return (
     <div
       className={`rounded-4 border mb-4 mx-2 ${
@@ -43,7 +21,7 @@ const CommentCard = ({ rating, content, userId, createdAt, postedDate }) => {
         {postedDate && <div>...</div>}
       </div>
       <h5 className="fw-bold my-2 d-flex gap-2">
-        {userId}
+        {"user.name"}
         <IconWrapper>
           <Image
             src={tick}

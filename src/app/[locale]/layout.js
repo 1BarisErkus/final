@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@smastrom/react-rating/style.css";
+import "react-range-slider-input/dist/style.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import { NextIntlClientProvider } from "next-intl";

@@ -149,12 +149,14 @@
     "passwordConfirm": "Sifreyi Tekrarı",
     "passwordConfirmPlaceholder": "Sifreyi tekrar girin",
     "login": "Giris Yap",
-    "success": "Basariyla giris yapildi.",
+    "success": "Basariyla giris yapildi. Hos geldin:",
     "error": "Giris yapilamadi. Lutfen bilgilerinizi kontrol edin.",
     "logout": "Cikis Yap",
-    "logoutSuccess": "Basariyla cikis yapildi.",
-    "signupSuccess": "Basariyla kayit olundu. Promosyon kodunuz: ATMOSWARE20",
+    "logoutSuccess": "Basariyla cikis yapildi. Gorusmek uzere!",
+    "signupSuccess": "Basariyla kayit olundu. Promosyon kodunuz: ATMOSWARE20 Tekrar Hosgeldin:",
     "signupError": "Kayit olunamadi. Lutfen bilgilerinizi kontrol edin.",
-    "emailInUse": "Bu e-posta adresi zaten kullaniliyor. Lutfen baska bir e-posta adresi deneyin."
+    "emailInUse": "Bu e-posta adresi zaten kullaniliyor. Lutfen baska bir e-posta adresi deneyin.",
+    "name": "Ad Soyad",
+    "namePlaceholder": "Ad ve soyad girin"
   }
 }
