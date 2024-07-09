@@ -5,6 +5,7 @@ import { IoMdSearch } from "react-icons/io";
 import { VscAccount } from "react-icons/vsc";
 import { IconsWrapper } from "./styles";
 import Language from "./Language";
+import ThemeChanger from "@/components/ThemeChanger";
 
 const Icons = () => {
   return (
@@ -12,13 +13,14 @@ const Icons = () => {
       <Link href="#">
         <IoMdSearch size={24} />
       </Link>
-      <Link href="#">
+      <Link href="/cart">
         <FiShoppingCart size={24} />
       </Link>
       <Link href="#">
         <VscAccount size={24} />
       </Link>
       <Language />
+      <ThemeChanger />
     </IconsWrapper>
   );
 };

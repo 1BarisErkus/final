@@ -15,7 +15,7 @@ const Card = () => {
           <ImageWrapper>
             <Image
               src="/images/wears/wear-1.png"
-              classNameName="card-img-left object-fit-cover"
+              className="card-img-left object-fit-cover"
               alt="product"
               fill
             />

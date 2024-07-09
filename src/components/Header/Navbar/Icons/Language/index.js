@@ -24,7 +24,7 @@ const Language = () => {
   };
 
   return (
-    <button className="border-0 bg-white" onClick={changeLanguage}>
+    <button className="border-0 bg-transparent" onClick={changeLanguage}>
       {
         <Image
           src={

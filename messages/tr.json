@@ -18,7 +18,10 @@
   },
   "Breadcrumb": {
     "home": "Anasayfa",
-    "library": "Kutuphane"
+    "library": "Kutuphane",
+    "cart": "Sepet",
+    "category": "Kategori",
+    "productDetail": "Urun Detayi"
   },
   "Category": {
     "casual": "Gunluk",
@@ -50,9 +53,6 @@
     "formal": "Resmi",
     "party": "Parti",
     "gym": "Spor Salonu"
-  },
-  "CommentCard": {
-    "posted": "14 Agustos 2023'te Yayinlandi"
   },
   "Footer": {
     "company": "Sirket",
@@ -129,5 +129,13 @@
     "apply": "Uygula",
     "gotoCheckout": "Odeme Yapin",
     "couponCode": "Kupon Kodu Ekle"
+  },
+  "Error": {
+    "pageNotFound": "Sayfa Bulunamadi",
+    "goHome": "Ana Sayfaya Git",
+    "somethingWentWrong": "Bir seyler yanlis gitti.",
+    "refreshPage": "Sayfayi Yenile",
+    "back": "Geri",
+    "error": "Hata"
   }
 }

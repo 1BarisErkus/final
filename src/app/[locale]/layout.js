@@ -12,6 +12,7 @@ import ReduxProvider from "@/common/ReduxProvider";
 import Discount from "@/components/Header/Discount";
 import Navbar from "@/components/Header/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "next-themes";
 
 const integralFc = localFont({
   src: [
@@ -57,15 +58,17 @@ export default async function RootLayout({ children, params: { locale } }) {
     <html lang={locale}>
       <body className={`${integralFc.variable} ${satoshi.variable}`}>
         <ReduxProvider>
-          <StyledComponentsRegistry>
-            <GlobalStyles />
-            <NextIntlClientProvider locale={locale} messages={messages}>
-              <Discount />
-              <Navbar />
-              {children}
-              <Footer />
-            </NextIntlClientProvider>
-          </StyledComponentsRegistry>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <ThemeProvider>
+              <StyledComponentsRegistry>
+                <GlobalStyles />
+                <Discount />
+                <Navbar />
+                {children}
+                <Footer />
+              </StyledComponentsRegistry>
+            </ThemeProvider>
+          </NextIntlClientProvider>
         </ReduxProvider>
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -4,12 +4,13 @@ import { useTranslations } from "next-intl";
 
 const CartPage = () => {
   const t = useTranslations("Cart");
+  const b = useTranslations("Breadcrumb");
   return (
     <main>
       <div className="container">
         <div className="row">
           <div className="col">
-            <Breadcrumb />
+            <Breadcrumb path={[b("home"), b("cart")]} />
             <h1>{t("yourCart")}</h1>
             <Cart />
           </div>

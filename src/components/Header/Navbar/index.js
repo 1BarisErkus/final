@@ -1,6 +1,6 @@
 import { Link } from "@/navigation";
 import { FaChevronDown } from "react-icons/fa";
-import { StyledLink } from "./styles";
+import { H1, Nav, StyledLink } from "./styles";
 import Icons from "./Icons";
 import SearchInput from "./SearchInput";
 import { useTranslations } from "next-intl";
@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 const Navbar = () => {
   const t = useTranslations("Header");
   return (
-    <nav className="navbar navbar-expand-lg border-bottom">
+    <Nav className="navbar navbar-expand-lg border-bottom">
       <div className="container-lg gap-3 my-2">
         <div className="d-flex gap-3 flex-wrap">
           <button
@@ -23,7 +23,7 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <Link className="navbar-brand" href="/">
-            <h1 className="fs-2">SHOP.CO</h1>
+            <H1 className="fs-2">SHOP.CO</H1>
           </Link>
         </div>
         <div className="collapse navbar-collapse gap-3" id="mainNav">
@@ -60,7 +60,7 @@ const Navbar = () => {
         </div>
         <Icons />
       </div>
-    </nav>
+    </Nav>
   );
 };
 

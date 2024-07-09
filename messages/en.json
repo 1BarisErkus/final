@@ -18,7 +18,10 @@
   },
   "Breadcrumb": {
     "home": "Home",
-    "library": "Library"
+    "library": "Library",
+    "cart": "Cart",
+    "category": "Category",
+    "productDetail": "Product Detail"
   },
   "Category": {
     "casual": "Casual",
@@ -50,9 +53,6 @@
     "formal": "Formal",
     "party": "Party",
     "gym": "Gym"
-  },
-  "CommentCard": {
-    "posted": "Posted on August 14, 2023"
   },
   "Footer": {
     "company": "Company",
@@ -129,5 +129,13 @@
     "apply": "Apply",
     "gotoCheckout": "Go to Checkout",
     "couponCode": "Add promo code"
+  },
+  "Error": {
+    "pageNotFound": "Page not found",
+    "goHome": "Back to Home",
+    "somethingWentWrong": "Something went wrong.",
+    "refreshPage": "Refresh Page",
+    "back": "Back to Previous Page",
+    "error": "Error"
   }
 }

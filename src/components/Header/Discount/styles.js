@@ -3,8 +3,8 @@ import { Link } from "@/navigation";
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-  background-color: black;
-  color: white;
+  background-color: var(--secondary);
+  color: var(--primary);
   padding: 10px 0;
 `;
 

@@ -14,7 +14,6 @@ const Modal = ({ productId }) => {
     e.preventDefault();
     try {
       const res = await addComment(productId, { rating, content: comment });
-      console.log("res", res);
       if (res.status === 200) {
         alert("Comment added successfully");
       }

@@ -2,6 +2,17 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+    :root {
+        --primary: #fff;
+        --secondary: #000;
+        --tertiary: #f2f0f1;
+    }
+
+    [data-theme="dark"] {
+        --primary: #000;
+        --secondary: white;
+        --tertiary: #1a1a1a;
+    }
     * {
         box-sizing: border-box;
         margin: 0;
