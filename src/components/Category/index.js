@@ -17,10 +17,10 @@ const Category = async ({ searchParams }) => {
     <div className="container ps-0">
       <div className="row m-0 p-0">
         <div className="col-lg-3 col-12 d-xxl-block d-none m-0 p-0">
-          <FilterComponent products={data} />
+          <FilterComponent />
         </div>
         <div className="col-lg-9 col-12 m-0 p-0">
-          <Header />
+          <Header length={data.length} />
           <WearCardList className="align-items-center justify-content-center justify-content-start mt-4">
             {data.map((card) => {
               const rating = calculateRating(card.comments);

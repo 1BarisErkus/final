@@ -25,7 +25,8 @@
   },
   "Category": {
     "casual": "Gunluk",
-    "showing": "100 urunden 1-10 Arasi Gosteriliyor",
+    "showing": "Gosteriliyor",
+    "showingProduct": "Urun",
     "sortby": "Sirala",
     "mostPopular": "En Populer",
     "previous": "Onceki",

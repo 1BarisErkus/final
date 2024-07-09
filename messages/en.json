@@ -25,7 +25,8 @@
   },
   "Category": {
     "casual": "Casual",
-    "showing": "Showing 1-10 of 100 Products",
+    "showing": "Showing",
+    "showingProduct": "Products",
     "sortby": "Sort by",
     "mostPopular": "Most Popular",
     "previous": "Previous",

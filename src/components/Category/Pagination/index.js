@@ -11,6 +11,14 @@ const Pagination = ({ hasNextPage, hasPrevPage }) => {
   const page = searchParams.get("_page") ?? "1";
   const limit = searchParams.get("_limit") ?? "9";
 
+  const updatePage = (newPage) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("_page", newPage);
+    params.set("_limit", limit);
+
+    router.push(`?${params.toString()}`, undefined, { scroll: false });
+  };
+
   return (
     <nav
       aria-label="Page navigation example"
@@ -21,7 +29,9 @@ const Pagination = ({ hasNextPage, hasPrevPage }) => {
           <button
             className={`page-link ${!hasPrevPage ? "disabled" : ""}`}
             onClick={() => {
-              router.push(`?_page=${Number(page) - 1}&_limit=${limit}`);
+              if (hasPrevPage) {
+                updatePage(Number(page) - 1);
+              }
             }}
           >
             {t("previous")}
@@ -31,7 +41,9 @@ const Pagination = ({ hasNextPage, hasPrevPage }) => {
           <button
             className={`page-link ${!hasNextPage ? "disabled" : ""}`}
             onClick={() => {
-              router.push(`?_page=${Number(page) + 1}&_limit=${limit}`);
+              if (hasNextPage) {
+                updatePage(Number(page) + 1);
+              }
             }}
           >
             {t("next")}
