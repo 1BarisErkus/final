@@ -10,7 +10,8 @@ import {
 } from "./styles";
 
 const WearCard = ({ src, title, price, discount = 0, rating }) => {
-  const discountlessPrice = discount !== 0 ? price / (1 - discount / 100) : 0;
+  const discountlessPrice =
+    discount !== 0 ? Math.round(price / (1 - discount / 100)) : 0;
 
   return (
     <Card className="card">

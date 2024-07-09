@@ -10,17 +10,7 @@
       "image": "wear-1",
       "top_selling": true,
       "new_arrival": false,
-      "sizes": {
-        "XXS": 1,
-        "XS": 11,
-        "S": 123,
-        "M": 0,
-        "L": 15,
-        "XL": 17,
-        "XXL": 18,
-        "3XL": 19,
-        "4XL": 2
-      },
+      "sizes": "small,medium,large",
       "color": "green",
       "dressStyle": "casual",
       "comments": [
@@ -30,27 +20,6 @@
           "content": "Great product, I love it!",
           "rating": 5,
           "created_at": "2021-09-01T12:00:00"
-        },
-        {
-          "id": "1720518801824",
-          "user_id": "123",
-          "content": "dasdsadas",
-          "rating": 1,
-          "created_at": "2024-07-09T09:53:21.824Z"
-        },
-        {
-          "id": "1720518861029",
-          "user_id": "123",
-          "content": "dasdsa",
-          "rating": 3,
-          "created_at": "2024-07-09T09:54:21.029Z"
-        },
-        {
-          "id": "1720518887430",
-          "user_id": "123",
-          "content": "dsadasdasa",
-          "rating": 3,
-          "created_at": "2024-07-09T09:54:47.430Z"
         }
       ]
     },
@@ -63,18 +32,8 @@
       "category": "shorts",
       "image": "wear-2",
       "top_selling": true,
-      "new_arrival": false,
-      "sizes": {
-        "XXS": 1,
-        "XS": 0,
-        "S": 0,
-        "M": 0,
-        "L": 0,
-        "XL": 17,
-        "XXL": 0,
-        "3XL": 0,
-        "4XL": 2
-      },
+      "new_arrival": true,
+      "sizes": "small,medium,large",
       "color": "red",
       "dressStyle": "formal",
       "comments": [
@@ -109,17 +68,7 @@
       "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
       "category": "shirts",
       "image": "wear-3",
-      "sizes": {
-        "XXS": 1,
-        "XS": 55,
-        "S": 0,
-        "M": 0,
-        "L": 11,
-        "XL": 17,
-        "XXL": 0,
-        "3XL": 0,
-        "4XL": 2
-      },
+      "sizes": "small",
       "color": "yellow",
       "dressStyle": "formal",
       "top_selling": true,
@@ -142,17 +91,7 @@
       "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
       "category": "hoodie",
       "image": "wear-4",
-      "sizes": {
-        "XXS": 0,
-        "XS": 0,
-        "S": 0,
-        "M": 0,
-        "L": 0,
-        "XL": 0,
-        "XXL": 0,
-        "3XL": 0,
-        "4XL": 0
-      },
+      "sizes": "medium,large",
       "color": "orange",
       "dressStyle": "formal",
       "top_selling": true,
@@ -167,19 +106,9 @@
       "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
       "category": "t-shirts",
       "image": "wear-4",
-      "top_selling": false,
+      "top_selling": true,
       "new_arrival": true,
-      "sizes": {
-        "XXS": 0,
-        "XS": 0,
-        "S": 123,
-        "M": 0,
-        "L": 0,
-        "XL": 0,
-        "XXL": 0,
-        "3XL": 0,
-        "4XL": 2
-      },
+      "sizes": "small,medium,large",
       "color": "green",
       "dressStyle": "casual",
       "comments": [
@@ -214,19 +143,9 @@
       "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
       "category": "shorts",
       "image": "wear-3",
-      "top_selling": false,
+      "top_selling": true,
       "new_arrival": true,
-      "sizes": {
-        "XXS": 1,
-        "XS": 11,
-        "S": 0,
-        "M": 0,
-        "L": 15,
-        "XL": 17,
-        "XXL": 18,
-        "3XL": 19,
-        "4XL": 2
-      },
+      "sizes": "large",
       "color": "pink",
       "dressStyle": "formal",
       "comments": [
@@ -247,20 +166,10 @@
       "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
       "category": "shirts",
       "image": "wear-2",
-      "sizes": {
-        "XXS": 1,
-        "XS": 11,
-        "S": 123,
-        "M": 0,
-        "L": 15,
-        "XL": 17,
-        "XXL": 18,
-        "3XL": 19,
-        "4XL": 2
-      },
+      "sizes": "xlarge",
       "color": "white",
       "dressStyle": "formal",
-      "top_selling": false,
+      "top_selling": true,
       "new_arrival": true,
       "comments": [
         {

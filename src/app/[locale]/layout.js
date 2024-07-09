@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@smastrom/react-rating/style.css";
+import "react-toastify/dist/ReactToastify.css";
 
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -13,6 +14,7 @@ import Discount from "@/components/Header/Discount";
 import Navbar from "@/components/Header/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "next-themes";
+import ToastModule from "@/common/ToastContainer";
 
 const integralFc = localFont({
   src: [
@@ -66,6 +68,7 @@ export default async function RootLayout({ children, params: { locale } }) {
                 <Navbar />
                 {children}
                 <Footer />
+                <ToastModule />
               </StyledComponentsRegistry>
             </ThemeProvider>
           </NextIntlClientProvider>

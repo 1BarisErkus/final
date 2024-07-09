@@ -23,7 +23,6 @@ import { BiChevronRight, BiChevronUp } from "react-icons/bi";
 
 const FilterComponent = ({ modal, className }) => {
   const t = useTranslations("Category");
-
   const router = useRouter();
   const searchParams = useSearchParams();
   const [selectedFilterQueries, setSelectedFilterQueries] = useState({});
@@ -77,13 +76,13 @@ const FilterComponent = ({ modal, className }) => {
   const dressStyles = [t("casual"), t("formal"), t("party"), t("gym")];
 
   const setCategory = (category) =>
-    handleSelectFilterOptions("category", category.toLocaleLowerCase());
+    handleSelectFilterOptions("category_like", category.toLowerCase());
   const setColor = (colorName) =>
-    handleSelectFilterOptions("color", colorName.toLocaleLowerCase());
+    handleSelectFilterOptions("color_like", colorName.toLowerCase());
   const setSize = (size) =>
-    handleSelectFilterOptions("size", size.toLocaleLowerCase());
+    handleSelectFilterOptions("sizes_like", size.toLowerCase());
   const setDressStyle = (dressStyle) =>
-    handleSelectFilterOptions("dressStyle", dressStyle.toLocaleLowerCase());
+    handleSelectFilterOptions("dressStyle_like", dressStyle.toLowerCase());
   const clearFilters = () => {
     router.push("category", { scroll: false });
     setSelectedFilterQueries({});
@@ -113,7 +112,7 @@ const FilterComponent = ({ modal, className }) => {
           <FilterButton
             key={i}
             className="d-flex justify-content-between"
-            selected={selectedFilterQueries?.category?.includes(
+            selected={selectedFilterQueries?.category_like?.includes(
               category.toLocaleLowerCase()
             )}
             onClick={() => setCategory(category)}
@@ -145,7 +144,7 @@ const FilterComponent = ({ modal, className }) => {
             name="color"
             value={colorName.toLowerCase()}
             color={color}
-            selected={selectedFilterQueries?.color?.includes(
+            selected={selectedFilterQueries?.color_like?.includes(
               colorName.toLocaleLowerCase()
             )}
             onClick={() => setColor(colorName)}
@@ -163,7 +162,7 @@ const FilterComponent = ({ modal, className }) => {
             key={i}
             name="size"
             value={size}
-            selected={selectedFilterQueries?.size?.includes(
+            selected={selectedFilterQueries?.sizes_like?.includes(
               size.toLocaleLowerCase()
             )}
             onClick={() => setSize(size)}
@@ -184,7 +183,7 @@ const FilterComponent = ({ modal, className }) => {
             name="dressStyle"
             value={dressStyle.toLowerCase()}
             className="d-flex justify-content-between"
-            selected={selectedFilterQueries?.dressStyle?.includes(
+            selected={selectedFilterQueries?.dressStyle_like?.includes(
               dressStyle.toLocaleLowerCase()
             )}
             onClick={() => {
@@ -196,7 +195,11 @@ const FilterComponent = ({ modal, className }) => {
           </FilterButton>
         ))}
       </ul>
-      <Button theme="dark" className="w-100 my-2" onClick={applyAllFilters}>
+      <Button
+        theme="dark"
+        className="w-100 my-2 bg-black text-white"
+        onClick={applyAllFilters}
+      >
         {t("applyFilter")}
       </Button>
     </FilterContainer>

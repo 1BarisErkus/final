@@ -5,7 +5,7 @@ export const checkValidQuery = (queries) => {
 export const convertStringToQueriesObject = (searchParams) => {
   let selectedQueries = {};
   searchParams.forEach((values, key) => {
-    const queries = values.split(",");
+    const queries = values.split("|");
     if (selectedQueries[key]) {
       selectedQueries[key].push(...queries);
     } else {
@@ -18,7 +18,7 @@ export const convertStringToQueriesObject = (searchParams) => {
 export const convertValidStringQueries = (queries) => {
   let q = "";
   for (let [key, value] of Object.entries(queries)) {
-    q = q + `${q === "" ? "" : "&"}${key}=${value}`;
+    q = q + `${q === "" ? "" : "&"}${key}=${value.join("|")}`;
   }
   return q;
 };

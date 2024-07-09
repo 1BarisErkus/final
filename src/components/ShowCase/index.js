@@ -1,10 +1,10 @@
 import { Container, H2, Row } from "./styles";
 import WearCard from "@/components/Wear/Card";
 import WearCardList from "@/components/Wear/CardList";
-import Button from "@/components/Button";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { calculateRating } from "@/lib/helpers";
+import ViewButton from "../Home/ViewButton";
 
 const ShowCase = ({ title, button, cards }) => {
   const t = useTranslations("ShowCase");
@@ -16,7 +16,7 @@ const ShowCase = ({ title, button, cards }) => {
             <H2 className=" text-center">{title}</H2>
             <WearCardList>
               {cards && cards.length > 0 ? (
-                cards.map((card) => {
+                cards.slice(0, 4).map((card) => {
                   const rating = calculateRating(card.comments);
                   return (
                     <Link key={card.id} href={`/product/${card.id}`}>
@@ -33,12 +33,8 @@ const ShowCase = ({ title, button, cards }) => {
               ) : (
                 <div>{t("productsAreNotFound")}</div>
               )}
+              {button && <ViewButton data={cards} />}
             </WearCardList>
-            {button && (
-              <Link href="/category">
-                <Button>{t("viewAll")}</Button>
-              </Link>
-            )}
           </div>
         </Row>
       </Container>

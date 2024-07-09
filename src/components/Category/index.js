@@ -7,8 +7,9 @@ import WearCard from "../Wear/Card";
 import FilterComponent from "./Filter";
 import { BiChevronDown, BiFilter } from "react-icons/bi";
 
-const Category = async () => {
-  const data = await getProducts();
+const Category = async ({ searchParams }) => {
+  const query = new URLSearchParams(searchParams).toString();
+  const data = await getProducts(query);
   const t = await getTranslations("Category");
 
   return (

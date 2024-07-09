@@ -10,4 +10,9 @@ export const StyledButton = styled.button`
   @media (max-width: 768px) {
     width: 100%;
   }
+
+  &:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+  }
 `;

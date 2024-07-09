@@ -38,7 +38,7 @@ const Content = ({
             {discount !== 0 && (
               <>
                 <DiscountlessPrice className="fs-2">
-                  ${price / (1 - discount / 100)}
+                  ${Math.round(price / (1 - discount / 100))}
                 </DiscountlessPrice>
                 <DiscountPercent className="fs-6">{discount}%</DiscountPercent>
               </>

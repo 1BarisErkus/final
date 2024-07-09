@@ -16,7 +16,7 @@ const Icons = () => {
       <Link href="/cart">
         <FiShoppingCart size={24} />
       </Link>
-      <Link href="#">
+      <Link href="/signin">
         <VscAccount size={24} />
       </Link>
       <Language />

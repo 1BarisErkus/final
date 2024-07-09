@@ -3,9 +3,15 @@ import Button from "@/components/Button";
 import { useTranslations } from "next-intl";
 import styled from "styled-components";
 import { useFormik } from "formik";
-import { object, string, ref } from "yup";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { object, string } from "yup";
+import {
+  useSignInWithEmailAndPassword,
+  useAuthState,
+} from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
+import { signOut } from "firebase/auth";
+import { useRouter } from "@/navigation";
+import { toast } from "react-toastify";
 
 const StyledFormContainer = styled.div`
   max-width: 400px;
@@ -16,37 +22,24 @@ const StyledFormContainer = styled.div`
   background-color: var(--quaternary);
 `;
 
-const SignupForm = () => {
-  const [createUserWithEmailAndPassword] =
-    useCreateUserWithEmailAndPassword(auth);
+const LoginForm = () => {
+  const t = useTranslations("Auth");
+  const [user] = useAuthState(auth);
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const router = useRouter();
+  console.log("user", user);
+
+  const notify = (message, type) => toast(message, { type: type });
 
   const initialValues = {
     email: "",
     password: "",
-    passwordConfirm: "",
   };
 
   const validationSchema = object({
     email: string().email("Invalid email address").required("Required"),
     password: string().required("Required"),
-    passwordConfirm: string()
-      .oneOf([ref("password"), null], "Passwords must match")
-      .required("Required"),
   });
-
-  const signup = async (values) => {
-    try {
-      const res = await createUserWithEmailAndPassword(
-        values.email,
-        values.password
-      );
-      values.email = "";
-      values.password = "";
-      values.passwordConfirm = "";
-    } catch {
-      console.error("Failed to create an account");
-    }
-  };
 
   const {
     values,
@@ -59,13 +52,52 @@ const SignupForm = () => {
   } = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: (values) => signup(values),
+    onSubmit: (values) => login(values),
   });
 
-  const t = useTranslations("Auth");
+  const login = async (values) => {
+    try {
+      const res = await signInWithEmailAndPassword(
+        values.email,
+        values.password
+      );
+      console.log(res);
+      if (res) {
+        router.push("/");
+        notify("adsadsa", "error");
+      }
+    } catch {
+      notify();
+      console.error("Failed to log in");
+    }
+  };
+
+  const logout = async () => {
+    try {
+      await signOut(auth);
+      router.push("/signin");
+    } catch {
+      console.error("Failed to log out");
+    }
+  };
+
+  if (user) {
+    return (
+      <div className="d-flex align-items-center justify-content-center mt-5">
+        You are already logged in. If you want to log out,
+        <button
+          className="bg-transparent border-0 text-warning"
+          onClick={logout}
+        >
+          click here.
+        </button>
+      </div>
+    );
+  }
+
   return (
     <StyledFormContainer>
-      <h2 className="text-center">{t("signup")}</h2>
+      <h2 className="text-center">{t("login")}</h2>
       <form onSubmit={handleSubmit}>
         <div className="my-3">
           <label htmlFor="email" className="form-label">
@@ -103,34 +135,16 @@ const SignupForm = () => {
           )}
         </div>
 
-        <div className="mb-3">
-          <label htmlFor="passwordConfirm" className="form-label">
-            {t("passwordConfirm")}
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="passwordConfirm"
-            placeholder={t("passwordConfirmPlaceholder")}
-            value={values.passwordConfirm}
-            onBlur={handleBlur}
-            onChange={handleChange}
-          />
-          {errors.passwordConfirm && touched.passwordConfirm && (
-            <div className="text-danger text-end">{errors.passwordConfirm}</div>
-          )}
-        </div>
-
         <Button
           type="submit"
           disabled={isSubmitting}
           className="w-100 bg-black text-white"
         >
-          {t("signup")}
+          {t("login")}
         </Button>
       </form>
     </StyledFormContainer>
   );
 };
 
-export default SignupForm;
+export default LoginForm;

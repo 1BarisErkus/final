@@ -4,8 +4,10 @@ import { revalidatePath } from "next/cache";
 
 const BASE_URL = "http://localhost:3001";
 
-export const getProducts = async () => {
-  const res = await fetch(`${BASE_URL}/products`, { cache: "no-store" });
+export const getProducts = async (query) => {
+  const res = await fetch(`${BASE_URL}/products?${query}`, {
+    cache: "no-store",
+  });
   const data = await res.json();
 
   return data;
@@ -40,9 +42,7 @@ export const getHappyComments = async () => {
 export const getNewArrivals = async () => {
   const res = await fetch(`${BASE_URL}/products`, { cache: "no-store" });
   const data = await res.json();
-  const newArrivals = data
-    .filter((product) => product.new_arrival === true)
-    .slice(0, 4);
+  const newArrivals = data.filter((product) => product.new_arrival === true);
 
   return newArrivals;
 };
@@ -50,9 +50,7 @@ export const getNewArrivals = async () => {
 export const getTopSelling = async () => {
   const res = await fetch(`${BASE_URL}/products`, { cache: "no-store" });
   const data = await res.json();
-  const topSelling = data
-    .filter((product) => product.top_selling === true)
-    .slice(0, 4);
+  const topSelling = data.filter((product) => product.top_selling === true);
 
   return topSelling;
 };
