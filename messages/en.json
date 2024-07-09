@@ -52,7 +52,12 @@
     "4xl": "4XL",
     "formal": "Formal",
     "party": "Party",
-    "gym": "Gym"
+    "gym": "Gym",
+    "priceLowToHigh": "Price: Low to High",
+    "priceHighToLow": "Price: High to Low",
+    "alphabetical": "Alphabetical",
+    "reverseAlphabetical": "Reverse Alphabetical",
+    "discount": "Highest Discount"
   },
   "Footer": {
     "company": "Company",

@@ -11,8 +11,6 @@ const Pagination = ({ hasNextPage, hasPrevPage }) => {
   const page = searchParams.get("_page") ?? "1";
   const limit = searchParams.get("_limit") ?? "9";
 
-  console.log("page, limit", page, limit);
-
   return (
     <nav
       aria-label="Page navigation example"

@@ -11,10 +11,7 @@ const Category = async ({ searchParams }) => {
   const query = new URLSearchParams(searchParams).toString();
   const page = searchParams["_page"] ?? "1";
   const limit = searchParams["_limit"] ?? "9";
-  console.log(page, limit);
-  // const data = await getProducts(query);
   const data = await getProducts(`${query}&_page=${page}&_limit=${limit}`);
-  console.log(data);
 
   return (
     <div className="container ps-0">

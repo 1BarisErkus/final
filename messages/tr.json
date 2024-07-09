@@ -52,7 +52,12 @@
     "4xl": "4XL",
     "formal": "Resmi",
     "party": "Parti",
-    "gym": "Spor Salonu"
+    "gym": "Spor Salonu",
+    "priceLowToHigh": "Ucret: Dusuk - Yuksek",
+    "priceHighToLow": "Ucret: Yuksek - Dusuk",
+    "alphabetical": "Alfabetik",
+    "reverseAlphabetical": "Ters Alfabetik",
+    "discount": "En Yuksek Indirim"
   },
   "Footer": {
     "company": "Sirket",
