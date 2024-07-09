@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
         --secondary: #000;
         --tertiary: #f2f0f1;
         --quaternary: #f8f9fa;
-        --filter-background: #e0e0e0;
+        --filter-background: #fff;
     }
 
     [data-theme="dark"] {

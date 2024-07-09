@@ -88,7 +88,8 @@
     "shop": "Shop",
     "onSale": "On Sale",
     "newArrivals": "New Arrivals",
-    "brands": "Brands"
+    "brands": "Brands",
+    "theme": "Theme"
   },
   "ProductDetail": {
     "selectColors": "Select Colors",
@@ -137,5 +138,15 @@
     "refreshPage": "Refresh Page",
     "back": "Back to Previous Page",
     "error": "Error"
+  },
+  "Auth": {
+    "signup": "Sign Up Now",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "passwordConfirm": "Password Again",
+    "passwordConfirmPlaceholder": "Enter your password again",
+    "login": "Login"
   }
 }

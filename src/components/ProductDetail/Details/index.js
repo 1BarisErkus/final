@@ -36,7 +36,7 @@ const Details = ({ comments, productId }) => {
               </button>
               <Button
                 theme="dark"
-                className="m-0"
+                className="m-0 bg-black text-white"
                 data-bs-toggle="modal"
                 data-bs-target="#addCommentModal"
               >

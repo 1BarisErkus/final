@@ -29,7 +29,11 @@ export const PaymentIconsContainer = styled.div`
 `;
 
 export const PaymentIcon = styled(Link)`
-  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
   border-radius: 5px;
   border: 1px solid #dee2e6;
+  background-color: var(--primary);
 `;

@@ -88,7 +88,8 @@
     "shop": "Magaza",
     "onSale": "Satista",
     "newArrivals": "Yeni Gelenler",
-    "brands": "Markalar"
+    "brands": "Markalar",
+    "theme": "Tema"
   },
   "ProductDetail": {
     "selectColors": "Renk Secin",
@@ -137,5 +138,15 @@
     "refreshPage": "Sayfayi Yenile",
     "back": "Geri",
     "error": "Hata"
+  },
+  "Auth": {
+    "signup": "Kayit Ol",
+    "email": "E-posta adresi",
+    "emailPlaceholder": "E-posta adresinizi girin",
+    "password": "Sifre",
+    "passwordPlaceholder": "Sifrenizi girin",
+    "passwordConfirm": "Sifreyi Tekrarı",
+    "passwordConfirmPlaceholder": "Sifreyi tekrar girin",
+    "login": "Giris Yap"
   }
 }

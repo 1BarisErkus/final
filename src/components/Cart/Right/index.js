@@ -39,12 +39,12 @@ const Right = () => {
         </div>
         <Button
           theme="dark"
-          className="rounded-pill d-flex text-center align-items-center justify-content-center ms-auto my-3"
+          className="rounded-pill d-flex text-center align-items-center justify-content-center ms-auto my-3 bg-black text-white"
         >
           {t("apply")}
         </Button>
       </form>
-      <Button theme="dark" className="w-100 my-3">
+      <Button theme="dark" className="w-100 my-3 bg-black text-white">
         {t("gotoCheckout")} <BiSolidRightArrow className="ms-2" />
       </Button>
     </div>

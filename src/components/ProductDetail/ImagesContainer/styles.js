@@ -31,6 +31,11 @@ export const LittleImageContainer = styled.div`
   &:hover {
     transform: scale(1.1);
   }
+
+  @media (max-width: 425px) {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 export const BigImage = styled.div`
@@ -46,4 +51,8 @@ export const BigImageContainer = styled.div`
   width: 400px;
   height: 485px;
   position: relative;
+  @media (max-width: 425px) {
+    width: 270px;
+    height: 350px;
+  }
 `;

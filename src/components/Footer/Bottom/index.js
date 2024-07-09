@@ -1,13 +1,11 @@
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 import {
   Bottom,
   Paragraph,
   PaymentIcon,
   PaymentIconsContainer,
 } from "./styles";
-import { RiVisaLine } from "react-icons/ri";
-import { BiLogoMastercard } from "react-icons/bi";
-import { FaAmazonPay, FaApplePay, FaGooglePay } from "react-icons/fa";
-import { useTranslations } from "next-intl";
 
 const FooterBottom = () => {
   const t = useTranslations("Footer");
@@ -17,19 +15,44 @@ const FooterBottom = () => {
         <Paragraph>{t("shopco")}</Paragraph>
         <PaymentIconsContainer>
           <PaymentIcon href="#">
-            <RiVisaLine />
+            <Image
+              src="/images/payment/visa.png"
+              alt="Visa"
+              width={30}
+              height={12}
+            />
           </PaymentIcon>
           <PaymentIcon href="#">
-            <BiLogoMastercard />
+            <Image
+              src="/images/payment/mastercard.png"
+              alt="Visa"
+              width={30}
+              height={12}
+            />
           </PaymentIcon>
           <PaymentIcon href="#">
-            <FaAmazonPay />
+            <Image
+              src="/images/payment/paypal.png"
+              alt="Visa"
+              width={30}
+              height={12}
+            />
           </PaymentIcon>
           <PaymentIcon href="#">
-            <FaApplePay />
+            <Image
+              src="/images/payment/apple.png"
+              alt="Visa"
+              width={30}
+              height={12}
+            />
           </PaymentIcon>
           <PaymentIcon href="#">
-            <FaGooglePay />
+            <Image
+              src="/images/payment/google.png"
+              alt="Visa"
+              width={30}
+              height={12}
+            />
           </PaymentIcon>
         </PaymentIconsContainer>
       </Bottom>

@@ -70,7 +70,7 @@ const Content = ({
           <div className="mt-4">
             <div className="d-flex flex-wrap gap-4 align-items-center justify-content-between">
               <ProductCountButton />
-              <Button theme="dark" className="m-0">
+              <Button theme="dark" className="m-0 bg-black text-white">
                 {t("addToCart")}
               </Button>
             </div>

@@ -1,8 +1,10 @@
 "use client";
 import { useTheme } from "next-themes";
 import { ThemeChangerWrapper } from "./style";
+import { useTranslations } from "next-intl";
 
 const ThemeChanger = () => {
+  const t = useTranslations("Header");
   const { theme, setTheme } = useTheme();
 
   const changeTheme = () => {
@@ -12,7 +14,7 @@ const ThemeChanger = () => {
 
   return (
     <ThemeChangerWrapper onClick={changeTheme} theme={theme}>
-      Change Theme
+      {t("theme")}
     </ThemeChangerWrapper>
   );
 };
