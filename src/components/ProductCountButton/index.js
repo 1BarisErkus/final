@@ -31,15 +31,15 @@ const ProductCountButton = ({
   count,
   setCount,
   cartInc = null,
-  cartDesc = null,
+  cartDec = null,
 }) => {
   return (
     <Container>
       <StyledBiMinus
-        onClick={cartDesc ? cartDesc : () => count > 1 && setCount(count - 1)}
+        onClick={cartInc ? cartInc : () => count > 1 && setCount(count - 1)}
       />
       <Count>{count}</Count>
-      <StyledBiPlus onClick={cartInc ? cartInc : () => setCount(count + 1)} />
+      <StyledBiPlus onClick={cartDec ? cartDec : () => setCount(count + 1)} />
     </Container>
   );
 };

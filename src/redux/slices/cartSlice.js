@@ -32,9 +32,10 @@ const cartSlice = createSlice({
       const user =
         typeof window !== "undefined" &&
         JSON.parse(localStorage.getItem("user"));
-      updateDbCart(user.uid, state.cart);
+      updateDbCart(user.uid, state.cart, "add", action.payload.count);
     },
     deleteProductToLocalCart: (state, action) => {
+      const count = state.cart.find((item) => item.id === action.payload).count;
       state.cart = state.cart.filter((item) => item.id !== action.payload);
       typeof window !== "undefined" &&
         localStorage.setItem("cart", JSON.stringify(state.cart));
@@ -42,11 +43,14 @@ const cartSlice = createSlice({
       const user =
         typeof window !== "undefined" &&
         JSON.parse(localStorage.getItem("user"));
-      updateDbCart(user.uid, state.cart);
+      updateDbCart(user.uid, state.cart, "delete", count);
     },
     increaseProductCount: (state, action) => {
       const index = state.cart.findIndex((item) => item.id === action.payload);
-      state.cart[index].count += 1;
+      state.cart[index].count -= 1;
+      if (state.cart[index].count === 0) {
+        state.cart = state.cart.filter((item) => item.id !== action.payload);
+      }
 
       typeof window !== "undefined" &&
         localStorage.setItem("cart", JSON.stringify(state.cart));
@@ -54,11 +58,11 @@ const cartSlice = createSlice({
       const user =
         typeof window !== "undefined" &&
         JSON.parse(localStorage.getItem("user"));
-      updateDbCart(user.uid, state.cart);
+      updateDbCart(user.uid, state.cart, "inc");
     },
     decreaseProductCount: (state, action) => {
       const index = state.cart.findIndex((item) => item.id === action.payload);
-      state.cart[index].count -= 1;
+      state.cart[index].count += 1;
 
       if (state.cart[index].count === 0) {
         state.cart = state.cart.filter((item) => item.id !== action.payload);
@@ -70,7 +74,7 @@ const cartSlice = createSlice({
       const user =
         typeof window !== "undefined" &&
         JSON.parse(localStorage.getItem("user"));
-      updateDbCart(user.uid, state.cart);
+      updateDbCart(user.uid, state.cart, "desc");
     },
     clearCart: (state) => {
       state.cart = [];
@@ -80,7 +84,7 @@ const cartSlice = createSlice({
       const user =
         typeof window !== "undefined" &&
         JSON.parse(localStorage.getItem("user"));
-      updateDbCart(user.uid, state.cart);
+      updateDbCart(user.uid, state.cart, "clear");
     },
   },
 });

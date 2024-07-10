@@ -1,30 +1,10 @@
 "use client";
-import { usePathname, useRouter } from "@/navigation";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
 import { IoMdSearch } from "react-icons/io";
+import Modal from "./Modal";
 
 const SearchInput = () => {
   const t = useTranslations("Header");
-  const [searchText, setSearchText] = useState("");
-  const router = useRouter();
-  const pathname = usePathname();
-
-  useEffect(() => {
-    if (searchText.length > 0) {
-      if (!pathname.includes("category")) {
-        // router.push(`/category?title_like=${searchText}`);
-      }
-      // router.push(`?title_like=${searchText}`);
-    } else {
-      // router.replace("/category");
-    }
-  }, [searchText, router, pathname]);
-
-  const handleChange = (e) => {
-    setSearchText(e.target.value);
-  };
-
   return (
     <div className="d-flex position-relative flex-grow-1">
       <span className="position-absolute top-50 start-0 translate-middle-y ms-3">
@@ -35,9 +15,11 @@ const SearchInput = () => {
         placeholder={t("inputPlaceholder")}
         type="search"
         aria-label="Search"
-        value={searchText}
-        onChange={handleChange}
+        data-bs-toggle="modal"
+        data-bs-target="#searchModal"
+        readOnly
       />
+      <Modal />
     </div>
   );
 };

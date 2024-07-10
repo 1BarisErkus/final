@@ -8,7 +8,7 @@ import {
 import Image from "next/image";
 import { RiDeleteBin3Fill } from "react-icons/ri";
 import { getProduct } from "@/lib/server/product";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import ProductCountButton from "@/components/ProductCountButton";
 import { notify } from "@/common/notify";
 import { useTranslations } from "next-intl";
@@ -22,7 +22,6 @@ const Card = ({ id, productId, size, color, count }) => {
   const t = useTranslations("ProductDetail");
   const [product, setProduct] = useState({});
   const [productCount, setProductCount] = useState(count);
-  const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -74,20 +73,21 @@ const Card = ({ id, productId, size, color, count }) => {
               <p className="card-text fs-4 fw-bold">${product?.price}</p>
               <ProductCountButton
                 count={productCount}
-                cartDesc={async () => {
-                  dispatch(decreaseProductCount(id));
-                  setProductCount((prev) => prev - 1);
-
-                  if (productCount <= 1)
-                    notify(t("productHasBeenDeleted"), "error");
-                }}
-                cartInc={async () => {
+                cartDec={async () => {
                   if (product?.stock < productCount) {
                     notify(t("stockError"), "error");
                     return;
                   }
+                  dispatch(decreaseProductCount(id));
                   setProductCount((prev) => prev + 1);
+                }}
+                cartInc={async () => {
                   dispatch(increaseProductCount(id));
+                  if (productCount <= 1) {
+                    notify(t("productHasBeenDeleted"), "error");
+                    return;
+                  }
+                  setProductCount((prev) => prev - 1);
                 }}
               />
             </div>

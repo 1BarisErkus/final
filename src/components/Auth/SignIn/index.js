@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeUser, setUser } from "@/redux/slices/userSlice";
 import { notify } from "@/common/notify";
 import { useEffect, useState } from "react";
+import { clearCart } from "@/redux/slices/cartSlice";
 
 const StyledFormContainer = styled.div`
   max-width: 400px;
@@ -72,6 +73,7 @@ const LoginForm = () => {
   const logout = async () => {
     try {
       await signOut(auth);
+      dispatch(clearCart());
       dispatch(removeUser());
       notify(t("logoutSuccess"), "success");
       router.push("/signin");

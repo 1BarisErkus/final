@@ -1,10 +1,26 @@
 "use server";
+import { getProduct, updateProduct } from "./product";
 import { getUser } from "./user";
 const BASE_URL = process.env.BASE_URL;
 
-export const updateDbCart = async (userId, cart) => {
+export const updateDbCart = async (userId, cart, type, count = 1) => {
   const user = await getUser(userId);
   user.cart = cart;
+
+  cart.forEach(async (item) => {
+    const product = await getProduct(item.productId);
+    if (type === "add") {
+      product.stock -= count;
+    } else if (type === "delete") {
+      product.stock += count;
+    } else if (type === "inc") {
+      product.stock += 1;
+    } else if (type === "desc") {
+      product.stock -= 1;
+    }
+
+    await updateProduct(product);
+  });
 
   const res = await fetch(`${BASE_URL}/users/${userId}`, {
     method: "PUT",

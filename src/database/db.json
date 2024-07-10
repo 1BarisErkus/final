@@ -13,7 +13,7 @@
       "sizes": "small,medium,large",
       "color": "green",
       "dressStyle": "casual",
-      "stock": 84,
+      "stock": 45,
       "comments": []
     },
     {
@@ -29,7 +29,7 @@
       "sizes": "small,medium,large",
       "color": "red",
       "dressStyle": "formal",
-      "stock": 27,
+      "stock": 4,
       "comments": [
         {
           "id": "1720563436715",
@@ -37,6 +37,13 @@
           "content": "Denemeeeee",
           "rating": 4,
           "created_at": "2024-07-09T22:17:16.715Z"
+        },
+        {
+          "id": "1720641313618",
+          "username": "Deneme User Name",
+          "content": "asdsada",
+          "rating": 2,
+          "created_at": "2024-07-10T19:55:13.618Z"
         }
       ]
     },
@@ -53,7 +60,7 @@
       "dressStyle": "formal",
       "top_selling": true,
       "new_arrival": true,
-      "stock": 53,
+      "stock": 52,
       "comments": []
     },
     {
@@ -126,22 +133,13 @@
       "id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
       "name": "Barış Erkuş",
       "email": "baris@gmail.com",
-      "cart": [
-        {
-          "id": "1720637841673",
-          "color": "purple",
-          "size": "medium",
-          "count": 5,
-          "productId": "2444"
-        },
-        {
-          "id": "1720637860601",
-          "color": "orange",
-          "size": "medium",
-          "count": 2,
-          "productId": "1"
-        }
-      ]
+      "cart": []
+    },
+    {
+      "id": "7eqa0pb38RXpa3pz5UkMMul8hwS2",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "cart": []
     }
   ]
 }

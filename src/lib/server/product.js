@@ -58,3 +58,15 @@ export const getMightLike = async () => {
 
   return mightLike;
 };
+
+export const updateProduct = async (product) => {
+  const res = await fetch(`${BASE_URL}/products/${product.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(product),
+  });
+  const data = await res.json();
+  return data;
+};

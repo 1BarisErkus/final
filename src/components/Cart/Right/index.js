@@ -3,31 +3,57 @@ import { MdOutlineDiscount } from "react-icons/md";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { useTranslations } from "next-intl";
 import { useSelector } from "react-redux";
+import { getProduct } from "@/lib/server/product";
+import { useEffect, useState } from "react";
 
 const Right = () => {
-  const { cart } = useSelector((state) => state.cart);
-  console.log("cart", cart);
   const t = useTranslations("Cart");
+  const [subTotal, setSubTotal] = useState(0);
+  const [discountPercentage, setDiscountPercentage] = useState(0);
+  const total = subTotal - Math.round((subTotal * discountPercentage) / 100);
+  const discount = total - subTotal;
+  const deliveryFee = 10;
+
+  const { cart } = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    const calculateTotal = async () => {
+      let newTotal = 0;
+      let newDiscountPercentage = 0;
+
+      for (const item of cart) {
+        const product = await getProduct(item.productId);
+        newTotal += product.price * item.count;
+        newDiscountPercentage = product.discount;
+      }
+
+      setSubTotal(newTotal);
+      setDiscountPercentage(newDiscountPercentage);
+    };
+
+    calculateTotal();
+  }, [cart]);
+
   return (
     <div className="border rounded-4 p-4">
       <h5 className="fs-4 fw-bold mb-4">{t("orderSummary")}</h5>
       <div className="pb-3 mb-3 border-bottom">
         <div className="d-flex justify-content-between mb-3">
           <p className="fs-5 mb-0">{t("subtotal")}</p>
-          <p className="fs-5 mb-0 fw-bold">$145</p>
+          <p className="fs-5 mb-0 fw-bold">${subTotal}</p>
         </div>
         <div className="d-flex justify-content-between mb-3">
           <p className="fs-5 mb-0">{t("discount")}</p>
-          <p className="fs-5 mb-0 fw-bold text-danger">-$113</p>
+          <p className="fs-5 mb-0 fw-bold text-danger">-${discount}</p>
         </div>
         <div className="d-flex justify-content-between mb-3">
-          <p className="fs-5 mb-0">{t("deliveryFree")}</p>
-          <p className="fs-5 mb-0 fw-bold">$10</p>
+          <p className="fs-5 mb-0">{t("deliveryFee")}</p>
+          <p className="fs-5 mb-0 fw-bold">${deliveryFee}</p>
         </div>
       </div>
       <div className="d-flex justify-content-between mb-3">
         <p className="fs-5 mb-0">{t("total")}</p>
-        <p className="fs-3 mb-0 fw-bold">$155</p>
+        <p className="fs-3 mb-0 fw-bold">${total}</p>
       </div>
       <form>
         <div className="d-flex position-relative flex-grow-1">

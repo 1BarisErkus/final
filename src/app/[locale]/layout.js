@@ -15,7 +15,7 @@ import Discount from "@/components/Header/Discount";
 import Navbar from "@/components/Header/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "next-themes";
-import ToastModule from "@/common/ToastContainer";
+import { ToastContainer } from "react-toastify";
 
 const integralFc = localFont({
   src: [
@@ -69,7 +69,7 @@ export default async function RootLayout({ children, params: { locale } }) {
                 <Navbar />
                 {children}
                 <Footer />
-                <ToastModule />
+                <ToastContainer />
               </StyledComponentsRegistry>
             </ThemeProvider>
           </NextIntlClientProvider>

@@ -157,7 +157,7 @@
     "orderSummary": "Siparis Ozeti",
     "subtotal": "Ara Toplam",
     "discount": "Indirim",
-    "deliveryFree": "Ucretsiz Teslimat",
+    "deliveryFee": "Teslimat Ucreti",
     "apply": "Uygula",
     "gotoCheckout": "Odeme Yapin",
     "couponCode": "Kupon Kodu Ekle"
