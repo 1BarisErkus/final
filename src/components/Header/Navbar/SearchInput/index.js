@@ -12,8 +12,6 @@ const SearchInput = () => {
 
   useEffect(() => {
     if (searchText.length > 0) {
-      console.log("pathname", pathname);
-      console.log(!pathname.includes("category"));
       if (!pathname.includes("category")) {
         // router.push(`/category?title_like=${searchText}`);
       }

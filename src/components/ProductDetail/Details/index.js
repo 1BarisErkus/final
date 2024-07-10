@@ -1,22 +1,15 @@
-import { RiIndentIncrease } from "react-icons/ri";
-import { BiChevronDown } from "react-icons/bi";
-import Button from "@/components/Button";
-import { useTranslations } from "next-intl";
-import Modal from "./Modal";
-import Comments from "./Comments";
 import HeaderTitleList from "./HeaderTitleList";
 import DetailsSection from "./DetailsSection";
 import Faqs from "./Faqs";
 import CommentsSection from "./CommentSection";
 
-const Details = ({ comments, product, productId }) => {
-  const t = useTranslations("ProductDetail");
+const Details = ({ comments, product }) => {
   return (
     <div className="container mt-5">
       <div className="row mt-5">
         <div className="col-12">
           <HeaderTitleList />
-          <div className="tab-content mt-4" id="myTabContent">
+          <div className="tab-content mt-4" id="contentTabs">
             <div
               className="tab-pane fade "
               id="productDetails"
@@ -31,7 +24,7 @@ const Details = ({ comments, product, productId }) => {
               role="tabpanel"
               aria-labelledby="ratingReviews-tab"
             >
-              <CommentsSection comments={comments} productId={productId} />
+              <CommentsSection comments={comments} productId={product.id} />
             </div>
             <div
               className="tab-pane fade"

@@ -13,6 +13,7 @@
       "sizes": "small,medium,large",
       "color": "green",
       "dressStyle": "casual",
+      "stock": 84,
       "comments": []
     },
     {
@@ -28,6 +29,7 @@
       "sizes": "small,medium,large",
       "color": "red",
       "dressStyle": "formal",
+      "stock": 27,
       "comments": [
         {
           "id": "1720563436715",
@@ -51,6 +53,7 @@
       "dressStyle": "formal",
       "top_selling": true,
       "new_arrival": true,
+      "stock": 53,
       "comments": []
     },
     {
@@ -66,6 +69,7 @@
       "dressStyle": "formal",
       "top_selling": true,
       "new_arrival": false,
+      "stock": 109,
       "comments": []
     },
     {
@@ -81,6 +85,7 @@
       "sizes": "small,medium,large",
       "color": "green",
       "dressStyle": "casual",
+      "stock": 100,
       "comments": []
     },
     {
@@ -96,6 +101,7 @@
       "sizes": "large",
       "color": "pink",
       "dressStyle": "formal",
+      "stock": 96,
       "comments": []
     },
     {
@@ -111,6 +117,7 @@
       "dressStyle": "formal",
       "top_selling": true,
       "new_arrival": true,
+      "stock": 12,
       "comments": []
     }
   ],
@@ -119,7 +126,22 @@
       "id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
       "name": "Barış Erkuş",
       "email": "baris@gmail.com",
-      "cart": []
+      "cart": [
+        {
+          "id": "1720637841673",
+          "color": "purple",
+          "size": "medium",
+          "count": 5,
+          "productId": "2444"
+        },
+        {
+          "id": "1720637860601",
+          "color": "orange",
+          "size": "medium",
+          "count": 2,
+          "productId": "1"
+        }
+      ]
     }
   ]
 }

@@ -22,6 +22,7 @@ const ProductDetail = async ({ slug }) => {
         </div>
         <div className="col-xl-6 col-12">
           <Content
+            id={product.id}
             title={product.title}
             price={product.price}
             discount={product.discount}
@@ -33,7 +34,7 @@ const ProductDetail = async ({ slug }) => {
             rating={rating}
           />
         </div>
-        <Details comments={comments} product={product} productId={slug} />
+        <Details comments={comments} product={product} />
         <ShowCase title={t("youMightAlsoLike")} cards={data} />
       </div>
     </div>

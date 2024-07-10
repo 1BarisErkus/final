@@ -10,6 +10,7 @@ import { useRouter } from "@/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser, setUser } from "@/redux/slices/userSlice";
 import { notify } from "@/common/notify";
+import { useEffect, useState } from "react";
 
 const StyledFormContainer = styled.div`
   max-width: 400px;
@@ -25,6 +26,11 @@ const LoginForm = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
+
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const initialValues = {
     email: "",
@@ -53,12 +59,12 @@ const LoginForm = () => {
   const login = async (values) => {
     signInWithEmailAndPassword(auth, values.email, values.password)
       .then((userCredential) => {
-        const user = userCredential.user;
-        dispatch(setUser(user));
+        const loggedUser = userCredential.user;
+        dispatch(setUser(loggedUser));
         notify(t("success"), "success");
         router.push("/");
       })
-      .catch((error) => {
+      .catch(() => {
         notify(t("error"), "error");
       });
   };
@@ -69,13 +75,19 @@ const LoginForm = () => {
       dispatch(removeUser());
       notify(t("logoutSuccess"), "success");
       router.push("/signin");
-    } catch {}
+    } catch {
+      notify(t("error"), "error");
+    }
   };
+
+  if (!isMounted) {
+    return null;
+  }
 
   if (user) {
     return (
       <div className="d-flex align-items-center justify-content-center mt-5">
-        You are already logged in. If you want to log out,
+        <span>You are already logged in. If you want to log out,</span>
         <button
           className="bg-transparent border-0 text-warning"
           onClick={logout}

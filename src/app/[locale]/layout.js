@@ -56,6 +56,7 @@ export const metadata = {
 
 export default async function RootLayout({ children, params: { locale } }) {
   const messages = await getMessages({ locale });
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${integralFc.variable} ${satoshi.variable}`}>

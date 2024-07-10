@@ -5,7 +5,7 @@ const HeaderTitleList = () => {
   return (
     <ul
       className="nav nav-tabs d-flex align-items-center justify-content-around pb-3 border-bottom"
-      id="myTab"
+      id="contentTabs"
       role="tablist"
     >
       <li className="nav-item" role="presentation">
@@ -18,6 +18,7 @@ const HeaderTitleList = () => {
           role="tab"
           aria-controls="productDetails"
           aria-selected="false"
+          tabIndex={-1}
         >
           {t("productDetails")}
         </button>
@@ -32,6 +33,7 @@ const HeaderTitleList = () => {
           role="tab"
           aria-controls="ratingReviews"
           aria-selected="true"
+          tabIndex={-1}
         >
           {t("ratingReviews")}
         </button>
@@ -46,6 +48,7 @@ const HeaderTitleList = () => {
           role="tab"
           aria-controls="faqs"
           aria-selected="false"
+          tabIndex={-1}
         >
           {t("faqs")}
         </button>

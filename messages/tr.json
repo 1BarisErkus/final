@@ -109,6 +109,8 @@
     "l": "Buyuk",
     "xl": "X - Buyuk",
     "xxl": "XX - Buyuk",
+    "3xl": "3X - Large",
+    "4xl": "4X - Large",
     "productDetails": "Urun Detaylari",
     "ratingReviews": "Degerlendirme ve Yorumlar",
     "faqs": "SSS",
@@ -133,7 +135,16 @@
     "question4": "Bu urunun yikama talimatlari nelerdir?",
     "answer4": "Bu urun 30 derecede yikanabilir.",
     "question5": "Bu urunun renkleri nelerdir?",
-    "answer5": "Bu urunun renk secenekleri mavi, siyah ve beyazdir."
+    "answer5": "Bu urunun renk secenekleri mavi, siyah ve beyazdir.",
+    "noLoggedIn": "Bu eylemi gerceklestirmek icin giris yapmalisiniz.",
+    "paramaterError": "Lütfen seçimlerinizi kontrol edin ve tekrardan deneyin.",
+    "stockError": "İstediğiniz stok miktarı bulunmamaktadır. Lütfen daha düşük bir değer girin.",
+    "productAdded": "Ürün başarıyla sepete eklendi.",
+    "unExpectedError": "Beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+    "minStockError": "Lütfen 0'dan büyük bir miktar girin.",
+    "productHasBeenDeleted": "Ürün silindi.",
+    "size": "Beden",
+    "color": "Renk"
   },
   "ShowCase": {
     "productsAreNotFound": "Urunler bulunamadi.",

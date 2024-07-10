@@ -14,4 +14,9 @@ export const ImageWrapper = styled.div`
 
 export const P = styled.p`
   font-size: 14px;
+  text-transform: capitalize;
+`;
+
+export const RiDeleteBin3FillWrapper = styled.div`
+  cursor: pointer;
 `;

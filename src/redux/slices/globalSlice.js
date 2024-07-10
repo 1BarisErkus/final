@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isHeaderVisible: true,
+  isHeaderVisible:
+    typeof window !== "undefined" && !localStorage.getItem("user")
+      ? true
+      : false,
 };
 
 const globalSlice = createSlice({

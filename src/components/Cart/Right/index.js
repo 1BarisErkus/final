@@ -2,8 +2,11 @@ import Button from "@/components/Button";
 import { MdOutlineDiscount } from "react-icons/md";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { useTranslations } from "next-intl";
+import { useSelector } from "react-redux";
 
 const Right = () => {
+  const { cart } = useSelector((state) => state.cart);
+  console.log("cart", cart);
   const t = useTranslations("Cart");
   return (
     <div className="border rounded-4 p-4">

@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import styled from "styled-components";
 import { BiPlus, BiMinus } from "react-icons/bi";
 
@@ -28,14 +27,19 @@ const Count = styled.span`
   user-select: none;
 `;
 
-const ProductCountButton = () => {
-  const [count, setCount] = useState(1);
-
+const ProductCountButton = ({
+  count,
+  setCount,
+  cartInc = null,
+  cartDesc = null,
+}) => {
   return (
     <Container>
-      <StyledBiMinus onClick={() => setCount(count - 1)} />
+      <StyledBiMinus
+        onClick={cartDesc ? cartDesc : () => count > 1 && setCount(count - 1)}
+      />
       <Count>{count}</Count>
-      <StyledBiPlus onClick={() => setCount(count + 1)} />
+      <StyledBiPlus onClick={cartInc ? cartInc : () => setCount(count + 1)} />
     </Container>
   );
 };

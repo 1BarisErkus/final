@@ -5,6 +5,7 @@ import { calculateRating } from "@/lib/helpers";
 import WearCard from "@/components/Wear/Card";
 import StyledButton from "@/components/Button";
 import CommentCard from "../CommentCard";
+import { Link } from "@/navigation";
 
 const ViewButton = ({ data, type }) => {
   const [click, setClick] = useState(false);
@@ -16,14 +17,15 @@ const ViewButton = ({ data, type }) => {
         ? data.slice(4).map((item) => {
             const rating = calculateRating(item.comments);
             return (
-              <WearCard
-                key={item.id}
-                src={item.image}
-                title={item.title}
-                rating={rating}
-                price={item.price}
-                discount={item.discount}
-              />
+              <Link key={item.id} href={`/product/${item.id}`}>
+                <WearCard
+                  src={item.image}
+                  title={item.title}
+                  rating={rating}
+                  price={item.price}
+                  discount={item.discount}
+                />
+              </Link>
             );
           })
         : click &&

@@ -20,6 +20,7 @@ import FilterButton from "./Button";
 import { FiFilter } from "react-icons/fi";
 import { BiChevronRight, BiChevronUp } from "react-icons/bi";
 import RangeSlider from "react-range-slider-input";
+import { filterColors } from "@/common/filterColors";
 
 const FilterComponent = ({ modal, className }) => {
   const t = useTranslations("Category");
@@ -63,18 +64,6 @@ const FilterComponent = ({ modal, className }) => {
     { name: t("hoodie"), value: "hoodie" },
     { name: t("jeans"), value: "jeans" },
   ];
-  const filterColors = {
-    green: "#00C12B",
-    red: "#F50606",
-    yellow: "#F5DD06",
-    orange: "#F57906",
-    blue: "#06CAF5",
-    darkblue: "#063AF5",
-    purple: "#7D06F5",
-    pink: "#F506A4",
-    white: "#FFFFFF",
-    black: "#000000",
-  };
   const sizes = [
     t("xxs"),
     t("xs"),
