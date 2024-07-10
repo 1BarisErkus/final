@@ -4,7 +4,7 @@ import tick from "../../../public/images/tick.png";
 import { IconWrapper } from "./styles";
 import { formatDate } from "@/lib/helpers";
 
-const CommentCard = ({ rating, content, createdAt, postedDate }) => {
+const CommentCard = ({ rating, content, createdAt, username, postedDate }) => {
   return (
     <div
       className={`rounded-4 border mb-4 mx-2 ${
@@ -21,7 +21,7 @@ const CommentCard = ({ rating, content, createdAt, postedDate }) => {
         {postedDate && <div>...</div>}
       </div>
       <h5 className="fw-bold my-2 d-flex gap-2">
-        {"user.name"}
+        {username}
         <IconWrapper>
           <Image
             src={tick}

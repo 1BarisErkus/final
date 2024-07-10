@@ -14,7 +14,8 @@
     "happyCustomers": "Happy Customers",
     "newArrivals": "New Arrivals",
     "topSellers": "Top Sellers",
-    "commentsNotFound": "No comments yet."
+    "commentsNotFound": "No comments yet.",
+    "emailSend": "Thank you for subscribing!"
   },
   "Breadcrumb": {
     "home": "Home",

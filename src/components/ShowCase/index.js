@@ -33,7 +33,9 @@ const ShowCase = ({ title, button, cards }) => {
               ) : (
                 <div>{t("productsAreNotFound")}</div>
               )}
-              {button && <ViewButton data={cards} type="wear" />}
+              {button && cards.length > 4 && (
+                <ViewButton data={cards} type="wear" />
+              )}
             </WearCardList>
           </div>
         </Row>

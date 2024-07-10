@@ -9,4 +9,5 @@ export const ThemeChangerWrapper = styled.button`
   color: ${({ theme }) => (theme === "dark" ? "#000" : "#fff")};
   padding: 5px 10px;
   transition: background-color 0.3s;
+  width: 70px;
 `;

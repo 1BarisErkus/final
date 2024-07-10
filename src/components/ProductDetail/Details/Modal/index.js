@@ -15,7 +15,7 @@ const Modal = ({ productId }) => {
 
     const newComment = {
       id: String(new Date().getTime()),
-      user_id: "123",
+      username: "Deneme User Name",
       content: comment,
       rating: rating,
       created_at: new Date().toISOString(),

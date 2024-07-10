@@ -8,27 +8,37 @@ import {
   SubscribeButton,
 } from "./styles";
 import { useTranslations } from "next-intl";
+import { object, string } from "yup";
+import { notify } from "@/common/notify";
 
 const Form = () => {
   const t = useTranslations("Footer");
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-    },
-    onSubmit: (values) => {
-      toast.success(`Thank you for subscribing! ${values.email}`);
-    },
-  });
+  const { handleSubmit, values, handleChange, errors, touched, handleBlur } =
+    useFormik({
+      initialValues: {
+        email: "",
+      },
+      validationSchema: object({
+        email: string().email("Invalid email address").required("Required"),
+      }),
+      onSubmit: (values) => {
+        notify(`${t("emailSend")}: ${values.email}`, "success");
+      },
+    });
 
   return (
-    <FormContainer onSubmit={formik.handleSubmit}>
+    <FormContainer onSubmit={handleSubmit}>
+      {errors.email && touched.email && (
+        <p className="text-danger m-0 p-0">{errors.email}</p>
+      )}
       <InputContainer>
         <Input
           type="email"
           name="email"
           placeholder={t("inputPlaceholder")}
-          value={formik.values.email}
-          onChange={formik.handleChange}
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
         <InputIcon />
       </InputContainer>

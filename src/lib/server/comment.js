@@ -1,4 +1,6 @@
+"use server";
 import { revalidatePath } from "next/cache";
+import { getProduct } from "./product";
 
 const BASE_URL = process.env.BASE_URL;
 

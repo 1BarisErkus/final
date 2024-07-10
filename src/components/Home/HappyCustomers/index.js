@@ -50,7 +50,7 @@ const HappyCustomers = () => {
           className="d-flex transition-transform gap-3"
           style={{
             transform: `translateX(-${
-              (currentIndex * 100) / (comments.length - 2)
+              (currentIndex * 500) / (comments.length - 2)
             }%)`,
             transition: "transform 0.5s",
           }}
@@ -61,6 +61,7 @@ const HappyCustomers = () => {
                 key={comment.id}
                 rating={comment.rating}
                 content={comment.content}
+                username={comment.username}
                 created_at={comment.created_at}
               />
             ))

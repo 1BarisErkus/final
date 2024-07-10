@@ -13,22 +13,7 @@
       "sizes": "small,medium,large",
       "color": "green",
       "dressStyle": "casual",
-      "comments": [
-        {
-          "id": "66666",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product,",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        },
-        {
-          "id": "10",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": " I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great ",
-          "rating": 0,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
+      "comments": []
     },
     {
       "id": "2444",
@@ -45,25 +30,11 @@
       "dressStyle": "formal",
       "comments": [
         {
-          "id": "312312312312",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        },
-        {
-          "id": "543543543",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!",
+          "id": "1720563436715",
+          "username": "Deneme User Name",
+          "content": "Denemeeeee",
           "rating": 4,
-          "created_at": "2024-07-08T17:15:49.568Z"
-        },
-        {
-          "id": "1720459034348",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "dasdas",
-          "rating": 4,
-          "created_at": "2024-07-08T17:17:14.348Z"
+          "created_at": "2024-07-09T22:17:16.715Z"
         }
       ]
     },
@@ -80,15 +51,7 @@
       "dressStyle": "formal",
       "top_selling": true,
       "new_arrival": true,
-      "comments": [
-        {
-          "id": "5444",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
+      "comments": []
     },
     {
       "id": "46666",
@@ -118,152 +81,9 @@
       "sizes": "small,medium,large",
       "color": "green",
       "dressStyle": "casual",
-      "comments": [
-        {
-          "id": "190",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        },
-        {
-          "id": "29222",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "I don't like it",
-          "rating": 2,
-          "created_at": "2021-09-01T12:00:00"
-        },
-        {
-          "id": "19033",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
-    },
-    {
-      "id": "244994",
-      "title": "Crewneck",
-      "price": 160,
-      "discount": 20,
-      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-      "category": "shorts",
-      "image": "wear-3",
-      "top_selling": true,
-      "new_arrival": true,
-      "sizes": "large",
-      "color": "pink",
-      "dressStyle": "formal",
-      "comments": [
-        {
-          "id": "442399432",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
-    },
-    {
-      "id": "31231319923131",
-      "title": "This graphic t-shirts which",
-      "price": 260,
-      "discount": 0,
-      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-      "category": "shirts",
-      "image": "wear-2",
-      "sizes": "xlarge",
-      "color": "white",
-      "dressStyle": "formal",
-      "top_selling": true,
-      "new_arrival": true,
-      "comments": [
-        {
-          "id": "599444",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
-    },
-    {
-      "id": "312313123131",
-      "title": "This graphic t-shirts which",
-      "price": 260,
-      "discount": 0,
-      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-      "category": "shirts",
-      "image": "wear-3",
-      "sizes": "small",
-      "color": "yellow",
-      "dressStyle": "formal",
-      "top_selling": true,
-      "new_arrival": true,
-      "comments": [
-        {
-          "id": "5444",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
-    },
-    {
-      "id": "46666",
-      "title": "Crafted from a soft",
-      "price": 60,
-      "discount": 0,
-      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-      "category": "hoodie",
-      "image": "wear-4",
-      "sizes": "medium,large",
-      "color": "orange",
-      "dressStyle": "formal",
-      "top_selling": true,
-      "new_arrival": false,
       "comments": []
     },
     {
-      "id": "1999",
-      "title": "Men's Markham Basic Spice Red Crewneck",
-      "price": 130,
-      "discount": 0,
-      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-      "category": "t-shirts",
-      "image": "wear-4",
-      "top_selling": true,
-      "new_arrival": true,
-      "sizes": "small,medium,large",
-      "color": "green",
-      "dressStyle": "casual",
-      "comments": [
-        {
-          "id": "190",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        },
-        {
-          "id": "29222",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "I don't like it",
-          "rating": 2,
-          "created_at": "2021-09-01T12:00:00"
-        },
-        {
-          "id": "19033",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
-    },
-    {
       "id": "244994",
       "title": "Crewneck",
       "price": 160,
@@ -276,138 +96,9 @@
       "sizes": "large",
       "color": "pink",
       "dressStyle": "formal",
-      "comments": [
-        {
-          "id": "442399432",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
-    },
-    {
-      "id": "31231319923131",
-      "title": "This graphic t-shirts which",
-      "price": 260,
-      "discount": 0,
-      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-      "category": "shirts",
-      "image": "wear-2",
-      "sizes": "xlarge",
-      "color": "white",
-      "dressStyle": "formal",
-      "top_selling": true,
-      "new_arrival": true,
-      "comments": [
-        {
-          "id": "599444",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
-    },
-    {
-      "id": "312313123131",
-      "title": "This graphic t-shirts which",
-      "price": 260,
-      "discount": 0,
-      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-      "category": "shirts",
-      "image": "wear-3",
-      "sizes": "small",
-      "color": "yellow",
-      "dressStyle": "formal",
-      "top_selling": true,
-      "new_arrival": true,
-      "comments": [
-        {
-          "id": "5444",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
-    },
-    {
-      "id": "46666",
-      "title": "Crafted from a soft",
-      "price": 60,
-      "discount": 0,
-      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-      "category": "hoodie",
-      "image": "wear-4",
-      "sizes": "medium,large",
-      "color": "orange",
-      "dressStyle": "formal",
-      "top_selling": true,
-      "new_arrival": false,
       "comments": []
     },
     {
-      "id": "1999",
-      "title": "Men's Markham Basic Spice Red Crewneck",
-      "price": 130,
-      "discount": 0,
-      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-      "category": "t-shirts",
-      "image": "wear-4",
-      "top_selling": true,
-      "new_arrival": true,
-      "sizes": "small,medium,large",
-      "color": "green",
-      "dressStyle": "casual",
-      "comments": [
-        {
-          "id": "190",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        },
-        {
-          "id": "29222",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "I don't like it",
-          "rating": 2,
-          "created_at": "2021-09-01T12:00:00"
-        },
-        {
-          "id": "19033",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
-    },
-    {
-      "id": "244994",
-      "title": "Crewneck",
-      "price": 160,
-      "discount": 20,
-      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-      "category": "shorts",
-      "image": "wear-3",
-      "top_selling": true,
-      "new_arrival": true,
-      "sizes": "large",
-      "color": "pink",
-      "dressStyle": "formal",
-      "comments": [
-        {
-          "id": "442399432",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
-    },
-    {
       "id": "31231319923131",
       "title": "This graphic t-shirts which",
       "price": 260,
@@ -420,15 +111,7 @@
       "dressStyle": "formal",
       "top_selling": true,
       "new_arrival": true,
-      "comments": [
-        {
-          "id": "599444",
-          "user_id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
-          "content": "Great product, I love it!",
-          "rating": 5,
-          "created_at": "2021-09-01T12:00:00"
-        }
-      ]
+      "comments": []
     }
   ],
   "users": [

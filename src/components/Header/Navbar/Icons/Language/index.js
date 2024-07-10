@@ -13,13 +13,10 @@ const Language = () => {
 
   const changeLanguage = () => {
     const newLanguage = currentLanguage === "tr" ? "en" : "tr";
-
     const newPath = pathname.replace(`/${currentLanguage}`, `/${newLanguage}`);
-
     startTransition(() => {
       router.push(`${newPath}`);
     });
-
     setCurrentLanguage(newLanguage);
   };
 

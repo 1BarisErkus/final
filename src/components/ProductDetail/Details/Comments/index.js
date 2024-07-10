@@ -15,20 +15,25 @@ const Comments = ({ comments }) => {
                 key={comment.id}
                 rating={comment.rating}
                 content={comment.content}
+                username={comment.username}
                 createdAt={comment.created_at}
                 postedDate
               />
             ))
         ) : (
-          <div className="fs-5 text-secondary">{t("noReviews")}</div>
+          <div className="fs-5 text-secondary text-center">
+            {t("noReviews")}
+          </div>
         )}
-        <ViewButton
-          className="d-flex mx-auto align-items-center justify-content-center"
-          type="comment"
-          data={comments}
-        >
-          {t("loadMore")}
-        </ViewButton>
+        {comments.length > 6 && (
+          <ViewButton
+            data={comments}
+            type="comment"
+            className="d-flex mx-auto align-items-center justify-content-center"
+          >
+            {t("loadMore")}
+          </ViewButton>
+        )}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
@@ -13,7 +13,6 @@ import {
   PriceRange,
   SectionTitle,
 } from "./styles";
-import { filterColors } from "@/common/colors";
 import ColorOption from "@/components/ColorOption";
 import SizeButton from "@/components/SizeButton";
 import Button from "@/components/Button";
@@ -58,12 +57,24 @@ const FilterComponent = ({ modal, className }) => {
   };
 
   const filterCategories = [
-    t("tshirts"),
-    t("shorts"),
-    t("shirts"),
-    t("hoodie"),
-    t("jeans"),
+    { name: t("tshirts"), value: "t-shirts" },
+    { name: t("shorts"), value: "shorts" },
+    { name: t("shirts"), value: "shirts" },
+    { name: t("hoodie"), value: "hoodie" },
+    { name: t("jeans"), value: "jeans" },
   ];
+  const filterColors = {
+    green: "#00C12B",
+    red: "#F50606",
+    yellow: "#F5DD06",
+    orange: "#F57906",
+    blue: "#06CAF5",
+    darkblue: "#063AF5",
+    purple: "#7D06F5",
+    pink: "#F506A4",
+    white: "#FFFFFF",
+    black: "#000000",
+  };
   const sizes = [
     t("xxs"),
     t("xs"),
@@ -75,7 +86,12 @@ const FilterComponent = ({ modal, className }) => {
     t("3xl"),
     t("4xl"),
   ];
-  const dressStyles = [t("casual"), t("formal"), t("party"), t("gym")];
+  const dressStyles = [
+    { name: t("casual"), value: "casual" },
+    { name: t("formal"), value: "formal" },
+    { name: t("party"), value: "party" },
+    { name: t("gym"), value: "gym" },
+  ];
 
   const setCategory = (category) =>
     handleSelectFilterOptions("category_like", category.toLowerCase());
@@ -122,11 +138,11 @@ const FilterComponent = ({ modal, className }) => {
             key={i}
             className="d-flex justify-content-between"
             selected={selectedFilterQueries?.category_like?.includes(
-              category.toLocaleLowerCase()
+              category.value.toLocaleLowerCase()
             )}
-            onClick={() => setCategory(category)}
+            onClick={() => setCategory(category.value)}
           >
-            <span>{category}</span>
+            <span>{category.name}</span>
             <BiChevronRight size={24} />
           </FilterButton>
         ))}
@@ -195,16 +211,15 @@ const FilterComponent = ({ modal, className }) => {
           <FilterButton
             key={i}
             name="dressStyle"
-            value={dressStyle.toLowerCase()}
             className="d-flex justify-content-between"
             selected={selectedFilterQueries?.dressStyle_like?.includes(
-              dressStyle.toLocaleLowerCase()
+              dressStyle.value.toLocaleLowerCase()
             )}
             onClick={() => {
-              setDressStyle(dressStyle);
+              setDressStyle(dressStyle.value);
             }}
           >
-            <span>{dressStyle}</span>
+            <span>{dressStyle.name}</span>
             <BiChevronRight size={24} />
           </FilterButton>
         ))}
