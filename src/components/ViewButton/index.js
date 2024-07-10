@@ -33,7 +33,7 @@ const ViewButton = ({ data, type }) => {
             .map((comment) => (
               <CommentCard
                 key={comment.id}
-                userId={comment.user_id}
+                username={comment.username}
                 rating={comment.rating}
                 content={comment.content}
                 createdAt={comment.created_at}

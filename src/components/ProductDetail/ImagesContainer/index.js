@@ -34,6 +34,7 @@ const ImagesContainer = ({ productImage }) => {
                 alt="product"
                 className="obejct-fit-cover rounded-4"
                 fill
+                priority
               />
             </LittleImageContainer>
           ))}
@@ -45,6 +46,7 @@ const ImagesContainer = ({ productImage }) => {
               alt="product"
               className="obejct-fit-cover rounded-4"
               fill
+              priority
             />
           </BigImageContainer>
         </BigImage>

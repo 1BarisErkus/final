@@ -1,7 +1,7 @@
 "use client";
 import { useLocale } from "next-intl";
 import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
 
 const Language = () => {
@@ -9,13 +9,20 @@ const Language = () => {
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [currentLanguage, setCurrentLanguage] = useState(locale);
 
   const changeLanguage = () => {
     const newLanguage = currentLanguage === "tr" ? "en" : "tr";
-    const newPath = pathname.replace(`/${currentLanguage}`, `/${newLanguage}`);
+    const currentPathWithoutLocale = pathname.replace(
+      `/${currentLanguage}`,
+      ""
+    );
+    const newSearch = new URLSearchParams(searchParams.toString());
     startTransition(() => {
-      router.push(`${newPath}`);
+      router.push(
+        `/${newLanguage}${currentPathWithoutLocale}?${newSearch.toString()}`
+      );
     });
     setCurrentLanguage(newLanguage);
   };

@@ -4,50 +4,44 @@ import Button from "@/components/Button";
 import { useTranslations } from "next-intl";
 import Modal from "./Modal";
 import Comments from "./Comments";
+import HeaderTitleList from "./HeaderTitleList";
+import DetailsSection from "./DetailsSection";
+import Faqs from "./Faqs";
+import CommentsSection from "./CommentSection";
 
-const Details = ({ comments, productId }) => {
+const Details = ({ comments, product, productId }) => {
   const t = useTranslations("ProductDetail");
   return (
     <div className="container mt-5">
       <div className="row mt-5">
         <div className="col-12">
-          <div className="d-flex align-items-center justify-content-around pb-3 border-bottom">
-            <div>
-              <h5 className="fs-6 text-secondary">{t("productDetails")}</h5>
+          <HeaderTitleList />
+          <div className="tab-content mt-4" id="myTabContent">
+            <div
+              className="tab-pane fade "
+              id="productDetails"
+              role="tabpanel"
+              aria-labelledby="productDetails-tab"
+            >
+              <DetailsSection product={product} />
             </div>
-            <div>
-              <h5 className="fs-6 text-secondary">{t("ratingReviews")}</h5>
+            <div
+              className="tab-pane fade show active"
+              id="ratingReviews"
+              role="tabpanel"
+              aria-labelledby="ratingReviews-tab"
+            >
+              <CommentsSection comments={comments} productId={productId} />
             </div>
-            <div>
-              <h5 className="fs-6 text-secondary">{t("faqs")}</h5>
-            </div>
-          </div>
-
-          <div className="mt-4 d-flex flex-wrap">
-            <div>
-              <span className="fs-4 fw-bold">{t("allReviews")}</span> (451)
-            </div>
-            <div className="ms-auto d-flex flex-wrap gap-3">
-              <button className="btn btn-light px-3 py-1 fs-4 d-flex align-items-center justify-content-center rounded-pill">
-                <RiIndentIncrease />
-              </button>
-              <button className="btn btn-light px-3 py-1 fs-6 d-flex align-items-center justify-content-center rounded-pill">
-                {t("latest")} <BiChevronDown />
-              </button>
-              <Button
-                theme="dark"
-                className="m-0 bg-black text-white"
-                data-bs-toggle="modal"
-                data-bs-target="#addCommentModal"
-              >
-                {t("writeReview")}
-              </Button>
+            <div
+              className="tab-pane fade"
+              id="faqs"
+              role="tabpanel"
+              aria-labelledby="faqs-tab"
+            >
+              <Faqs />
             </div>
           </div>
-
-          <Modal productId={productId} />
-
-          <Comments comments={comments} />
         </div>
       </div>
     </div>

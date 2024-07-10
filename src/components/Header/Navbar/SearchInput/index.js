@@ -6,21 +6,26 @@ import { IoMdSearch } from "react-icons/io";
 
 const SearchInput = () => {
   const t = useTranslations("Header");
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchText, setSearchText] = useState("");
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    const query = new URLSearchParams(window.location.search);
-
-    if (searchTerm) {
-      query.set("title_like", searchTerm);
+    if (searchText.length > 0) {
+      console.log("pathname", pathname);
+      console.log(!pathname.includes("category"));
+      if (!pathname.includes("category")) {
+        // router.push(`/category?title_like=${searchText}`);
+      }
+      // router.push(`?title_like=${searchText}`);
     } else {
-      query.delete("title_like");
+      // router.replace("/category");
     }
+  }, [searchText, router, pathname]);
 
-    router.replace(`${pathname}?${query.toString()}`, { scroll: false });
-  }, [searchTerm, router, pathname]);
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
+  };
 
   return (
     <div className="d-flex position-relative flex-grow-1">
@@ -32,8 +37,8 @@ const SearchInput = () => {
         placeholder={t("inputPlaceholder")}
         type="search"
         aria-label="Search"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        value={searchText}
+        onChange={handleChange}
       />
     </div>
   );

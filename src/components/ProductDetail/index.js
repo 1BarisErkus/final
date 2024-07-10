@@ -33,7 +33,7 @@ const ProductDetail = async ({ slug }) => {
             rating={rating}
           />
         </div>
-        <Details comments={comments} productId={slug} />
+        <Details comments={comments} product={product} productId={slug} />
         <ShowCase title={t("youMightAlsoLike")} cards={data} />
       </div>
     </div>

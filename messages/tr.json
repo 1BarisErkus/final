@@ -121,7 +121,19 @@
     "modalTitle": "Yorumunuzu yazin",
     "modalClose": "Kapat",
     "modalSubmit": "Gonder",
-    "modalSubtitle": "Puanlayın ve yorumunuzu yazın"
+    "modalSubtitle": "Puanlayın ve yorumunuzu yazın",
+    "topSellerProduct": "En Cok Satan Urun",
+    "newArrivalProduct": "Yeni Gelen Urun",
+    "question1": "Bu urunun kumas kalitesi nedir?",
+    "answer1": "Bu urun %100 pamuk kumasindan uretilmistir.",
+    "question2": "Bu urunun iade kosullari nelerdir?",
+    "answer2": "Bu urunun iadesi 30 gun icerisinde yapilabilir.",
+    "question3": "Bu urunun bedeni nasildir?",
+    "answer3": "Bu urunun bedeni normal bedenlere gore biraz daha buyuktur.",
+    "question4": "Bu urunun yikama talimatlari nelerdir?",
+    "answer4": "Bu urun 30 derecede yikanabilir.",
+    "question5": "Bu urunun renkleri nelerdir?",
+    "answer5": "Bu urunun renk secenekleri mavi, siyah ve beyazdir."
   },
   "ShowCase": {
     "productsAreNotFound": "Urunler bulunamadi.",

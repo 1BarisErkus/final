@@ -121,7 +121,19 @@
     "modalTitle": "Write your review",
     "modalClose": "Close",
     "modalSubmit": "Submit",
-    "modalSubtitle": "Rate and write your comment"
+    "modalSubtitle": "Rate and write your comment",
+    "topSellerProduct": "Top Seller Product",
+    "newArrivalProduct": "New Arrival Product",
+    "question1": "What is the fabric quality of this product?",
+    "answer1": "This product is made of 100% cotton fabric.",
+    "question2": "What are the return conditions of this product?",
+    "answer2": "The return of this product can be made within 30 days.",
+    "question3": "What is the size of this product?",
+    "answer3": "The size of this product is a bit larger than normal sizes.",
+    "question4": "What are the washing instructions of this product?",
+    "answer4": "This product can be washed at 30 degrees.",
+    "question5": "What are the colors of this product?",
+    "answer5": "The color options of this product are blue, black and white."
   },
   "ShowCase": {
     "productsAreNotFound": "Products are not found.",
