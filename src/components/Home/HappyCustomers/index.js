@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { getHappyComments } from "@/lib/server/product";
+import { getHappyComments } from "@/server/product";
 import CommentCard from "../../CommentCard";
 import { H2, Section, StyledButton } from "./styles";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";

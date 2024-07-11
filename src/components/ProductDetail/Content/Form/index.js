@@ -7,7 +7,7 @@ import Button from "@/components/Button";
 import { useTranslations } from "next-intl";
 import { useReducer } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { notify } from "@/common/notify";
+import { notify } from "@/lib/notify";
 import { addProductToLocalCart } from "@/redux/slices/cartSlice";
 
 const initialValues = {

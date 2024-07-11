@@ -9,7 +9,7 @@ import {
 } from "./styles";
 import { useTranslations } from "next-intl";
 import { object, string } from "yup";
-import { notify } from "@/common/notify";
+import { notify } from "@/lib/notify";
 
 const Form = () => {
   const t = useTranslations("Footer");

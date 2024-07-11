@@ -2,7 +2,7 @@
 import WearCard from "@/components/Wear/Card";
 import WearCardList from "@/components/Wear/CardList";
 import { calculateRating } from "@/lib/helpers";
-import { getProducts } from "@/lib/server/product";
+import { getProducts } from "@/server/product";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";

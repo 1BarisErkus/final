@@ -1,8 +1,8 @@
 "use client";
-import { notify } from "@/common/notify";
+import { notify } from "@/lib/notify";
 import Button from "@/components/Button";
-import { addComment } from "@/lib/server/comment";
-import { getUser } from "@/lib/server/user";
+import { addComment } from "@/server/comment";
+import { getUser } from "@/server/user";
 import { Rating } from "@smastrom/react-rating";
 import { useTranslations } from "next-intl";
 import { useState } from "react";

@@ -1,4 +1,4 @@
-import { getMightLike, getProduct } from "@/lib/server/product";
+import { getMightLike, getProduct } from "@/server/product";
 import ShowCase from "../ShowCase";
 import Content from "./Content";
 import Details from "./Details";

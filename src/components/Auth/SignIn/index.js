@@ -9,7 +9,7 @@ import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useRouter } from "@/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser, setUser } from "@/redux/slices/userSlice";
-import { notify } from "@/common/notify";
+import { notify } from "@/lib/notify";
 import { useEffect, useState } from "react";
 import { clearCart } from "@/redux/slices/cartSlice";
 import { openHeader } from "@/redux/slices/globalSlice";

@@ -1,8 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { getProduct } from "./product";
-
-const BASE_URL = process.env.BASE_URL;
+import { BASE_URL } from "./baseUrl";
 
 export const addComment = async (productId, newComment) => {
   const product = await getProduct(productId);

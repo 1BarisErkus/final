@@ -8,10 +8,10 @@ import {
 } from "./styles";
 import Image from "next/image";
 import { RiDeleteBin3Fill } from "react-icons/ri";
-import { getProduct } from "@/lib/server/product";
+import { getProduct } from "@/server/product";
 import { useDispatch } from "react-redux";
 import ProductCountButton from "@/components/ProductCountButton";
-import { notify } from "@/common/notify";
+import { notify } from "@/lib/notify";
 import { useTranslations } from "next-intl";
 import {
   decreaseProductCount,

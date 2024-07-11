@@ -1,5 +1,5 @@
 import { Link } from "@/navigation";
-import { getProducts } from "@/lib/server/product";
+import { getProducts } from "@/server/product";
 import { calculateRating } from "@/lib/helpers";
 import WearCardList from "../Wear/CardList";
 import WearCard from "../Wear/Card";

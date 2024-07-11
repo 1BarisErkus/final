@@ -3,9 +3,9 @@ import { MdOutlineDiscount } from "react-icons/md";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { useTranslations } from "next-intl";
 import { useSelector } from "react-redux";
-import { getProduct } from "@/lib/server/product";
+import { getProduct } from "@/server/product";
 import { useEffect, useState } from "react";
-import { notify } from "@/common/notify";
+import { notify } from "@/lib/notify";
 
 const Right = () => {
   const t = useTranslations("Cart");

@@ -1,7 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { getUser } from "./user";
-const BASE_URL = process.env.BASE_URL;
+import { BASE_URL } from "./baseUrl";
 
 export const updateDbCart = async (userId, cart) => {
   const user = await getUser(userId);

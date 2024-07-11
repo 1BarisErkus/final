@@ -1,5 +1,5 @@
 "use server";
-const BASE_URL = process.env.BASE_URL;
+import { BASE_URL } from "./baseUrl";
 
 export const addUser = async (user) => {
   const res = await fetch(`${BASE_URL}/users`, {

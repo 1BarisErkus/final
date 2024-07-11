@@ -1,5 +1,5 @@
 import ShowCase from "@/components/ShowCase";
-import { getTopSelling } from "@/lib/server/product";
+import { getTopSelling } from "@/server/product";
 import { getTranslations } from "next-intl/server";
 
 const TopSelling = async () => {

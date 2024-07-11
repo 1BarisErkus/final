@@ -1,4 +1,4 @@
-import { updateDbCart } from "@/lib/server/cart";
+import { updateDbCart } from "@/server/cart";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {

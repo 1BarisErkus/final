@@ -7,8 +7,8 @@ import { object, string, ref } from "yup";
 import { auth } from "@/lib/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "@/navigation";
-import { notify } from "@/common/notify";
-import { addUser } from "@/lib/server/user";
+import { notify } from "@/lib/notify";
+import { addUser } from "@/server/user";
 
 const StyledFormContainer = styled.div`
   max-width: 400px;

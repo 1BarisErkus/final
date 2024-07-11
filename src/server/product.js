@@ -1,6 +1,6 @@
 "use server";
 import { revalidatePath } from "next/cache";
-const BASE_URL = process.env.BASE_URL;
+import { BASE_URL } from "./baseUrl";
 
 export const getProducts = async (query) => {
   const res = await fetch(`${BASE_URL}/products?${query}`, {
