@@ -38,7 +38,7 @@ const Modal = ({ productId }) => {
 
     try {
       const res = await addComment(productId, newComment);
-      if (res.status === 200) {
+      if (res) {
         notify(t("addedComment"), "success");
       }
     } catch {

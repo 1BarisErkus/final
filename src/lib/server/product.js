@@ -1,4 +1,5 @@
 "use server";
+import { revalidatePath } from "next/cache";
 const BASE_URL = process.env.BASE_URL;
 
 export const getProducts = async (query) => {
@@ -14,6 +15,11 @@ export const getProduct = async (slug) => {
   const res = await fetch(`${BASE_URL}/products?id=${slug}`, {
     cache: "no-store",
   });
+
+  if (res.status !== 200) {
+    throw new Error("Failed to fetch");
+  }
+
   const data = await res.json();
   return data[0];
 };
@@ -74,6 +80,13 @@ export const updateProduct = async (product) => {
     },
     body: JSON.stringify(product),
   });
+
+  if (res.status !== 200) {
+    throw new Error("Failed to fetch");
+  }
+
+  revalidatePath(`/products/${product.id}`);
+
   const data = await res.json();
   return data;
 };

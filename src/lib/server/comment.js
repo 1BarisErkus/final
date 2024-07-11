@@ -23,7 +23,11 @@ export const addComment = async (productId, newComment) => {
     body: JSON.stringify(newProduct),
   });
 
-  revalidatePath("/product/[id]", "page");
+  if (res.status !== 200) {
+    throw new Error("Failed to add comment");
+  }
 
-  return res.json();
+  revalidatePath("/product/[id]", "page");
+  const data = await res.json();
+  return data;
 };

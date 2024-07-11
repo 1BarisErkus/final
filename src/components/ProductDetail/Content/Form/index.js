@@ -67,6 +67,7 @@ const Form = ({ productId, dbSizes, stock }) => {
       notify(t("paramaterError"), "error");
       return;
     }
+    console.log(stock, state.count);
     if (stock < state.count) {
       notify(t("stockError"), "error");
       return;

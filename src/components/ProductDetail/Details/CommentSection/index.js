@@ -4,6 +4,7 @@ import Comments from "../Comments";
 import { useTranslations } from "next-intl";
 import Modal from "./Modal";
 import SortBy from "./SortBy";
+import { FilterButton } from "./styles";
 
 const CommentsSection = ({ comments, productId }) => {
   const t = useTranslations("ProductDetail");
@@ -14,9 +15,9 @@ const CommentsSection = ({ comments, productId }) => {
           <span className="fs-4 fw-bold">{t("allReviews")}</span> (451)
         </div>
         <div className="ms-auto d-flex flex-wrap gap-3">
-          <button className="btn btn-light px-3 py-1 fs-4 d-flex align-items-center justify-content-center rounded-pill">
+          <FilterButton className="btn btn-light px-3 py-1 fs-4 d-flex align-items-center justify-content-center rounded-pill">
             <RiIndentIncrease />
-          </button>
+          </FilterButton>
           <SortBy />
           <Button
             theme="dark"

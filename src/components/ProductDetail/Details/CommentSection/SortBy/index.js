@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "@/navigation";
-import { Select } from "../styles";
+import { Option, Select } from "../styles";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -57,10 +57,10 @@ const SortBy = () => {
       className="form-select d-inline-block bg-transparent border-0 fs-6"
     >
       &#8595;
-      <option value="sortByDate">{t("sortByDate")}</option>
-      <option value="sortByDateOld">{t("sortByDateOld")}</option>
-      <option value="sortByRating">{t("sortByRating")}</option>
-      <option value="sortByRatingLow">{t("sortByRatingLow")}</option>
+      <Option value="sortByDate">{t("sortByDate")}</Option>
+      <Option value="sortByDateOld">{t("sortByDateOld")}</Option>
+      <Option value="sortByRating">{t("sortByRating")}</Option>
+      <Option value="sortByRatingLow">{t("sortByRatingLow")}</Option>
     </Select>
   );
 };
