@@ -13,6 +13,8 @@ const Category = async ({ searchParams }) => {
   const limit = searchParams["_limit"] ?? "9";
   const data = await getProducts(`${query}&_page=${page}&_limit=${limit}`);
 
+  console.log(page * limit, data.length);
+
   return (
     <div className="container ps-0">
       <div className="row m-0 p-0">
@@ -37,10 +39,7 @@ const Category = async ({ searchParams }) => {
               );
             })}
           </WearCardList>
-          <Pagination
-            hasNextPage={page * limit <= data.length}
-            hasPrevPage={page > 1}
-          />
+          <Pagination hasNextPage={data.length >= 9} hasPrevPage={page > 1} />
         </div>
       </div>
     </div>
