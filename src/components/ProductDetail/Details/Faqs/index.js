@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { AccordionBody, AccordionButton } from "./styles";
 
 const Faqs = () => {
   const t = useTranslations("ProductDetail");
@@ -15,23 +16,25 @@ const Faqs = () => {
       {faqs.map((faq) => (
         <div key={faq.id} className="accordion-item">
           <h2 className="accordion-header">
-            <button
-              className="accordion-button"
+            <AccordionButton
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target={`#collapse${faq.id}`}
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls={`collapse${faq.id}`}
             >
               {faq.question}
-            </button>
+            </AccordionButton>
           </h2>
           <div
             id={`collapse${faq.id}`}
             className="accordion-collapse collapse"
             data-bs-parent="#faqsAccordion"
           >
-            <div className="accordion-body">{faq.answer}</div>
+            <AccordionBody className="accordion-body">
+              {faq.answer}
+            </AccordionBody>
           </div>
         </div>
       ))}

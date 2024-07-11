@@ -26,7 +26,7 @@ const ImagesContainer = ({ productImage }) => {
   return (
     <div className="container ps-0">
       <Row className="row">
-        <LitteImages className="col-lg-4 col-12 gap-3 px-0">
+        <LitteImages className="col-lg-3 col-12 gap-3 px-0">
           {images.map((image) => (
             <LittleImageContainer key={image.id} className="position-relative">
               <Image
@@ -39,7 +39,7 @@ const ImagesContainer = ({ productImage }) => {
             </LittleImageContainer>
           ))}
         </LitteImages>
-        <BigImage className="col-lg-8 col-12">
+        <BigImage className="col-lg-9 col-12">
           <BigImageContainer>
             <Image
               src={`/images/wears/${productImage}.png`}
@@ -47,6 +47,7 @@ const ImagesContainer = ({ productImage }) => {
               className="obejct-fit-cover rounded-4"
               fill
               priority
+              quality={100}
             />
           </BigImageContainer>
         </BigImage>

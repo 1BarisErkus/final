@@ -6,6 +6,7 @@ export const getProducts = async (query) => {
     cache: "no-store",
   });
   const data = await res.json();
+  console.log(query, data);
   return data;
 };
 
@@ -38,7 +39,10 @@ export const getHappyComments = async () => {
 export const getNewArrivals = async () => {
   const res = await fetch(`${BASE_URL}/products`, { cache: "no-store" });
   const data = await res.json();
-  const newArrivals = data.filter((product) => product.new_arrival === true);
+  const newArrivals =
+    data.length > 0
+      ? data.filter((product) => product.new_arrival === true)
+      : [];
 
   return newArrivals;
 };
@@ -46,7 +50,10 @@ export const getNewArrivals = async () => {
 export const getTopSelling = async () => {
   const res = await fetch(`${BASE_URL}/products`, { cache: "no-store" });
   const data = await res.json();
-  const topSelling = data.filter((product) => product.top_selling === true);
+  const topSelling =
+    data.length > 0
+      ? data.filter((product) => product.top_selling === true)
+      : [];
 
   return topSelling;
 };
@@ -54,7 +61,7 @@ export const getTopSelling = async () => {
 export const getMightLike = async () => {
   const res = await fetch(`${BASE_URL}/products`, { cache: "no-store" });
   const data = await res.json();
-  const mightLike = data.slice(0, 4);
+  const mightLike = data.length > 0 ? data.slice(0, 4) : [];
 
   return mightLike;
 };

@@ -144,7 +144,13 @@
     "minStockError": "Please enter a quantity greater than 0.",
     "productHasBeenDeleted": "Product has been deleted.",
     "size": "Size",
-    "color": "Color"
+    "color": "Color",
+    "emptyFields": "Please fill in all fields.",
+    "addedComment": "Your comment has been added successfully.",
+    "sortByDate": "Latest",
+    "sortByDateOld": "Oldest",
+    "sortByRating": "Rating (Highest First)",
+    "sortByRatingLow": "Rating (Lowest First)"
   },
   "ShowCase": {
     "productsAreNotFound": "Products are not found.",

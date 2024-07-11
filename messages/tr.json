@@ -144,7 +144,9 @@
     "minStockError": "Lütfen 0'dan büyük bir miktar girin.",
     "productHasBeenDeleted": "Ürün silindi.",
     "size": "Beden",
-    "color": "Renk"
+    "color": "Renk",
+    "emptyFields": "Lütfen tüm alanları doldurun.",
+    "addedComment": "Yorumunuz başarıyla eklendi."
   },
   "ShowCase": {
     "productsAreNotFound": "Urunler bulunamadi.",

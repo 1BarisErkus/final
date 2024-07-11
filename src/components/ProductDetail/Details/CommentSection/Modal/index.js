@@ -1,21 +1,36 @@
 "use client";
+import { notify } from "@/common/notify";
+import Button from "@/components/Button";
 import { addComment } from "@/lib/server/comment";
+import { getUser } from "@/lib/server/user";
 import { Rating } from "@smastrom/react-rating";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Modal = ({ productId }) => {
   const t = useTranslations("ProductDetail");
+  const { user } = useSelector((state) => state.user);
 
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!user) {
+      notify(t("noLoggedIn"), "error");
+      return;
+    }
+    if (!comment || !rating || comment === "" || rating === 0) {
+      notify(t("emptyFields"), "error");
+      return;
+    }
+
+    const displayUser = await getUser(user.uid);
 
     const newComment = {
       id: String(new Date().getTime()),
-      username: "Deneme User Name",
+      username: displayUser.name,
       content: comment,
       rating: rating,
       created_at: new Date().toISOString(),
@@ -24,10 +39,10 @@ const Modal = ({ productId }) => {
     try {
       const res = await addComment(productId, newComment);
       if (res.status === 200) {
-        alert("Comment added successfully");
+        notify(t("addedComment"), "success");
       }
-    } catch (error) {
-      alert(error.message);
+    } catch {
+      notify(t("unExpectedError"), "error");
     }
   };
 
@@ -72,16 +87,13 @@ const Modal = ({ productId }) => {
               />
             </div>
             <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
+              <Button
+                type="submit"
+                className="btn btn-primary my-0"
                 data-bs-dismiss="modal"
               >
-                {t("modalClose")}
-              </button>
-              <button type="submit" className="btn btn-primary">
                 {t("modalSubmit")}
-              </button>
+              </Button>
             </div>
           </form>
         </div>

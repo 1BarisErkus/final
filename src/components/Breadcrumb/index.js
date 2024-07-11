@@ -6,7 +6,7 @@ const Breadcrumb = ({ path }) => {
       <ol className="breadcrumb">
         {path.map((item, index) => (
           <li key={index} className="breadcrumb-item">
-            <Link href="/">{item}</Link>
+            <Link href="#">{item}</Link>
           </li>
         ))}
       </ol>

@@ -86,7 +86,7 @@ const Form = ({ productId, dbSizes, stock }) => {
     <form onSubmit={handleSubmit}>
       <div className="mt-2 pb-4 border-bottom">
         <h5 className="fs-6 text-secondary">{t("selectColors")}</h5>
-        <div className="d-flex mt-3">
+        <div className="d-flex flex-wrap mt-3">
           {Object.entries(filterColors).map(([colorName, color]) => (
             <ColorOption
               key={color}

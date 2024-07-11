@@ -1,9 +1,9 @@
 import Button from "@/components/Button";
-import { BiChevronDown } from "react-icons/bi";
 import { RiIndentIncrease } from "react-icons/ri";
 import Comments from "../Comments";
 import { useTranslations } from "next-intl";
-import Modal from "../Modal";
+import Modal from "./Modal";
+import SortBy from "./SortBy";
 
 const CommentsSection = ({ comments, productId }) => {
   const t = useTranslations("ProductDetail");
@@ -17,9 +17,7 @@ const CommentsSection = ({ comments, productId }) => {
           <button className="btn btn-light px-3 py-1 fs-4 d-flex align-items-center justify-content-center rounded-pill">
             <RiIndentIncrease />
           </button>
-          <button className="btn btn-light px-3 py-1 fs-6 d-flex align-items-center justify-content-center rounded-pill">
-            {t("latest")} <BiChevronDown />
-          </button>
+          <SortBy />
           <Button
             theme="dark"
             className="m-0 bg-black text-white"

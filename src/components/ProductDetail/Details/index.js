@@ -7,7 +7,7 @@ const Details = ({ comments, product }) => {
   return (
     <div className="container mt-5">
       <div className="row mt-5">
-        <div className="col-12">
+        <div className="col-12 m-0 p-0">
           <HeaderTitleList />
           <div className="tab-content mt-4" id="contentTabs">
             <div

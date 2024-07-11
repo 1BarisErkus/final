@@ -29,21 +29,91 @@
       "sizes": "small,medium,large",
       "color": "red",
       "dressStyle": "formal",
-      "stock": 4,
+      "stock": 3,
       "comments": [
         {
-          "id": "1720563436715",
-          "username": "Deneme User Name",
-          "content": "Denemeeeee",
-          "rating": 4,
-          "created_at": "2024-07-09T22:17:16.715Z"
+          "id": "1720685395039",
+          "username": "Barış Erkuş",
+          "content": "Deneme",
+          "rating": 2,
+          "created_at": "2024-07-11T08:09:55.039Z"
         },
         {
-          "id": "1720641313618",
-          "username": "Deneme User Name",
-          "content": "asdsada",
+          "id": "1720685412846",
+          "username": "admin",
+          "content": "Hoppala",
+          "rating": 5,
+          "created_at": "2024-07-11T08:10:12.846Z"
+        },
+        {
+          "id": "1720687194655",
+          "username": "admin",
+          "content": "a",
+          "rating": 4,
+          "created_at": "2024-07-12T08:39:54.655Z"
+        },
+        {
+          "id": "1720687312596",
+          "username": "admin",
+          "content": "adasdasdsa",
+          "rating": 3,
+          "created_at": "2024-07-13T08:41:52.596Z"
+        },
+        {
+          "id": "1720687325021",
+          "username": "admin",
+          "content": "dsadsadsa",
+          "rating": 4,
+          "created_at": "2024-07-14T08:42:05.021Z"
+        },
+        {
+          "id": "1720687389813",
+          "username": "admin",
+          "content": "deneme",
           "rating": 2,
-          "created_at": "2024-07-10T19:55:13.618Z"
+          "created_at": "2024-07-15T08:43:09.813Z"
+        },
+        {
+          "id": "1720687396771",
+          "username": "admin",
+          "content": "denemeaaa",
+          "rating": 2,
+          "created_at": "2024-07-11T08:43:16.771Z"
+        },
+        {
+          "id": "1720687593690",
+          "username": "admin",
+          "content": "asdadas",
+          "rating": 3,
+          "created_at": "2024-07-11T08:46:33.690Z"
+        },
+        {
+          "id": "1720687601637",
+          "username": "admin",
+          "content": "asdadasdasdsa",
+          "rating": 3,
+          "created_at": "2024-07-11T08:46:41.637Z"
+        },
+        {
+          "id": "1720687653677",
+          "username": "admin",
+          "content": "dasdad",
+          "rating": 2,
+          "created_at": "2024-07-11T08:47:33.677Z"
+        },
+        {
+          "id": "1720687907111",
+          "username": "admin",
+          "content": "addsadsadasdsadsadasdsadadasdasdsa",
+          "rating": 1,
+          "created_at": "2024-07-11T08:51:47.111Z"
+        },
+        {
+          "id": "1720687921994",
+          "username": "admin",
+          "content": "addsadsadasdsadsadasdsadadasdasdsadasdasdsadadasdadas",
+          "rating": 3,
+          "created_at": "2024-07-11T08:52:01.994Z"
         }
       ]
     },

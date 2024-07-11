@@ -6,13 +6,31 @@ import ImagesContainer from "./ImagesContainer";
 import { getTranslations } from "next-intl/server";
 import { calculateRating } from "@/lib/helpers";
 
-const ProductDetail = async ({ slug }) => {
+const ProductDetail = async ({ slug, searchParams }) => {
   const data = await getMightLike();
   const product = await getProduct(slug);
   const comments = product.comments;
   const t = await getTranslations("ProductDetail");
-
   const rating = calculateRating(comments);
+
+  const sortKey = searchParams._sort || "created_at";
+  const sortOrder = searchParams._order || "desc";
+
+  const sortedComments = [...comments].sort((a, b) => {
+    if (sortKey === "created_at") {
+      if (sortOrder === "asc") {
+        return new Date(a[sortKey]) - new Date(b[sortKey]);
+      } else {
+        return new Date(b[sortKey]) - new Date(a[sortKey]);
+      }
+    } else {
+      if (sortOrder === "asc") {
+        return a[sortKey] - b[sortKey];
+      } else {
+        return b[sortKey] - a[sortKey];
+      }
+    }
+  });
 
   return (
     <div className="container">
@@ -34,7 +52,7 @@ const ProductDetail = async ({ slug }) => {
             rating={rating}
           />
         </div>
-        <Details comments={comments} product={product} />
+        <Details comments={sortedComments} product={product} />
         <ShowCase title={t("youMightAlsoLike")} cards={data} />
       </div>
     </div>

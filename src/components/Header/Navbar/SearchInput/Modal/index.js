@@ -6,6 +6,7 @@ import { getProducts } from "@/lib/server/product";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { ModalContent } from "./styles";
 
 const Modal = () => {
   const t = useTranslations("Header");
@@ -14,6 +15,7 @@ const Modal = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      if (text === "") return;
       const data = await getProducts(`title_like=${text}`);
       setData(data);
       console.log(data);
@@ -30,7 +32,7 @@ const Modal = () => {
       aria-hidden="true"
     >
       <div className="modal-dialog">
-        <div className="modal-content">
+        <ModalContent className="modal-content">
           <div className="modal-body">
             <input
               type="search"
@@ -42,23 +44,25 @@ const Modal = () => {
               autoFocus
             />
             <WearCardList>
-              {data.map((wear) => {
-                const rating = calculateRating(wear.comments);
-                return (
-                  <Link href={`/product/${wear.id}`} key={wear.id}>
-                    <WearCard
-                      src={wear.image}
-                      title={wear.title}
-                      price={wear.price}
-                      discount={wear.discount}
-                      rating={rating}
-                    />
-                  </Link>
-                );
-              })}
+              {data.length > 0
+                ? data.map((wear) => {
+                    const rating = calculateRating(wear.comments);
+                    return (
+                      <Link href={`/product/${wear.id}`} key={wear.id}>
+                        <WearCard
+                          src={wear.image}
+                          title={wear.title}
+                          price={wear.price}
+                          discount={wear.discount}
+                          rating={rating}
+                        />
+                      </Link>
+                    );
+                  })
+                : null}
             </WearCardList>
           </div>
-        </div>
+        </ModalContent>
       </div>
     </div>
   );
