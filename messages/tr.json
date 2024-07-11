@@ -86,7 +86,8 @@
     "freeEbooks": "Ucretsiz E Kitaplar",
     "developmentTutorial": "Gelistirme Egitimi",
     "howToBlog": "Blog Nasil Yapilir",
-    "youtubePlaylist": "YouTube Oynatma Listesi"
+    "youtubePlaylist": "YouTube Oynatma Listesi",
+    "emailSend": "Abone oldugunuz icin tesekkurler"
   },
   "Header": {
     "content": "Kaydolun ve tum siparislerinizde %20 indirim kazanin.",
@@ -146,7 +147,11 @@
     "size": "Beden",
     "color": "Renk",
     "emptyFields": "Lütfen tüm alanları doldurun.",
-    "addedComment": "Yorumunuz başarıyla eklendi."
+    "addedComment": "Yorumunuz başarıyla eklendi.",
+    "sortByDate": "En Son",
+    "sortByDateOld": "En Eski",
+    "sortByRating": "Puana Göre (Yüksekten Düşüğe)",
+    "sortByRatingLow": "Puana Göre (Düşükten Yükseğe)"
   },
   "ShowCase": {
     "productsAreNotFound": "Urunler bulunamadi.",

@@ -7,7 +7,6 @@ export const getProducts = async (query) => {
     cache: "no-store",
   });
   const data = await res.json();
-  console.log(query, data);
   return data;
 };
 

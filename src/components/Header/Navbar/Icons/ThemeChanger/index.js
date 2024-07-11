@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { useTheme } from "next-themes";
 import { ThemeChangerWrapper } from "./style";
 import { useTranslations } from "next-intl";
@@ -12,8 +13,20 @@ const ThemeChanger = () => {
     setTheme(nextTheme);
   };
 
+  useEffect(() => {
+    const button = document.querySelector(".theme-changer-button");
+    if (button) {
+      button.style.backgroundColor = theme === "dark" ? "#fff" : "#000";
+      button.style.color = theme === "dark" ? "#000" : "#fff";
+    }
+  }, [theme]);
+
   return (
-    <ThemeChangerWrapper onClick={changeTheme} theme={theme}>
+    <ThemeChangerWrapper
+      className="theme-changer-button"
+      onClick={changeTheme}
+      theme={theme}
+    >
       {t("theme")}
     </ThemeChangerWrapper>
   );

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { StyledCard, StyledLink } from "./styles";
 
-const DressCard = ({ col, title, src }) => {
+const DressCard = ({ col, title, value, src }) => {
   return (
     <StyledLink
-      href={`/category?dressStyle_like=${title.toLowerCase()}`}
+      href={`/category?dressStyle_like=${value}`}
       className={`col-${col} text-decoration-none text-black`}
     >
       <StyledCard className="bg-white position-relative rounded-4 mb-3">

@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
         --tertiary: #f2f0f1;
         --quaternary: #f8f9fa;
         --filter-background: #fff;
+        --filter-hover: #e0e0e0
     }
 
     [data-theme="dark"] {
@@ -16,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
         --tertiary: #1a1a1a;
         --quaternary: #171717;
         --filter-background: #171717;
+        --filter-hover: #2a2a2a;
     }
     * {
         box-sizing: border-box;

@@ -32,8 +32,8 @@ export const PaymentIcon = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px 16px;
+  padding: 8px 14px;
   border-radius: 5px;
-  border: 1px solid #dee2e6;
   background-color: var(--primary);
+  border: none;
 `;

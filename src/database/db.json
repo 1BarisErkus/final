@@ -14,64 +14,7 @@
       "color": "green",
       "dressStyle": "casual",
       "stock": 0,
-      "comments": [
-        {
-          "id": "1720690949386",
-          "username": "admin",
-          "content": "dsadasdsa",
-          "rating": 2,
-          "created_at": "2024-07-11T09:42:29.386Z"
-        },
-        {
-          "id": "1720690984552",
-          "username": "admin",
-          "content": "dsadasdsa",
-          "rating": 2,
-          "created_at": "2024-07-11T09:43:04.552Z"
-        },
-        {
-          "id": "1720690991463",
-          "username": "admin",
-          "content": "dadas",
-          "rating": 4,
-          "created_at": "2024-07-11T09:43:11.463Z"
-        },
-        {
-          "id": "1720690994133",
-          "username": "admin",
-          "content": "dadas",
-          "rating": 4,
-          "created_at": "2024-07-11T09:43:14.133Z"
-        },
-        {
-          "id": "1720691020883",
-          "username": "admin",
-          "content": "dadas",
-          "rating": 4,
-          "created_at": "2024-07-11T09:43:40.883Z"
-        },
-        {
-          "id": "1720691032536",
-          "username": "admin",
-          "content": "dadasdd",
-          "rating": 4,
-          "created_at": "2024-07-11T09:43:52.536Z"
-        },
-        {
-          "id": "1720691256141",
-          "username": "admin",
-          "content": "dadasddcccc",
-          "rating": 5,
-          "created_at": "2024-07-11T09:47:36.141Z"
-        },
-        {
-          "id": "1720694119546",
-          "username": "Barış Erkuş",
-          "content": "dasdasdsadsa",
-          "rating": 5,
-          "created_at": "2024-07-11T10:35:19.546Z"
-        }
-      ]
+      "comments": []
     },
     {
       "id": "2444",
@@ -86,114 +29,8 @@
       "sizes": "small,medium,large",
       "color": "red",
       "dressStyle": "formal",
-      "stock": -31,
-      "comments": [
-        {
-          "id": "1720685395039",
-          "username": "Barış Erkuş",
-          "content": "Deneme",
-          "rating": 2,
-          "created_at": "2024-07-11T08:09:55.039Z"
-        },
-        {
-          "id": "1720685412846",
-          "username": "admin",
-          "content": "Hoppala",
-          "rating": 5,
-          "created_at": "2024-07-11T08:10:12.846Z"
-        },
-        {
-          "id": "1720687194655",
-          "username": "admin",
-          "content": "a",
-          "rating": 4,
-          "created_at": "2024-07-12T08:39:54.655Z"
-        },
-        {
-          "id": "1720687312596",
-          "username": "admin",
-          "content": "adasdasdsa",
-          "rating": 3,
-          "created_at": "2024-07-13T08:41:52.596Z"
-        },
-        {
-          "id": "1720687325021",
-          "username": "admin",
-          "content": "dsadsadsa",
-          "rating": 4,
-          "created_at": "2024-07-14T08:42:05.021Z"
-        },
-        {
-          "id": "1720687389813",
-          "username": "admin",
-          "content": "deneme",
-          "rating": 2,
-          "created_at": "2024-07-15T08:43:09.813Z"
-        },
-        {
-          "id": "1720687396771",
-          "username": "admin",
-          "content": "denemeaaa",
-          "rating": 2,
-          "created_at": "2024-07-11T08:43:16.771Z"
-        },
-        {
-          "id": "1720687593690",
-          "username": "admin",
-          "content": "asdadas",
-          "rating": 3,
-          "created_at": "2024-07-11T08:46:33.690Z"
-        },
-        {
-          "id": "1720687601637",
-          "username": "admin",
-          "content": "asdadasdasdsa",
-          "rating": 3,
-          "created_at": "2024-07-11T08:46:41.637Z"
-        },
-        {
-          "id": "1720687653677",
-          "username": "admin",
-          "content": "dasdad",
-          "rating": 2,
-          "created_at": "2024-07-11T08:47:33.677Z"
-        },
-        {
-          "id": "1720687907111",
-          "username": "admin",
-          "content": "addsadsadasdsadsadasdsadadasdasdsa",
-          "rating": 1,
-          "created_at": "2024-07-11T08:51:47.111Z"
-        },
-        {
-          "id": "1720687921994",
-          "username": "admin",
-          "content": "addsadsadasdsadsadasdsadadasdasdsadasdasdsadadasdadas",
-          "rating": 3,
-          "created_at": "2024-07-11T08:52:01.994Z"
-        },
-        {
-          "id": "1720690853054",
-          "username": "admin",
-          "content": "dsdsdsa",
-          "rating": 3,
-          "created_at": "2024-07-11T09:40:53.054Z"
-        },
-        {
-          "id": "1720690862163",
-          "username": "admin",
-          "content": "dsdsdsadadsadsa",
-          "rating": 3,
-          "created_at": "2024-07-11T09:41:02.163Z"
-        },
-        {
-          "id": "1720690939597",
-          "username": "admin",
-          "content": "dsadadas",
-          "rating": 4,
-          "created_at": "2024-07-11T09:42:19.597Z"
-        }
-      ]
+      "stock": 29,
+      "comments": []
     },
     {
       "id": "312313123131",
@@ -208,7 +45,7 @@
       "dressStyle": "formal",
       "top_selling": true,
       "new_arrival": true,
-      "stock": 52,
+      "stock": 41,
       "comments": []
     },
     {
@@ -224,7 +61,7 @@
       "dressStyle": "formal",
       "top_selling": true,
       "new_arrival": false,
-      "stock": 109,
+      "stock": 108,
       "comments": []
     },
     {
@@ -274,78 +111,77 @@
       "new_arrival": true,
       "stock": 12,
       "comments": []
+    },
+    {
+      "id": "312313199232131",
+      "title": "This graphic t-shirts which",
+      "price": 260,
+      "discount": 0,
+      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      "category": "shirts",
+      "image": "wear-2",
+      "sizes": "xlarge",
+      "color": "white",
+      "dressStyle": "formal",
+      "top_selling": true,
+      "new_arrival": true,
+      "stock": 12,
+      "comments": []
+    },
+    {
+      "id": "312313195923131",
+      "title": "This graphic t-shirts which",
+      "price": 260,
+      "discount": 0,
+      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      "category": "shirts",
+      "image": "wear-2",
+      "sizes": "xlarge",
+      "color": "white",
+      "dressStyle": "formal",
+      "top_selling": true,
+      "new_arrival": true,
+      "stock": 12,
+      "comments": []
+    },
+    {
+      "id": "3123131955923131",
+      "title": "This graphic t-shirts which",
+      "price": 260,
+      "discount": 0,
+      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      "category": "shirts",
+      "image": "wear-2",
+      "sizes": "xlarge",
+      "color": "white",
+      "dressStyle": "formal",
+      "top_selling": true,
+      "new_arrival": true,
+      "stock": 4,
+      "comments": []
+    },
+    {
+      "id": "31231319923534543131",
+      "title": "This graphic t-shirts which",
+      "price": 260,
+      "discount": 0,
+      "description": "This graphic t-shirts which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      "category": "shirts",
+      "image": "wear-2",
+      "sizes": "xlarge",
+      "color": "white",
+      "dressStyle": "formal",
+      "top_selling": true,
+      "new_arrival": true,
+      "stock": 12,
+      "comments": []
     }
   ],
   "users": [
     {
       "id": "p8xQJsFrBETHXooOAKd5Wvr4FMs1",
       "name": "Barış Erkuş",
-      "email": "baris@gmail.com",
-      "cart": [
-        {
-          "id": "1720693948347",
-          "color": "red",
-          "size": "medium",
-          "count": 10,
-          "productId": "1"
-        },
-        {
-          "id": "1720693949427",
-          "color": "red",
-          "size": "large",
-          "count": 10,
-          "productId": "1"
-        },
-        {
-          "id": "1720693950620",
-          "color": "red",
-          "size": "small",
-          "count": 20,
-          "productId": "1"
-        },
-        {
-          "id": "1720693951920",
-          "color": "green",
-          "size": "small",
-          "count": 10,
-          "productId": "1"
-        },
-        {
-          "id": "1720693953034",
-          "color": "yellow",
-          "size": "small",
-          "count": 10,
-          "productId": "1"
-        },
-        {
-          "id": "1720693954297",
-          "color": "orange",
-          "size": "small",
-          "count": 10,
-          "productId": "1"
-        },
-        {
-          "id": "1720693957024",
-          "color": "blue",
-          "size": "small",
-          "count": 10,
-          "productId": "1"
-        },
-        {
-          "id": "1720693958311",
-          "color": "darkblue",
-          "size": "small",
-          "count": 10,
-          "productId": "1"
-        },
-        {
-          "id": "1720693959471",
-          "color": "purple",
-          "size": "small",
-          "count": 10,
-          "productId": "1"
-        }
-      ]
+      "email": "baris@gmail.com"
     },
     {
       "id": "7eqa0pb38RXpa3pz5UkMMul8hwS2",

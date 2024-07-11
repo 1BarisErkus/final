@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useRouter } from "@/navigation";
 import { useSearchParams } from "next/navigation";
+import { Option, Select } from "./styles";
 
 const SortBy = () => {
   const t = useTranslations("Category");
@@ -45,18 +46,18 @@ const SortBy = () => {
   };
 
   return (
-    <select
+    <Select
       value={sortOption}
       onChange={handleSortChange}
       className="form-select d-inline-block w-auto bg-transparent border-0"
     >
-      <option value="mostPopular">{t("mostPopular")}</option>
-      <option value="priceLowToHigh">{t("priceLowToHigh")}</option>
-      <option value="priceHighToLow">{t("priceHighToLow")}</option>
-      <option value="alphabetical">{t("alphabetical")}</option>
-      <option value="reverseAlphabetical">{t("reverseAlphabetical")}</option>
-      <option value="discount">{t("discount")}</option>
-    </select>
+      <Option value="mostPopular">{t("mostPopular")}</Option>
+      <Option value="priceLowToHigh">{t("priceLowToHigh")}</Option>
+      <Option value="priceHighToLow">{t("priceHighToLow")}</Option>
+      <Option value="alphabetical">{t("alphabetical")}</Option>
+      <Option value="reverseAlphabetical">{t("reverseAlphabetical")}</Option>
+      <Option value="discount">{t("discount")}</Option>
+    </Select>
   );
 };
 

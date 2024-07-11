@@ -7,6 +7,7 @@ import { Rating } from "@smastrom/react-rating";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { ModalContent } from "./styles";
 
 const Modal = ({ productId }) => {
   const t = useTranslations("ProductDetail");
@@ -55,7 +56,7 @@ const Modal = ({ productId }) => {
       aria-hidden="true"
     >
       <div className="modal-dialog">
-        <div className="modal-content">
+        <ModalContent className="modal-content">
           <form onSubmit={handleSubmit}>
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="addCommentModalLabel">
@@ -96,7 +97,7 @@ const Modal = ({ productId }) => {
               </Button>
             </div>
           </form>
-        </div>
+        </ModalContent>
       </div>
     </div>
   );

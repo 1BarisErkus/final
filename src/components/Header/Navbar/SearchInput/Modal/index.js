@@ -18,7 +18,6 @@ const Modal = () => {
       if (text === "") return;
       const data = await getProducts(`title_like=${text}`);
       setData(data);
-      console.log(data);
     };
     fetchData();
   }, [text]);

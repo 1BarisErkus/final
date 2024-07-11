@@ -32,7 +32,7 @@ const cartSlice = createSlice({
       const user =
         typeof window !== "undefined" &&
         JSON.parse(localStorage.getItem("user"));
-      updateDbCart(user.uid, state.cart, "add", action.payload.count);
+      updateDbCart(user.uid, state.cart);
     },
     deleteProductToLocalCart: (state, action) => {
       const count = state.cart.find((item) => item.id === action.payload).count;
@@ -43,7 +43,7 @@ const cartSlice = createSlice({
       const user =
         typeof window !== "undefined" &&
         JSON.parse(localStorage.getItem("user"));
-      updateDbCart(user.uid, state.cart, "delete", count);
+      updateDbCart(user.uid, state.cart);
     },
     increaseProductCount: (state, action) => {
       const index = state.cart.findIndex((item) => item.id === action.payload);
@@ -58,7 +58,7 @@ const cartSlice = createSlice({
       const user =
         typeof window !== "undefined" &&
         JSON.parse(localStorage.getItem("user"));
-      updateDbCart(user.uid, state.cart, "inc");
+      updateDbCart(user.uid);
     },
     decreaseProductCount: (state, action) => {
       const index = state.cart.findIndex((item) => item.id === action.payload);
@@ -74,7 +74,7 @@ const cartSlice = createSlice({
       const user =
         typeof window !== "undefined" &&
         JSON.parse(localStorage.getItem("user"));
-      updateDbCart(user.uid, state.cart, "desc");
+      updateDbCart(user.uid);
     },
     clearCart: (state) => {
       state.cart = [];
@@ -84,7 +84,7 @@ const cartSlice = createSlice({
       const user =
         typeof window !== "undefined" &&
         JSON.parse(localStorage.getItem("user"));
-      updateDbCart(user.uid, state.cart, "clear");
+      updateDbCart(user.uid);
     },
   },
 });

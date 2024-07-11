@@ -13,10 +13,10 @@ const Browse = () => {
     <Main className="container-xl py-5 rounded-5 px-5">
       <h2 className="text-center">{t("browse")}</h2>
       <div className="row mt-5">
-        <DressCard col={4} title={t("casual")} src={casual} />
-        <DressCard col={8} title={t("formal")} src={formal} />
-        <DressCard col={8} title={t("party")} src={party} />
-        <DressCard col={4} title={t("gym")} src={gym} />
+        <DressCard col={4} title={t("casual")} value="casual" src={casual} />
+        <DressCard col={8} title={t("formal")} value="formal" src={formal} />
+        <DressCard col={8} title={t("party")} value="party" src={party} />
+        <DressCard col={4} title={t("gym")} value="gym" src={gym} />
       </div>
     </Main>
   );
