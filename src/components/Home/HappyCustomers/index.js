@@ -50,7 +50,7 @@ const HappyCustomers = () => {
           className="d-flex transition-transform gap-3"
           style={{
             transform: `translateX(-${
-              (currentIndex * 50) / (comments.length - 2)
+              (currentIndex * 150) / (comments.length - 2)
             }%)`,
             transition: "transform 0.5s",
           }}

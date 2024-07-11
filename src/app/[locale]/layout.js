@@ -4,18 +4,11 @@ import "@smastrom/react-rating/style.css";
 import "react-range-slider-input/dist/style.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
-
-import StyledComponentsRegistry from "@/lib/styledregistry";
-import GlobalStyles from "@/common/GlobalStyles";
-import ReduxProvider from "@/common/ReduxProvider";
-
 import Discount from "@/components/Header/Discount";
 import Navbar from "@/components/Header/Navbar";
 import Footer from "@/components/Footer";
-import { ThemeProvider } from "next-themes";
-import { ToastContainer } from "react-toastify";
+
+import Providers from "@/common/Providers";
 
 const integralFc = localFont({
   src: [
@@ -54,26 +47,16 @@ export const metadata = {
   description: "E-commerce website for all your needs!",
 };
 
-export default async function RootLayout({ children, params: { locale } }) {
-  const messages = await getMessages({ locale });
-
+export default function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${integralFc.variable} ${satoshi.variable}`}>
-        <ReduxProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <ThemeProvider>
-              <StyledComponentsRegistry>
-                <GlobalStyles />
-                <Discount />
-                <Navbar />
-                {children}
-                <Footer />
-                <ToastContainer />
-              </StyledComponentsRegistry>
-            </ThemeProvider>
-          </NextIntlClientProvider>
-        </ReduxProvider>
+        <Providers locale={locale}>
+          <Discount />
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

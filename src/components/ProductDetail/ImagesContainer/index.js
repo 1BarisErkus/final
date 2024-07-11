@@ -35,6 +35,9 @@ const ImagesContainer = ({ productImage }) => {
                 className="obejct-fit-cover rounded-4"
                 fill
                 priority
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
               />
             </LittleImageContainer>
           ))}
@@ -48,6 +51,9 @@ const ImagesContainer = ({ productImage }) => {
               fill
               priority
               quality={100}
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
             />
           </BigImageContainer>
         </BigImage>

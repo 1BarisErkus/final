@@ -14,9 +14,12 @@ const globalSlice = createSlice({
     hideHeader: (state) => {
       state.isHeaderVisible = false;
     },
+    openHeader: (state) => {
+      state.isHeaderVisible = true;
+    },
   },
 });
 
-export const { hideHeader } = globalSlice.actions;
+export const { hideHeader, openHeader } = globalSlice.actions;
 
 export default globalSlice.reducer;

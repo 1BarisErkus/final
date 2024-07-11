@@ -12,6 +12,7 @@ import { removeUser, setUser } from "@/redux/slices/userSlice";
 import { notify } from "@/common/notify";
 import { useEffect, useState } from "react";
 import { clearCart } from "@/redux/slices/cartSlice";
+import { openHeader } from "@/redux/slices/globalSlice";
 
 const StyledFormContainer = styled.div`
   max-width: 400px;
@@ -75,6 +76,7 @@ const LoginForm = () => {
       await signOut(auth);
       dispatch(clearCart());
       dispatch(removeUser());
+      dispatch(openHeader());
       notify(t("logoutSuccess"), "success");
       router.push("/signin");
     } catch {

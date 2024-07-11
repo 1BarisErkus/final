@@ -38,7 +38,8 @@ const Language = () => {
           }
           width={24}
           height={24}
-          alt="TR flag"
+          alt="flag"
+          priority
         />
       }
     </button>

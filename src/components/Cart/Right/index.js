@@ -5,34 +5,57 @@ import { useTranslations } from "next-intl";
 import { useSelector } from "react-redux";
 import { getProduct } from "@/lib/server/product";
 import { useEffect, useState } from "react";
+import { notify } from "@/common/notify";
 
 const Right = () => {
   const t = useTranslations("Cart");
+  const [couponCode, setCouponCode] = useState("");
+  const [couponValue, setCouponValue] = useState(0);
   const [subTotal, setSubTotal] = useState(0);
-  const [discountPercentage, setDiscountPercentage] = useState(0);
-  const total = subTotal - Math.round((subTotal * discountPercentage) / 100);
-  const discount = total - subTotal;
-  const deliveryFee = 10;
+  const [total, setTotal] = useState(0);
+  const discount = subTotal - total;
+  const deliveryFee = subTotal > 100 ? 0 : 10;
 
   const { cart } = useSelector((state) => state.cart);
 
   useEffect(() => {
     const calculateTotal = async () => {
       let newTotal = 0;
-      let newDiscountPercentage = 0;
+      let subTotal = 0;
 
       for (const item of cart) {
         const product = await getProduct(item.productId);
-        newTotal += product.price * item.count;
-        newDiscountPercentage = product.discount;
+        const discountPrice = Math.round(
+          product.price - product.price * (product.discount / 100)
+        );
+        subTotal += product.price * item.count;
+        newTotal += discountPrice * item.count;
       }
-
-      setSubTotal(newTotal);
-      setDiscountPercentage(newDiscountPercentage);
+      newTotal -= couponValue;
+      setSubTotal(subTotal);
+      setTotal(newTotal);
     };
 
     calculateTotal();
-  }, [cart]);
+  }, [cart, couponValue]);
+
+  const applyCoupon = () => {
+    if (cart.length === 0) {
+      notify(t("emptyCart"), "error");
+      return;
+    }
+    if (couponCode.toUpperCase() === "ATMOSWARE20") {
+      setCouponValue(20);
+      setCouponCode("");
+      if (couponValue === 20) {
+        notify(t("couponAlreadyApplied"), "error");
+        return;
+      }
+      notify(t("couponApplied"), "success");
+    } else {
+      notify(t("invalidCouponCode"), "error");
+    }
+  };
 
   return (
     <div className="border rounded-4 p-4">
@@ -48,12 +71,14 @@ const Right = () => {
         </div>
         <div className="d-flex justify-content-between mb-3">
           <p className="fs-5 mb-0">{t("deliveryFee")}</p>
-          <p className="fs-5 mb-0 fw-bold">${deliveryFee}</p>
+          <p className="fs-5 mb-0 fw-bold">
+            {deliveryFee === 0 ? t("deliveryFree") : `$${deliveryFee}`}
+          </p>
         </div>
       </div>
       <div className="d-flex justify-content-between mb-3">
         <p className="fs-5 mb-0">{t("total")}</p>
-        <p className="fs-3 mb-0 fw-bold">${total}</p>
+        <p className="fs-3 mb-0 fw-bold">${total + deliveryFee}</p>
       </div>
       <form>
         <div className="d-flex position-relative flex-grow-1">
@@ -64,17 +89,24 @@ const Right = () => {
             className="form-control me-2 rounded-pill ps-5 py-2 pe-2 border-0 bg-light"
             type="text"
             placeholder={t("couponCode")}
+            value={couponCode}
+            onChange={(e) => setCouponCode(e.target.value)}
           />
         </div>
       </form>
       <Button
         theme="dark"
         className="rounded-pill d-flex text-center align-items-center justify-content-center ms-auto my-3 bg-black text-white"
+        onClick={applyCoupon}
       >
         {t("apply")}
       </Button>
-      <Button theme="dark" className="w-100 my-3 bg-black text-white">
-        {t("gotoCheckout")} <BiSolidRightArrow className="ms-2" />
+      <Button
+        theme="dark"
+        className="w-100 my-3 bg-black text-white"
+        onClick={() => notify(t("gotoCheckout"))}
+      >
+        {t("gotoCheckoutText")} <BiSolidRightArrow className="ms-2" />
       </Button>
     </div>
   );

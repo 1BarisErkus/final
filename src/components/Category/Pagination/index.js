@@ -2,6 +2,7 @@
 import { useRouter } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
+import { PaginationButton } from "./styles";
 
 const Pagination = ({ hasNextPage, hasPrevPage }) => {
   const t = useTranslations("Category");
@@ -26,7 +27,7 @@ const Pagination = ({ hasNextPage, hasPrevPage }) => {
     >
       <ul className="pagination mt-5">
         <li className="page-item">
-          <button
+          <PaginationButton
             className={`page-link ${!hasPrevPage ? "disabled" : ""}`}
             onClick={() => {
               if (hasPrevPage) {
@@ -35,10 +36,10 @@ const Pagination = ({ hasNextPage, hasPrevPage }) => {
             }}
           >
             {t("previous")}
-          </button>
+          </PaginationButton>
         </li>
         <li className="page-item">
-          <button
+          <PaginationButton
             className={`page-link ${!hasNextPage ? "disabled" : ""}`}
             onClick={() => {
               if (hasNextPage) {
@@ -47,7 +48,7 @@ const Pagination = ({ hasNextPage, hasPrevPage }) => {
             }}
           >
             {t("next")}
-          </button>
+          </PaginationButton>
         </li>
       </ul>
     </nav>

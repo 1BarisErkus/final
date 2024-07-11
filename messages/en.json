@@ -166,8 +166,14 @@
     "deliveryFee": "Delivery Fee",
     "total": "Total",
     "apply": "Apply",
-    "gotoCheckout": "Go to Checkout",
-    "couponCode": "Add promo code"
+    "couponCode": "Add promo code",
+    "deliveryFree": "Free Delivery",
+    "gotoCheckout": "We will be providing this service soon. Please try again later.",
+    "gotoCheckoutText": "Go to Checkout",
+    "invalidCouponCode": "Invalid coupon code. Please try again.",
+    "emptyCart": "Your cart is empty. You can add products from the shop page.",
+    "couponApplied": "Coupon applied successfully.",
+    "couponAlreadyApplied": "Coupon has already been applied."
   },
   "Error": {
     "pageNotFound": "Page not found",

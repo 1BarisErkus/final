@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   CardContainer,
+  DiscountPercent,
   ImageWrapper,
   P,
   RiDeleteBin3FillWrapper,
@@ -33,21 +34,21 @@ const Card = ({ id, productId, size, color, count }) => {
   }, [productId]);
 
   return (
-    <CardContainer
-      className="card mb-3 border-0 border-bottom"
-      style={{ maxWidth: "700px" }}
-    >
+    <CardContainer className="card mb-3 border-0 border-bottom">
       <div className="row g-0">
-        <div className="col-xxl-2 d-flex align-items-center">
+        <div className="col-xxl-2 d-flex align-items-center justify-content-center">
           <ImageWrapper>
-            <Image
-              src={`/images/wears/${
-                product ? product.image : "default-wear"
-              }.png`}
-              className="card-img-left object-fit-cover"
-              alt="product"
-              fill
-            />
+            {product?.image && (
+              <Image
+                src={`/images/wears/${product.image}.png`}
+                className="card-img-left object-fit-cover"
+                alt="product"
+                fill
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+              />
+            )}
           </ImageWrapper>
         </div>
         <div className="col-xxl-10">
@@ -57,7 +58,10 @@ const Card = ({ id, productId, size, color, count }) => {
               <RiDeleteBin3FillWrapper>
                 <RiDeleteBin3Fill
                   className="fs-5 text-danger"
-                  onClick={() => dispatch(deleteProductToLocalCart(id))}
+                  onClick={() => {
+                    dispatch(deleteProductToLocalCart(id));
+                    notify(t("productHasBeenDeleted"), "error");
+                  }}
                 />
               </RiDeleteBin3FillWrapper>
             </div>
@@ -70,7 +74,12 @@ const Card = ({ id, productId, size, color, count }) => {
               </P>
             </div>
             <div className="d-flex justify-content-between align-items-center">
-              <p className="card-text fs-4 fw-bold">${product?.price}</p>
+              <div className="d-flex gap-2 align-items-center justify-content-center">
+                <p className="card-text fs-4 fw-bold mb-0">${product?.price}</p>
+                <DiscountPercent className="card-text">
+                  %{product?.discount}
+                </DiscountPercent>
+              </div>
               <ProductCountButton
                 count={productCount}
                 cartDec={async () => {

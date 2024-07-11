@@ -166,8 +166,14 @@
     "discount": "Indirim",
     "deliveryFee": "Teslimat Ucreti",
     "apply": "Uygula",
-    "gotoCheckout": "Odeme Yapin",
-    "couponCode": "Kupon Kodu Ekle"
+    "couponCode": "Kupon Kodu Ekle",
+    "deliveryFree": "Ucretsiz Teslimat",
+    "gotoCheckout": "Bu konuda yakında hizmet vereceğiz. Lütfen daha sonra tekrar deneyin.",
+    "gotoCheckoutText": "Kasaya Git",
+    "invalidCouponCode": "Geçersiz kupon kodu. Lütfen kontrol edin ve tekrar deneyin.",
+    "emptyCart": "Sepetiniz boş. Ürünleri mağaza sayfasından ekleyebilirsiniz.",
+    "couponApplied": "Kupon başarıyla uygulandı.",
+    "couponAlreadyApplied": "Kupon zaten uygulandı."
   },
   "Error": {
     "pageNotFound": "Sayfa Bulunamadi",

@@ -152,6 +152,7 @@ const FilterComponent = ({ modal, className }) => {
         <span>${priceRange[0]}</span>
         <span>${priceRange[1]}</span>
       </div>
+
       <SectionTitle>
         <span>{t("colors")}</span>
         <BiChevronUp size={24} />

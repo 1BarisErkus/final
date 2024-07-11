@@ -22,6 +22,9 @@ const WearCard = ({ src, title, price, discount = 0, rating }) => {
           alt="Wear"
           fill
           priority
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
         />
       </ImageContainer>
       <div className="card-body px-0">
