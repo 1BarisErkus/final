@@ -80,7 +80,7 @@
       "discount": 43,
       "description": "This is a description for product 2. It is designed to be appealing and informative.",
       "category": "shirts",
-      "image": "wear-2",
+      "image": "wear-5",
       "top_selling": true,
       "new_arrival": false,
       "sizes": "xlarge,xxlarge,medium,large,xxsmall,xsmall",
@@ -118,7 +118,7 @@
       "discount": 25,
       "description": "This is a description for product 3. It is designed to be appealing and informative.",
       "category": "jeans",
-      "image": "wear-2",
+      "image": "wear-6",
       "top_selling": false,
       "new_arrival": true,
       "sizes": "xlarge,medium,small",
@@ -149,7 +149,7 @@
       "discount": 46,
       "description": "This is a description for product 4. It is designed to be appealing and informative.",
       "category": "jeans",
-      "image": "wear-2",
+      "image": "wear-7",
       "top_selling": true,
       "new_arrival": false,
       "sizes": "small,medium,xxsmall,xsmall,large,xxlarge,xlarge",
@@ -180,7 +180,7 @@
       "discount": 36,
       "description": "This is a description for product 5. It is designed to be appealing and informative.",
       "category": "shirts",
-      "image": "wear-1",
+      "image": "wear-8",
       "top_selling": false,
       "new_arrival": true,
       "sizes": "large,xlarge,xxlarge",
@@ -211,7 +211,7 @@
       "discount": 0,
       "description": "This is a description for product 6. It is designed to be appealing and informative.",
       "category": "shirts",
-      "image": "wear-3",
+      "image": "wear-9",
       "top_selling": true,
       "new_arrival": false,
       "sizes": "medium,xxsmall,xlarge,small,large,xsmall",
@@ -242,7 +242,7 @@
       "discount": 4,
       "description": "This is a description for product 7. It is designed to be appealing and informative.",
       "category": "shorts",
-      "image": "wear-3",
+      "image": "wear-10",
       "top_selling": false,
       "new_arrival": true,
       "sizes": "xsmall,xxlarge,large",
@@ -280,7 +280,7 @@
       "discount": 0,
       "description": "This is a description for product 8. It is designed to be appealing and informative.",
       "category": "jeans",
-      "image": "wear-2",
+      "image": "wear-11",
       "top_selling": true,
       "new_arrival": false,
       "sizes": "xxlarge,small,large,medium,xsmall",
@@ -342,7 +342,7 @@
       "discount": 10,
       "description": "This is a description for product 10. It is designed to be appealing and informative.",
       "category": "shirts",
-      "image": "wear-2",
+      "image": "wear-1",
       "top_selling": true,
       "new_arrival": true,
       "sizes": "xlarge,xxlarge",
@@ -366,7 +366,7 @@
       "discount": 40,
       "description": "This is a description for product 11. It is designed to be appealing and informative.",
       "category": "shorts",
-      "image": "wear-1",
+      "image": "wear-12",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "xxlarge,large,medium,xxsmall,xsmall",
@@ -421,7 +421,7 @@
       "discount": 26,
       "description": "This is a description for product 13. It is designed to be appealing and informative.",
       "category": "jeans",
-      "image": "wear-2",
+      "image": "wear-7",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "xxlarge,large",
@@ -445,7 +445,7 @@
       "discount": 41,
       "description": "This is a description for product 14. It is designed to be appealing and informative.",
       "category": "t-shirts",
-      "image": "wear-3",
+      "image": "wear-4",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "xlarge,xxsmall,xsmall,medium,large",
@@ -469,7 +469,7 @@
       "discount": 3,
       "description": "This is a description for product 15. It is designed to be appealing and informative.",
       "category": "shorts",
-      "image": "wear-3",
+      "image": "wear-12",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "xlarge,small",
@@ -521,7 +521,7 @@
       "discount": 19,
       "description": "This is a description for product 16. It is designed to be appealing and informative.",
       "category": "jeans",
-      "image": "wear-3",
+      "image": "wear-2",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "large,xlarge",
@@ -552,7 +552,7 @@
       "discount": 14,
       "description": "This is a description for product 17. It is designed to be appealing and informative.",
       "category": "hoodie",
-      "image": "wear-3",
+      "image": "wear-13",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "xxlarge,xlarge,small",
@@ -590,7 +590,7 @@
       "discount": 35,
       "description": "This is a description for product 18. It is designed to be appealing and informative.",
       "category": "t-shirts",
-      "image": "wear-1",
+      "image": "wear-9",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "xxsmall,large,medium,small,xsmall,xxlarge,xlarge",
@@ -621,7 +621,7 @@
       "discount": 43,
       "description": "This is a description for product 19. It is designed to be appealing and informative.",
       "category": "shirts",
-      "image": "wear-4",
+      "image": "wear-8",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "small,medium,xlarge,xsmall,xxlarge,xxsmall",
@@ -652,7 +652,7 @@
       "discount": 0,
       "description": "This is a description for product 20. It is designed to be appealing and informative.",
       "category": "t-shirts",
-      "image": "wear-1",
+      "image": "wear-9",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "xxsmall,small,large,xxlarge,medium",
@@ -676,7 +676,7 @@
       "discount": 0,
       "description": "This is a description for product 21. It is designed to be appealing and informative.",
       "category": "shorts",
-      "image": "wear-2",
+      "image": "wear-10",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "xxlarge,xlarge,small,medium,xxsmall,large,xsmall",
@@ -700,7 +700,7 @@
       "discount": 0,
       "description": "This is a description for product 22. It is designed to be appealing and informative.",
       "category": "shorts",
-      "image": "wear-2",
+      "image": "wear-12",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "large,xxlarge",
@@ -724,7 +724,7 @@
       "discount": 0,
       "description": "This is a description for product 23. It is designed to be appealing and informative.",
       "category": "shorts",
-      "image": "wear-4",
+      "image": "wear-14",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "xxsmall,medium,xlarge",
@@ -748,7 +748,7 @@
       "discount": 15,
       "description": "This is a description for product 24. It is designed to be appealing and informative.",
       "category": "jeans",
-      "image": "wear-1",
+      "image": "wear-2",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "large,small,xlarge",
@@ -779,7 +779,7 @@
       "discount": 33,
       "description": "This is a description for product 25. It is designed to be appealing and informative.",
       "category": "shirts",
-      "image": "wear-1",
+      "image": "wear-5",
       "top_selling": false,
       "new_arrival": false,
       "sizes": "xxlarge,xsmall,medium,small,xlarge",
@@ -908,198 +908,6 @@
       ]
     },
     {
-      "id": "28",
-      "title": "Product Title 28",
-      "price": 163,
-      "discount": 0,
-      "description": "This is a description for product 28. It is designed to be appealing and informative.",
-      "category": "jeans",
-      "image": "wear-1",
-      "top_selling": false,
-      "new_arrival": false,
-      "sizes": "xsmall,small,xlarge,xxsmall,medium,xxlarge",
-      "color": "darkblue",
-      "dressStyle": "casual",
-      "stock": 59,
-      "comments": [
-        {
-          "id": "60",
-          "username": "Barış Erkuş",
-          "content": "Good quality but a bit expensive.",
-          "rating": 4,
-          "created_at": "2024-09-11T12:24:18.228400"
-        },
-        {
-          "id": "61",
-          "username": "Admin Administrator",
-          "content": "Average product, could be better.",
-          "rating": 3,
-          "created_at": "2024-07-11T12:24:18.228400"
-        }
-      ]
-    },
-    {
-      "id": "29",
-      "title": "Product Title 29",
-      "price": 46,
-      "discount": 0,
-      "description": "This is a description for product 29. It is designed to be appealing and informative.",
-      "category": "hoodie",
-      "image": "wear-4",
-      "top_selling": false,
-      "new_arrival": false,
-      "sizes": "xxsmall,xxlarge",
-      "color": "white",
-      "dressStyle": "casual",
-      "stock": 89,
-      "comments": [
-        {
-          "id": "62",
-          "username": "Admin Administrator",
-          "content": "Average product, could be better.",
-          "rating": 3,
-          "created_at": "2024-07-11T12:24:18.228400"
-        }
-      ]
-    },
-    {
-      "id": "30",
-      "title": "Product Title 30",
-      "price": 194,
-      "discount": 0,
-      "description": "This is a description for product 30. It is designed to be appealing and informative.",
-      "category": "jeans",
-      "image": "wear-2",
-      "top_selling": false,
-      "new_arrival": false,
-      "sizes": "large,xlarge,xsmall",
-      "color": "purple",
-      "dressStyle": "party",
-      "stock": 24,
-      "comments": [
-        {
-          "id": "63",
-          "username": "Admin Administrator",
-          "content": "Not satisfied, poor quality.",
-          "rating": 2,
-          "created_at": "2024-07-11T12:24:18.228400"
-        },
-        {
-          "id": "64",
-          "username": "Barış Erkuş",
-          "content": "Would not recommend this product.",
-          "rating": 2,
-          "created_at": "2024-06-11T12:24:18.228400"
-        },
-        {
-          "id": "65",
-          "username": "Barış Erkuş",
-          "content": "Very disappointed with the quality.",
-          "rating": 1,
-          "created_at": "2024-07-11T12:24:18.228400"
-        },
-        {
-          "id": "66",
-          "username": "Admin Administrator",
-          "content": "Terrible product, not worth the money.",
-          "rating": 1,
-          "created_at": "2024-02-11T12:24:18.228400"
-        }
-      ]
-    },
-    {
-      "id": "31",
-      "title": "Product Title 31",
-      "price": 83,
-      "discount": 44,
-      "description": "This is a description for product 31. It is designed to be appealing and informative.",
-      "category": "shirts",
-      "image": "wear-4",
-      "top_selling": false,
-      "new_arrival": false,
-      "sizes": "xxsmall,large,medium,xlarge",
-      "color": "pink",
-      "dressStyle": "party",
-      "stock": 17,
-      "comments": [
-        {
-          "id": "67",
-          "username": "Admin Administrator",
-          "content": "Not satisfied, poor quality.",
-          "rating": 2,
-          "created_at": "2024-07-11T12:24:18.228400"
-        },
-        {
-          "id": "68",
-          "username": "Barış Erkuş",
-          "content": "Would not recommend this product.",
-          "rating": 2,
-          "created_at": "2023-11-11T12:24:18.228400"
-        },
-        {
-          "id": "69",
-          "username": "Barış Erkuş",
-          "content": "Very disappointed with the quality.",
-          "rating": 1,
-          "created_at": "2023-07-11T12:24:18.228400"
-        },
-        {
-          "id": "70",
-          "username": "Admin Administrator",
-          "content": "Terrible product, not worth the money.",
-          "rating": 1,
-          "created_at": "2021-07-11T12:24:18.228400"
-        }
-      ]
-    },
-    {
-      "id": "32",
-      "title": "Product Title 32",
-      "price": 42,
-      "discount": 10,
-      "description": "This is a description for product 32. It is designed to be appealing and informative.",
-      "category": "t-shirts",
-      "image": "wear-3",
-      "top_selling": false,
-      "new_arrival": false,
-      "sizes": "large,xsmall,xlarge",
-      "color": "green",
-      "dressStyle": "casual",
-      "stock": 17,
-      "comments": [
-        {
-          "id": "71",
-          "username": "Barış Erkuş",
-          "content": "Very disappointed with the quality.",
-          "rating": 1,
-          "created_at": "2024-07-11T12:24:18.228400"
-        },
-        {
-          "id": "72",
-          "username": "Admin Administrator",
-          "content": "Terrible product, not worth the money.",
-          "rating": 1,
-          "created_at": "2024-04-11T12:24:18.228400"
-        }
-      ]
-    },
-    {
-      "id": "39",
-      "title": "Product Title 39",
-      "price": 199,
-      "discount": 0,
-      "description": "This is a description for product 39. It is designed to be appealing and informative.",
-      "category": "hoodie",
-      "image": "wear-2",
-      "top_selling": false,
-      "new_arrival": false,
-      "sizes": "xxsmall,small,large,xsmall",
-      "color": "orange",
-      "dressStyle": "casual",
-      "stock": 52,
-      "comments": []
-    },
-    {
       "id": "40",
       "title": "Product Title 40",
       "price": 200,
@@ -1190,21 +998,6 @@
       "id": "7eqa0pb38RXpa3pz5UkMMul8hwS2",
       "name": "Admin Administrator",
       "email": "admin@gmail.com"
-    },
-    {
-      "id": "tSp234xHozU5IXf6one02QftGYU2",
-      "name": "Ahmet Selim",
-      "email": "ahmet@gmail.com"
-    },
-    {
-      "id": "k2auFQVA4fhaiQLVq6Rw1S4TABD3",
-      "name": "Deneme Kullanıcı",
-      "email": "deneme@gmail.com"
-    },
-    {
-      "id": "D6w0YfZkp4OeNjHO7TNKs4qte7q1",
-      "name": "Kerim Albay",
-      "email": "kerim@gmail.com"
     }
   ]
 }
