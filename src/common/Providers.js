@@ -11,7 +11,7 @@ const Providers = async ({ children, locale }) => {
   return (
     <ReduxProvider>
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <ThemeProvider enableSystem="false">
+        <ThemeProvider enableSystem="false" defaultTheme="light">
           <StyledComponentsRegistry>
             <GlobalStyles />
             {children}
