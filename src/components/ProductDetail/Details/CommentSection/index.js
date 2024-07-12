@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import { RiIndentIncrease } from "react-icons/ri";
-import Comments from "../Comments";
+import Comments from "./Comments";
 import { useTranslations } from "next-intl";
 import Modal from "./Modal";
 import SortBy from "./SortBy";

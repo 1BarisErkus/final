@@ -20,3 +20,8 @@ export const FilterButton = styled.button`
   cursor: pointer;
   transition: background-color 0.3s;
 `;
+
+export const ModalContent = styled.div`
+  background-color: var(--primary);
+  color: var(--secondary);
+`;

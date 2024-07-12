@@ -7,20 +7,14 @@ import {
   convertStringToQueriesObject,
   convertValidStringQueries,
 } from "@/lib/filter";
-import {
-  ClearButtonWrapper,
-  FilterContainer,
-  PriceRange,
-  SectionTitle,
-} from "./styles";
-import ColorOption from "@/components/ColorOption";
-import SizeButton from "@/components/SizeButton";
+import { FilterContainer } from "./styles";
 import Button from "@/components/Button";
-import FilterButton from "./Button";
-import { FiFilter } from "react-icons/fi";
-import { BiChevronRight, BiChevronUp } from "react-icons/bi";
-import RangeSlider from "react-range-slider-input";
-import { filterColors } from "@/common/filterColors";
+import Head from "./Head";
+import Category from "./Category";
+import Range from "./Range";
+import Colors from "./Colors";
+import Sizes from "./Sizes";
+import DressStyle from "./DressStyle";
 
 const FilterComponent = ({ modal, className }) => {
   const t = useTranslations("Category");
@@ -106,114 +100,31 @@ const FilterComponent = ({ modal, className }) => {
 
   return (
     <FilterContainer className={className}>
-      <SectionTitle className="pb-3 border-bottom">
-        <span>{t("filters")}</span>
-        {modal ? (
-          <ClearButtonWrapper
-            className="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></ClearButtonWrapper>
-        ) : (
-          <ClearButtonWrapper onClick={clearFilters}>
-            <FiFilter size={24} />
-          </ClearButtonWrapper>
-        )}
-      </SectionTitle>
-
-      <ul className="list-unstyled d-flex flex-column pb-3 mb-3 border-bottom gap-1">
-        {filterCategories.map((category, i) => (
-          <FilterButton
-            key={i}
-            className="d-flex justify-content-between"
-            selected={selectedFilterQueries?.category_like?.includes(
-              category.value.toLocaleLowerCase()
-            )}
-            onClick={() => setCategory(category.value)}
-          >
-            <span>{category.name}</span>
-            <BiChevronRight size={24} />
-          </FilterButton>
-        ))}
-      </ul>
-
-      <SectionTitle>
-        <span>{t("price")}</span>
-        <BiChevronUp size={24} />
-      </SectionTitle>
-      <RangeSlider
-        min={0}
-        max={1000}
-        value={priceRange}
-        onInput={setPrice}
-        className="mb-3"
+      <Head title={t("filters")} clearFilters={clearFilters} modal={modal} />
+      <Category
+        selectedFilterQueries={selectedFilterQueries}
+        setCategory={setCategory}
+        filterCategories={filterCategories}
       />
-      <div className="mb-4 d-flex justify-content-between">
-        <span>${priceRange[0]}</span>
-        <span>${priceRange[1]}</span>
-      </div>
+      <Range title={t("price")} priceRange={priceRange} setPrice={setPrice} />
+      <Colors
+        title={t("colors")}
+        selectedFilterQueries={selectedFilterQueries}
+        setColor={setColor}
+      />
+      <Sizes
+        title={t("size")}
+        sizes={sizes}
+        setSize={setSize}
+        selectedFilterQueries={selectedFilterQueries}
+      />
+      <DressStyle
+        title={t("dressStyle")}
+        dressStyles={dressStyles}
+        setDressStyle={setDressStyle}
+        selectedFilterQueries={selectedFilterQueries}
+      />
 
-      <SectionTitle>
-        <span>{t("colors")}</span>
-        <BiChevronUp size={24} />
-      </SectionTitle>
-      <div className="pb-3 border-bottom mb-3">
-        {Object.entries(filterColors).map(([colorName, color]) => (
-          <ColorOption
-            key={color}
-            name="color"
-            value={colorName.toLowerCase()}
-            color={color}
-            selected={selectedFilterQueries?.color_like?.includes(
-              colorName.toLocaleLowerCase()
-            )}
-            onClick={() => setColor(colorName)}
-          />
-        ))}
-      </div>
-
-      <SectionTitle>
-        <span>{t("size")}</span>
-        <BiChevronUp size={24} />
-      </SectionTitle>
-      <div className="pb-3 border-bottom mb-3">
-        {sizes.map((size, i) => (
-          <SizeButton
-            key={i}
-            name="size"
-            value={size}
-            selected={selectedFilterQueries?.sizes_like?.includes(
-              size.toLocaleLowerCase()
-            )}
-            onClick={() => setSize(size)}
-          >
-            {size}
-          </SizeButton>
-        ))}
-      </div>
-
-      <SectionTitle>
-        <span>{t("dressStyle")}</span>
-        <BiChevronUp size={24} />
-      </SectionTitle>
-      <ul className="list-unstyled d-flex flex-column mb-3 gap-1">
-        {dressStyles.map((dressStyle, i) => (
-          <FilterButton
-            key={i}
-            name="dressStyle"
-            className="d-flex justify-content-between"
-            selected={selectedFilterQueries?.dressStyle_like?.includes(
-              dressStyle.value.toLocaleLowerCase()
-            )}
-            onClick={() => {
-              setDressStyle(dressStyle.value);
-            }}
-          >
-            <span>{dressStyle.name}</span>
-            <BiChevronRight size={24} />
-          </FilterButton>
-        ))}
-      </ul>
       <Button
         theme="dark"
         className="w-100 my-2 bg-black text-white"

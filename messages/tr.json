@@ -173,7 +173,8 @@
     "invalidCouponCode": "Geçersiz kupon kodu. Lütfen kontrol edin ve tekrar deneyin.",
     "emptyCart": "Sepetiniz boş. Ürünleri mağaza sayfasından ekleyebilirsiniz.",
     "couponApplied": "Kupon başarıyla uygulandı.",
-    "couponAlreadyApplied": "Kupon zaten uygulandı."
+    "couponAlreadyApplied": "Kupon zaten uygulandı.",
+    "youMustLoginFirst": "Bu özelliği kullanmak için giriş yapmalısınız."
   },
   "Error": {
     "pageNotFound": "Sayfa Bulunamadi",
@@ -200,6 +201,12 @@
     "signupError": "Kayit olunamadi. Lutfen bilgilerinizi kontrol edin.",
     "emailInUse": "Bu e-posta adresi zaten kullaniliyor. Lutfen baska bir e-posta adresi deneyin.",
     "name": "Ad Soyad",
-    "namePlaceholder": "Ad ve soyad girin"
+    "namePlaceholder": "Ad ve soyad girin",
+    "required": "Bu alan zorunludur.",
+    "invalidEmail": "Lutfen gecerli bir e-posta adresi girin.",
+    "youAreLoggedIn": "Zaten giris yapilmis durumdasiniz. Cikis yapmak istiyorsaniz,",
+    "clickHere": "buraya tıklayın",
+    "passwordToShort": "Sifreniz cok kisa. En az 6 karakter olmalidir.",
+    "passwordNotMatch": "Sifreler uyusmuyor. Lutfen kontrol edin."
   }
 }

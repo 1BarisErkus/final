@@ -2,7 +2,7 @@ import {
   DiscountlessPrice,
   DiscountPercent,
   Price,
-} from "@/components/Wear/Card/styles";
+} from "@/components/Wear/styles";
 import { Rating } from "@smastrom/react-rating";
 import Form from "./Form";
 
@@ -14,7 +14,6 @@ const Content = ({
   description,
   stock,
   sizes,
-  color,
   rating,
 }) => {
   return (

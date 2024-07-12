@@ -173,7 +173,8 @@
     "invalidCouponCode": "Invalid coupon code. Please try again.",
     "emptyCart": "Your cart is empty. You can add products from the shop page.",
     "couponApplied": "Coupon applied successfully.",
-    "couponAlreadyApplied": "Coupon has already been applied."
+    "couponAlreadyApplied": "Coupon has already been applied.",
+    "youMustLoginFirst": "You must be logged in to use this feature."
   },
   "Error": {
     "pageNotFound": "Page not found",
@@ -200,6 +201,12 @@
     "signupError": "Sign up failed. Please check your information.",
     "emailInUse": "Email is already in use. Please try another one.",
     "name": "Name Surname",
-    "namePlaceholder": "Enter your name and surname"
+    "namePlaceholder": "Enter your name and surname",
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "youAreLoggedIn": "You are already logged in. If you want to log out,",
+    "clickHere": "click here.",
+    "passwordTooShort": "Password must be at least 6 characters long.",
+    "passwordNotMatch": "Passwords do not match. Please check again."
   }
 }

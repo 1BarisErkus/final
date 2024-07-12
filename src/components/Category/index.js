@@ -1,6 +1,7 @@
 import { Link } from "@/navigation";
 import { getProducts } from "@/server/product";
 import { calculateRating } from "@/lib/helpers";
+
 import WearCardList from "../Wear/CardList";
 import WearCard from "../Wear/Card";
 import FilterComponent from "./Filter";
@@ -13,15 +14,13 @@ const Category = async ({ searchParams }) => {
   const limit = searchParams["_limit"] ?? "9";
   const data = await getProducts(`${query}&_page=${page}&_limit=${limit}`);
 
-  console.log(page * limit, data.length);
-
   return (
     <div className="container ps-0">
       <div className="row m-0 p-0">
-        <div className="col-lg-3 col-12 d-xxl-block d-none m-0 p-0">
+        <div className="col-lg-3 d-xxl-block d-none m-0 p-0">
           <FilterComponent />
         </div>
-        <div className="col-lg-9 col-12 m-0 p-0">
+        <div className="col-lg-9 m-0 p-0">
           <Header length={data.length} />
           <WearCardList className="align-items-center justify-content-center justify-content-start mt-4">
             {data.map((card) => {
