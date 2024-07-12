@@ -30,7 +30,7 @@ const brands = [
 
 const Brands = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" id="brands">
       <div className="row">
         <div className="col-lg-12 bg-black py-5">
           <ul className="d-flex flex-wrap align-items-center justify-content-center gap-5 col-md:gap-1">

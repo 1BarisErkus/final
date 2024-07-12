@@ -32,7 +32,7 @@ const Navbar = () => {
               <StyledLink
                 className="nav-link d-flex gap-1"
                 aria-current="page"
-                href="#"
+                href="/category"
               >
                 {t("shop")}
                 <span>
@@ -41,7 +41,7 @@ const Navbar = () => {
               </StyledLink>
             </li>
             <li className="nav-item">
-              <StyledLink className="nav-link" href="#">
+              <StyledLink className="nav-link" href="#topSelling">
                 {t("onSale")}
               </StyledLink>
             </li>
@@ -51,7 +51,7 @@ const Navbar = () => {
               </StyledLink>
             </li>
             <li className="nav-item">
-              <StyledLink className="nav-link" href="#">
+              <StyledLink className="nav-link" href="#brands">
                 {t("brands")}
               </StyledLink>
             </li>

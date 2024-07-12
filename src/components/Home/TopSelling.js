@@ -6,7 +6,11 @@ const TopSelling = async () => {
   const data = await getTopSelling();
   const t = await getTranslations("Home");
 
-  return <ShowCase title={t("topSellers")} button cards={data} />;
+  return (
+    <div id="topSelling">
+      <ShowCase title={t("topSellers")} button cards={data} />
+    </div>
+  );
 };
 
 export default TopSelling;
